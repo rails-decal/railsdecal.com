@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 2.2.1'
 gem 'pg', '0.17.1'
 gem 'jbuilder', '~> 1.2'
 gem 'google-analytics-rails', '~> 0.0.5'
+gem 'devise', '~> 3.2.3'
 
 group :doc do
   gem 'sdoc', require: false
