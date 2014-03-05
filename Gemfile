@@ -19,12 +19,13 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'annotate', '~> 2.6.1'
   gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'bullet', '~> 4.8.0'
-  gem 'annotate', '~> 2.6.1'
   gem 'commands', '~> 0.2.1'
   gem 'factory_girl', '~> 4.4.0'
+  gem 'rails_best_practices', '~> 1.15.1'
   gem 'rspec-rails', '~> 2.14.1'
 end
 
