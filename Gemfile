@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'slim-rails', '~> 2.1.0'
 
 gem 'pg', '0.17.1'
 
