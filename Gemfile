@@ -26,3 +26,7 @@ group :development, :test do
   gem 'factory_girl', '~> 4.4.0'
   gem 'rspec-rails', '~> 2.14.1'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
