@@ -5,11 +5,14 @@
     h1 Instructors:
     h4 Mark Miyashita
     h4 Sam Lau
+  section.about-course
+    p This course is awesome.
 
 javascript:
   $(document).ready(function() {
     $(".main").onepage_scroll({
       sectionContainer: "section",
+      easing: "ease",
       loop: true,
       responsiveFallback: 600
     });
