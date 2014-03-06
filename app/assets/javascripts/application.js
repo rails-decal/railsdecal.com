@@ -17,10 +17,14 @@
 
 
 $(document).ready(function() {
-  $(".header-link").click(function() {
+  $(".header-link").click(function(event) {
+    event.preventDefault();
 
     $("ul#header-links li").removeClass("active");
     $(this).parent().addClass("active");
+    $('html, body').animate({
+      scrollTop: $("#" + $(this).data().element).offset().top - 50
+    }, 500);
   });
 
 });

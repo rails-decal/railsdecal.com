@@ -7,6 +7,11 @@ $light-gray: #f5f5f5;
 body {
   font-family: 'open sans';
   -webkit-font-smoothing: antialiased;
+  padding-top: 50px;
+
+  .center {
+    text-align: center;
+  }
 
   .white {
     color: white;
