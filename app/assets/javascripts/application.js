@@ -17,6 +17,7 @@
 
 
 $(document).ready(function() {
+
   $(".header-link").click(function(event) {
     event.preventDefault();
 
@@ -25,6 +26,12 @@ $(document).ready(function() {
     $('html, body').animate({
       scrollTop: $("#" + $(this).data().element).offset().top - 50
     }, 500);
+  });
+
+  $("#typer").typed({
+    strings: ["Facebook.", "Twitter.", "Yelp.", "Google.", "great website. We'll teach you how."],
+    typeSpeed: 80,
+    backDelay: 500
   });
 
 });

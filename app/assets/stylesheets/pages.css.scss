@@ -23,6 +23,14 @@ body {
     font-weight: bold;
   }
 
+  .light-link {
+    color: $light-gray;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
   h1, h2, h3, h4, h5 {
     font-weight: 300;
   }
@@ -38,10 +46,18 @@ body {
   .main {
     section#intro {
       background-color: $founders-rock-blue;
+
+      .about-intro {
+        padding: 100px 0;
+      }
     }
 
     section#about {
       background-color: $medalist-gold;
+
+      .attention-grabber {
+        padding: 100px 0;
+      }
     }
 
     section {
@@ -54,7 +70,6 @@ body {
         width: 100%;
 
         .description {
-          padding-top: 50px;
           line-height: 1.8em;
           position: relative;
           height: 100%;
@@ -66,6 +81,7 @@ body {
           float: right;
           width: 33.33333333333333%;
           margin-left: 16.666666666666664%;
+          padding-top: 50px;
           display: inline;
         }
       }
@@ -95,4 +111,16 @@ body {
       background-color: $rails-red
     }
   }
+}
+
+#typed-cursor{
+  opacity: 1;
+  font-weight: 100;
+  animation: blink 0.7s infinite;
+}
+
+@-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
 }
