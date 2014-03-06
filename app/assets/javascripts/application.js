@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+$(document).ready(function() {
+  $(".header-link").click(function() {
+
+    $("ul#header-links li").removeClass("active");
+    $(this).parent().addClass("active");
+
+    $(".main").moveTo($(this).data().index);
+  });
+
+});

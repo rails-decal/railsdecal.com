@@ -8,7 +8,10 @@ nav.navbar.navbar-default
         span.icon-bar
       = link_to "Rails DeCal", root_path, class: "navbar-brand"
     .collapse.navbar-collapse#collapsed-navbar
-      ul.nav.navbar-nav
+      ul.nav.navbar-nav#header-links
+        - if content_for?(:header_links)
+          = render partial: yield(:header_links)
+      ul.nav.navbar-nav.navbar-right
         li.active
           a href="#" Link
         li
@@ -30,10 +33,3 @@ nav.navbar.navbar-default
             li.divider
             li
               a href="#" One more separated link
-      form.navbar-form.navbar-left role="search"
-        .form-group
-          input.form-control type="text" placeholder="Search"
-        button.btn.btn-default type="submit" Submit
-      ul.nav.navbar-nav.navbar-right
-        li
-          a href="#" Link

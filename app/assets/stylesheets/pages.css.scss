@@ -21,15 +21,15 @@ body {
   }
 
   .main {
-    section.intro {
+    section#intro {
       background-color: $founders-rock-blue;
     }
 
-    section.about-course {
+    section#about {
       background-color: $medalist-gold;
     }
 
-    section.schedule {
+    section#schedule {
       background-color: $rails-red
     }
   }
