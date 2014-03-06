@@ -2,30 +2,21 @@ body {
   font-family: 'open sans';
   -webkit-font-smoothing: antialiased;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
+  .white {
+    color: white;
+  }
+
+  h1, h2, h3, h4, h5 {
     font-weight: 300;
   }
 
   .main {
     section.intro {
       background-color: #B02B2C;
-
-      h1 {
-        color: white;
-      }
     }
 
     section.instructors {
       background-color: #555557;
-
-      h1,
-      h4 {
-        color: white;
-      }
     }
   }
 }
