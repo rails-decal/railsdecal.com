@@ -4,7 +4,7 @@
   section#intro
     .container
       .row
-        .col-md-6.col-md-offset-2
+        .col-md-8.col-md-offset-2
           h1.white Ruby on Rails DeCal
           h3.white UC Berkeley - Fall 2014
           p.white
@@ -15,20 +15,30 @@
   section#about
     .container
       .row
-        .col-md-6.col-md-offset-2
+        .col-md-8.col-md-offset-2
           h1.white About:
+  section#about-mark
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .about-section
+            .description
+              h2 About Mark
+              p blah blah blah
+            .image
+              = image_tag "mark_miyashita.jpg", class: "round-with-border"
+  section#about-sam
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          .about-section
+            .description
+              h2 About Sam
+              p blah blah
+            .image
+              = image_tag "sam_lau.jpeg", class: "round-with-border"
   section#schedule
     .container
       .row
-        .col-md-6.col-md-offset-2
+        .col-md-8.col-md-offset-2
           p.white This is the schedule.
-
-javascript:
-  $(document).ready(function() {
-    $(".main").onepage_scroll({
-      sectionContainer: "section",
-      easing: "ease",
-      loop: true,
-      responsiveFallback: 600
-    });
-  });

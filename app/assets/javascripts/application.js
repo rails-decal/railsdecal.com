@@ -21,8 +21,6 @@ $(document).ready(function() {
 
     $("ul#header-links li").removeClass("active");
     $(this).parent().addClass("active");
-
-    $(".main").moveTo($(this).data().index);
   });
 
 });
