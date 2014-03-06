@@ -12,24 +12,25 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
         - if content_for?(:header_links)
           = render partial: yield(:header_links)
       ul.nav.navbar-nav.navbar-right
-        li.active
-          a href="#" Link
         li
-          a href="#" Link
-        li.dropdown
-          a.dropdown-toggle href="#" data-toggle="dropdown"
-            | Dropdown
-            b.caret
-          ul.dropdown-menu
-            li
-              a href="#" Action
-            li
-              a href="#" Another Action
-            li
-              a href="#" Something else here
-            li.divider
-            li
-              a href="#" Separated Link
-            li.divider
-            li
-              a href="#" One more separated link
+          = link_to "Sign In", "#", class: "flat-button"
+        - if signed_in?
+          li
+            a href="#" Link
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown"
+              | Dropdown
+              b.caret
+            ul.dropdown-menu
+              li
+                a href="#" Action
+              li
+                a href="#" Another Action
+              li
+                a href="#" Something else here
+              li.divider
+              li
+                a href="#" Separated Link
+              li.divider
+              li
+                a href="#" One more separated link

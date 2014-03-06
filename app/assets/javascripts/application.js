@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require_tree .
 
 
@@ -24,7 +23,7 @@ $(document).ready(function() {
     $("ul#header-links li").removeClass("active");
     $(this).parent().addClass("active");
     $('html, body').animate({
-      scrollTop: $("#" + $(this).data().element).offset().top - 50
+      scrollTop: $("#" + $(this).data().element).offset().top - 70
     }, 500);
   });
 
