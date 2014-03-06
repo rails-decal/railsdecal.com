@@ -120,7 +120,11 @@ body {
     }
 
     section#schedule {
-      background-color: $rails-red
+      background-color: $rails-red;
+
+      .schedule-container {
+        padding: 100px 0;
+      }
     }
   }
 }
