@@ -1,0 +1,39 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle type="button" data-toggle="collapse" data-target="collapsed-navbar"
+        span.sr-only Toggle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to "Rails DeCal", root_path, class: "navbar-brand"
+    .collapse.navbar-collapse#collapsed-navbar
+      ul.nav.navbar-nav
+        li.active
+          a href="#" Link
+        li
+          a href="#" Link
+        li.dropdown
+          a.dropdown-toggle href="#" data-toggle="dropdown"
+            | Dropdown
+            b.caret
+          ul.dropdown-menu
+            li
+              a href="#" Action
+            li
+              a href="#" Another Action
+            li
+              a href="#" Something else here
+            li.divider
+            li
+              a href="#" Separated Link
+            li.divider
+            li
+              a href="#" One more separated link
+      form.navbar-form.navbar-left role="search"
+        .form-group
+          input.form-control type="text" placeholder="Search"
+        button.btn.btn-default type="submit" Submit
+      ul.nav.navbar-nav.navbar-right
+        li
+          a href="#" Link

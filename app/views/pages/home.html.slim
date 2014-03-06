@@ -5,18 +5,21 @@
         .col-md-6.col-md-offset-2
           h1.white Ruby on Rails DeCal
           h3.white UC Berkeley - Fall 2014
-  section.instructors
-    .container
-      .row
-        .col-md-6.col-md-offset-2
-          h1.white Instructors:
-          h4.white Mark Miyashita
-          h4.white Sam Lau
+          p.white
+            | Instructors: 
+            = link_to "Mark Miyashita", "http://markmiyashita.com", class: "dark-link"
+            |  and 
+            = link_to "Sam Lau", "https://github.com/SamLau95", class: "dark-link"
   section.about-course
     .container
       .row
         .col-md-6.col-md-offset-2
-          p This course is going to be awesome.
+          h1.white About:
+  section.schedule
+    .container
+      .row
+        .col-md-6.col-md-offset-2
+          p.white This is the schedule.
 
 javascript:
   $(document).ready(function() {

@@ -1,3 +1,7 @@
+$rails-red: #B02B2C;
+$founders-rock-blue: #2D637F;
+$medalist-gold: #E09E19;
+
 body {
   font-family: 'open sans';
   -webkit-font-smoothing: antialiased;
@@ -6,17 +10,27 @@ body {
     color: white;
   }
 
+  .dark-link {
+    color: rgba(0,0,0,0.85);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
   h1, h2, h3, h4, h5 {
     font-weight: 300;
   }
 
   .main {
     section.intro {
-      background-color: #B02B2C;
+      background-color: $founders-rock-blue;
     }
 
-    section.instructors {
-      background-color: #555557;
+    section.about-course {
+      background-color: $medalist-gold;
+    }
+
+    section.schedule {
+      background-color: $rails-red
     }
   }
 }
