@@ -1,1 +1,16 @@
-h1 Ruby on Rails DeCal at UC Berkeley - Fall 2014
+.main
+  section.intro
+    h1 Ruby on Rails DeCal at UC Berkeley - Fall 2014
+  section.instructors
+    h1 Instructors:
+    h4 Mark Miyashita
+    h4 Sam Lau
+
+javascript:
+  $(document).ready(function() {
+    $(".main").onepage_scroll({
+      sectionContainer: "section",
+      loop: true,
+      responsiveFallback: 600
+    });
+  });
