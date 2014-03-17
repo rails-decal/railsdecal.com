@@ -13,6 +13,7 @@ gem 'pg', '0.17.1'
 gem 'jbuilder', '~> 1.2'
 gem 'google-analytics-rails', '~> 0.0.5'
 gem 'devise', '~> 3.2.3'
+gem 'newrelic_rpm'
 
 group :doc do
   gem 'sdoc', require: false
