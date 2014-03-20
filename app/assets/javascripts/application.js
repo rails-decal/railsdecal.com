@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require reveal.min.js
 //= require_tree .
 
 
@@ -32,5 +33,7 @@ $(document).ready(function() {
     typeSpeed: 80,
     backDelay: 500
   });
+
+  Reveal.configure({ autoSlide: 0 });
 
 });
