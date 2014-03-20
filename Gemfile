@@ -15,6 +15,9 @@ gem 'google-analytics-rails', '~> 0.0.5'
 gem 'devise', '~> 3.2.3'
 gem 'newrelic_rpm'
 
+# For Lectures
+gem "rails-reveal-js", "~> 2.6.1"
+
 group :doc do
   gem 'sdoc', require: false
 end
