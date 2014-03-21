@@ -15,6 +15,9 @@ gem 'google-analytics-rails', '~> 0.0.5'
 gem 'devise', '~> 3.2.3'
 gem 'newrelic_rpm'
 
+# For Lectures
+gem "rails-reveal-js", "~> 2.6.1.2"
+
 group :doc do
   gem 'sdoc', require: false
 end
@@ -28,6 +31,7 @@ group :development, :test do
   gem 'factory_girl', '~> 4.4.0'
   gem 'rails_best_practices', '~> 1.15.1'
   gem 'rspec-rails', '~> 2.14.1'
+  gem 'rails-rename', '~> 1.0.0'
 end
 
 group :production do

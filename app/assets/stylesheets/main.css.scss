@@ -1,0 +1,31 @@
+body {
+  font-family: 'open sans';
+  -webkit-font-smoothing: antialiased;
+  padding-top: 70px;
+}
+
+.center {
+  text-align: center;
+}
+
+.white {
+  color: white;
+}
+
+.dark-link {
+  color: rgba(0,0,0,0.85);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.light-link {
+  color: $light-gray;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 300;
+}
