@@ -1,6 +1,6 @@
 class Lecture < ActiveRecord::Base
 
-  Lecture.all.group_by(&:year).map{|year, lectures| { year => lectures.group_by{|l| l.semester}}}
+  default_scope order(:number)
 
   def filename
     "lectures/#{year}/#{semester.downcase}/#{partial.downcase}"
