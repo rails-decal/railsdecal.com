@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require reveal.min.js
+//= require reveal
 //= require_tree .
 
 
