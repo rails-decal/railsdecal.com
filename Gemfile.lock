@@ -202,7 +202,7 @@ DEPENDENCIES
   pg (= 0.17.1)
   rails (= 4.0.0)
   rails-rename (~> 1.0.0)
-  rails-reveal-js (~> 2.6.1.1)
+  rails-reveal-js (~> 2.6.1.2)
   rails_12factor
   rails_best_practices (~> 1.15.1)
   rspec-rails (~> 2.14.1)

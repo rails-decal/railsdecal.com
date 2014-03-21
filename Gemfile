@@ -16,7 +16,7 @@ gem 'devise', '~> 3.2.3'
 gem 'newrelic_rpm'
 
 # For Lectures
-gem "rails-reveal-js", "~> 2.6.1.1"
+gem "rails-reveal-js", "~> 2.6.1.2"
 
 group :doc do
   gem 'sdoc', require: false
