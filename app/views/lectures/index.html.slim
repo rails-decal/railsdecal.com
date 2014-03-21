@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-md-12
+      .lectures-container
+        - @lectures.each do |lectures_for_year|
+          - lectures_for_year.each do |year, lectures_for_semester|
+            h1 = year
+            .lectures-by-year
+              - lectures_for_semester.each do |semester, lectures|
+                h3 = semester
+                .lectures-by-semester
+                - lectures.each do |lecture|
+                  .lecture
+                    = link_to lecture.title, lecture
