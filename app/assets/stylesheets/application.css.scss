@@ -8,12 +8,15 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require reveal
- *= require reveal-theme/solarized
  *= require_self
  */
 
 @import "colors";
 
 @import "bootstrap";
+@import "bootstrap_overrides";
+
+@import "main";
+@import "navbar";
+
 @import "partials/*";
