@@ -9,9 +9,9 @@
             h1.white Ruby on Rails DeCal
             h3.white UC Berkeley - Fall 2014
             p.white
-              | Instructors: 
+              ' Instructors:
               = link_to "Mark Miyashita", "http://markmiyashita.com", class: "light-link underline"
-              |  and 
+              '  and
               = link_to "Sam Lau", "https://github.com/SamLau95", class: "light-link underline"
   section#about
     .container
@@ -19,7 +19,7 @@
         .col-md-12.center
           .attention-grabber
             h1.white
-              | Build the next 
+              ' Build the next
               span#typer
             .row
               .col-md-8.col-md-offset-2.center
@@ -30,21 +30,27 @@
       .row
         .col-md-8.col-md-offset-2
           .about-section
-            .description
-              h2 About Mark
-              = render partial: "shared/instructors/mark"
-            .image
-              = image_tag "mark_miyashita.jpg", class: "round-with-border"
+            .row
+              .col-md-5
+                h2 About Mark
+                .description
+                  = render partial: "shared/instructors/mark"
+              .col-md-5.col-md-offset-2
+                .image-container.image-bottom
+                  = image_tag "mark_miyashita.jpg", class: "round-with-border"
   section#about-sam
     .container
       .row
         .col-md-8.col-md-offset-2
           .about-section
-            .description
-              h2 About Sam
-              = render partial: "shared/instructors/sam"
-            .image
-              = image_tag "sam_lau.jpeg", class: "round-with-border"
+            .row
+              .col-md-5
+                .image-container.image-top
+                  = image_tag "sam_lau.jpeg", class: "round-with-border"
+              .col-md-5.col-md-offset-2
+                h2 About Sam
+                .description
+                  = render partial: "shared/instructors/sam"
   section#schedule
     .container
       .row

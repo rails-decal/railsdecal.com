@@ -7,6 +7,12 @@ $navbar-padding-bottom: 25px;
   height: 70px;
 }
 
+.navbar-toggle {
+  padding: 15px 10px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
 .navbar-nav > li > a {
   padding-top: $navbar-padding-top;
   padding-bottom: $navbar-padding-bottom;
@@ -36,4 +42,20 @@ $navbar-padding-bottom: 25px;
 .navbar-default .navbar-nav > .active > a:focus {
   background-color: $lap-lane;
   color: white;
+}
+
+@media (max-width: 767px) {
+
+  body {
+    padding-top: 0px;
+  }
+
+  .navbar-fixed-top {
+    position: relative;
+  }
+
+  .navbar-nav {
+    margin: 0px -15px;
+  }
+
 }

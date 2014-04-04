@@ -1,0 +1,16 @@
+$desktop: "(min-width: 1024px)";
+$mobile: "(max-width: 767px)";
+$not-mobile: "(min-width: 768px)";
+
+@mixin breakpoint($querystring) {
+  $valid: true;
+  @if type-of($querystring) != "string" {
+    @warn "querystring: #{$querystring} is not a string";
+    $valid: false;
+  }
+  @if $valid == true {
+    @media #{$querystring} {
+      @content;
+    }
+  }
+}
