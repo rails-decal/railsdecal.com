@@ -1,0 +1,84 @@
+.main {
+  section#intro {
+    background-color: $founders-rock-blue;
+
+    .about-intro {
+      padding: 100px 0;
+    }
+  }
+
+  section#about {
+    background-color: $medalist-gold;
+
+    .attention-grabber {
+      padding: 100px 0;
+    }
+  }
+
+  section {
+    .about-section {
+      padding: 100px 0;
+      margin: 0 auto;
+      content: "";
+      display: table;
+      max-width: 1000px;
+      width: 100%;
+
+      .description {
+        line-height: 1.8em;
+        position: relative;
+        height: 100%;
+      }
+
+      .image {
+        float: right;
+        width: 33.33333333333333%;
+        margin-left: 16.666666666666664%;
+        padding-top: 50px;
+        display: inline;
+      }
+
+      .image-container {
+        @include breakpoint($mobile) {
+          text-align: center;
+        }
+      }
+
+      .image-top {
+        padding-bottom: 50px;
+      }
+
+      .image-bottom {
+        padding-top: 50px;
+      }
+    }
+  }
+
+  section#about-mark {
+    background-color: white;
+  }
+
+  section#about-sam {
+    background-color: $light-gray;
+  }
+
+  section#schedule {
+    background-color: $rails-red;
+
+    .schedule-container {
+      padding: 100px 0;
+    }
+  }
+}
+
+#typed-cursor{
+  opacity: 1;
+  font-weight: 100;
+  animation: blink 0.7s infinite;
+}
+
+@-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
