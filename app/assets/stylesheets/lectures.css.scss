@@ -3,5 +3,7 @@
  *= require reveal-theme/solarized
  */
 
+@import "mixins";
 @import "colors";
 @import "main";
+@import "buttons";
