@@ -11,4 +11,4 @@
                 .lectures-by-semester
                 - lectures.each do |lecture|
                   .lecture
-                    = link_to lecture.title, lecture
+                    = link_to "Lecture #{lecture.number} - #{lecture.title}", lecture
