@@ -1,0 +1,25 @@
+.main
+  .container
+    .row
+      .col-md-12
+        h1 Student Application
+        .row
+          .col-md-6
+            = simple_form_for(@student_application, html: {class: 'form-horizontal'}) do |f|
+              = f.error_notification
+              .form-inputs
+                = f.input :first_name
+                = f.input :last_name
+                = f.input :email
+                = f.input :year
+                = f.input :major
+                = f.input :gpa
+                = f.input :why_join
+                = f.input :cs_classes_taken
+                = f.input :current_courseload
+                = f.input :other_commitments
+                = f.input :how_many_hours_willing
+                = f.input :how_did_you_hear_about_us
+              .form-actions
+                = f.button :submit, "Sign up", class: 'flat-button'
+          .col-md-6
