@@ -1,4 +1,5 @@
 class Lecture < ActiveRecord::Base
+  belongs_to :semester
 
   default_scope order(:number)
 
