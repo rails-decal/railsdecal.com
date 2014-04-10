@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = ENV['DEVISE_SECRET_TOKEN']
+  # config.secret_key = 'ea71eb5693d90823cadf962f1af0f2d91c480f7c4d8e59768f195b430f5f1560003be3013a36fe0955555e6708c91a8636c7333e77785a562042be13419278db'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -76,7 +76,7 @@ Devise.setup do |config|
   # particular strategies by setting this option.
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
-  # passing :skip => :sessions to `devise_for` in your config/routes.rb
+  # passing skip: :sessions to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
@@ -91,11 +91,13 @@ Devise.setup do |config|
   #
   # Limiting the stretches to just one in testing will increase the performance of
   # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use
-  # a value less than 10 in other environments.
+  # a value less than 10 in other environments. Note that, for bcrypt (the default
+  # encryptor), the cost increases exponentially with the number of stretches (e.g.
+  # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '08d7ad4e174b5d0f41a94790af4c059cff4fc52a80727b65e7d146412c714657879b2090c658e0e1f6980254bdeb8618b5ebafdea2fcd742a946654f57249fc0'
+  # config.pepper = 'a1eaad80850a866073f47bbac8cc9a6b610ee8b98b4e5d6e00430da498200b2d04848da35402ff26a355cd2b93a204c54382dcc8d7701987751ac2248e04d6aa'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -115,8 +117,8 @@ Devise.setup do |config|
 
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
-  # db field (see migrations). Until confirmed new email is stored in
-  # unconfirmed email column, and copied to email column on successful confirmation.
+  # db field (see migrations). Until confirmed, new email is stored in
+  # unconfirmed_email column, and copied to email column on successful confirmation.
   config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
@@ -130,7 +132,7 @@ Devise.setup do |config|
   # config.extend_remember_period = false
 
   # Options to be passed to the created cookie. For instance, you can set
-  # :secure => true in order to force SSL only cookies.
+  # secure: true in order to force SSL only cookies.
   # config.rememberable_options = {}
 
   # ==> Configuration for :validatable
@@ -227,7 +229,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -235,7 +237,7 @@ Devise.setup do |config|
   #
   # config.warden do |manager|
   #   manager.intercept_401 = false
-  #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
+  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
   # ==> Mountable engine configurations
