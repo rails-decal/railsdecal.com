@@ -15,6 +15,7 @@ RailsDecal::Application.routes.draw do
   namespace :admin do
     match '/', to: redirect('/admin/dashboard'), via: :get
     match 'dashboard', to: 'pages#dashboard', via: :get
+    resources :users, only: [:index]
   end
 
 end
