@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :roles
 
   def current_role
-    self.roles.where(semester: Semester.current)
+    self.roles.where(semester: Semester.current).first
   end
 
   def is_staff?
