@@ -11,4 +11,10 @@ RailsDecal::Application.routes.draw do
                      controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [:show]
+
+  namespace :admin do
+    match '/', to: redirect('/admin/dashboard'), via: :get
+    match 'dashboard', to: 'pages#dashboard', via: :get
+  end
+
 end
