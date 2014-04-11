@@ -16,25 +16,22 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
       ul.nav.navbar-nav
         = active_li_link "Apply", apply_path
       ul.nav.navbar-nav.navbar-right
-        li
-          = link_to "Sign In", "#", class: "flat-button"
         - if signed_in?
-          li
-            a href="#" Link
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown"
-              | Dropdown
+              ' Hi,
+              = current_user.name
               b.caret
             ul.dropdown-menu
               li
-                a href="#" Action
-              li
-                a href="#" Another Action
-              li
-                a href="#" Something else here
+                = link_to "Profile", current_user
               li.divider
+              - if current_user.is_staff?
+                li
+                  = link_to "Admin Dashboard", admin_dashboard_path
+                li.divider
               li
-                a href="#" Separated Link
-              li.divider
-              li
-                a href="#" One more separated link
+                = link_to "Sign Out", destroy_user_session_path, method: :delete
+        - else
+          li
+            = link_to "Sign In with GitHub", user_omniauth_authorize_path(:github), class: "flat-button"
