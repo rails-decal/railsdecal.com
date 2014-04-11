@@ -27,6 +27,8 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
                 = link_to "Profile", current_user
               li.divider
               li
+                = link_to "Admin Dashboard", admin_dashboard_path
+              li
                 = link_to "Sign Out", destroy_user_session_path, method: :delete
         - else
           li
