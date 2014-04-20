@@ -9,11 +9,19 @@ class User < ActiveRecord::Base
   has_many :student_applications
 
   def first_name
-    name.split(' ').first
+    if name
+      name.split(' ').first
+    else
+      ''
+    end
   end
 
   def last_name
-    name.split(' ').last
+    if name
+      name.split(' ').last
+    else
+      ''
+    end
   end
 
   def current_role
