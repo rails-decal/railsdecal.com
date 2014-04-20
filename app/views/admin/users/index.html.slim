@@ -2,6 +2,14 @@
   .row
     .col-md-12
       h1 All Users
-      - @users.each do |user|
-        .user-container
-          = user.name
+      table.table.table-striped
+        th Name
+        th Email
+        th Enabled?
+        th Sign Up Date
+        - @users.each do |user|
+          tr
+            td = user.name
+            td = user.email
+            td = user.enabled
+            td = user.created_at.to_formatted_s(:long_ordinal)
