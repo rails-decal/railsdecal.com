@@ -1,6 +1,7 @@
 RailsDecal::Application.routes.draw do
   root to: "pages#home"
 
+  match 'why', to: 'pages#why_this_class', via: :get
   match "apply", to: "student_applications#new", via: :get
   match "apply", to: "student_applications#create", as: "student_applications", via: :post
 
