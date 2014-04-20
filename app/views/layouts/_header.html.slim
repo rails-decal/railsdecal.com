@@ -17,7 +17,7 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
         = active_li_link "Why Take This Class?", why_path
         = active_li_link "Apply", apply_path
       ul.nav.navbar-nav.navbar-right
-        - if signed_in?
+        - if enabled_user?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown"
               ' Hi,
