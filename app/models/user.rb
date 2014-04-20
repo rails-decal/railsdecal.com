@@ -6,6 +6,15 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:github]
 
   has_many :roles
+  has_many :student_applications
+
+  def first_name
+    name.split(' ').first
+  end
+
+  def last_name
+    name.split(' ').last
+  end
 
   def current_role
     self.roles.where(semester: Semester.current).first
