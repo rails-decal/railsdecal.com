@@ -14,4 +14,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_in_path_for(user)
+    if user.submitted_current_semester_application?
+      if user.enabled
+        user
+      else
+        root_path
+      end
+    else
+      why_path
+    end
+  end
+
 end

@@ -2,7 +2,11 @@ class StudentApplicationsController < ApplicationController
   before_filter :student_application, only: []
 
   def new
-    @student_application = StudentApplication.new
+    if enabled_user?
+      @student_application = StudentApplication.new
+    else
+      redirect_to why_path
+    end
   end
 
   def create
