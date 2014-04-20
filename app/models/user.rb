@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
     self.current_role.name == "Instructor" || self.current_role.name == "TA"
   end
 
+  def submitted_current_semester_application?
+    true
+  end
+
   def self.find_for_github_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
