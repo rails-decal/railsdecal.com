@@ -2,11 +2,17 @@ class StudentApplicationsController < ApplicationController
   before_filter :student_application, only: []
 
   def new
-    @student_application = StudentApplication.new
+    if enabled_user?
+      @student_application = StudentApplication.new
+    else
+      redirect_to why_path
+    end
   end
 
   def create
     @student_application = StudentApplication.new(student_application_params)
+    @student_application.user = current_user
+    @student_application.semester = Semester.current
     if @student_application.save
       flash[:info] = "Thanks for applying! We'll get back to you with our decision."
       redirect_to why_path
