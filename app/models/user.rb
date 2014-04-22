@@ -6,13 +6,54 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:github]
 
   has_many :roles
+  has_many :student_applications
+
+  def first_name
+    if name
+      name.split(' ').first
+    else
+      ''
+    end
+  end
+
+  def last_name
+    if name
+      name.split(' ').last
+    else
+      ''
+    end
+  end
 
   def current_role
     self.roles.where(semester: Semester.current).first
   end
 
+  def add_role_for_semester(role_name, semester)
+    self.enabled = true
+    current_role = self.roles.where(semester: Semester.current)
+    position = Position.find_by(name: role_name)
+    if current_role
+      current_role.update(position: position)
+    else
+      self.roles.where(semester: Semester.current, position: position).first_or_create
+    end
+    self.save!
+  end
+
+  def add_role_for_current_semester(role_name)
+    add_role_for_semester(role_name, Semester.current)
+  end
+
   def is_staff?
     self.current_role.name == "Instructor" || self.current_role.name == "TA"
+  end
+
+  def submitted_current_semester_application?
+    unless student_applications.where(semester: Semester.current).nil?
+      true
+    else
+      false
+    end
   end
 
   def self.find_for_github_oauth(auth)
