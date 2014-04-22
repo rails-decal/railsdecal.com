@@ -34,4 +34,9 @@ $(document).ready(function() {
     backDelay: 500
   });
 
+  $(".time-element").hide();
+  $(".time-element").waypoint(function(event, direction) {
+    $(this).stop().fadeToggle("slow");
+  }, {offset:'87%'});
+
 });
