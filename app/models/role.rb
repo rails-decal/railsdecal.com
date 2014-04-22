@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: roles
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  user_id     :integer
+#  semester_id :integer
+#  position_id :integer
+#
+
 class Role < ActiveRecord::Base
   belongs_to :semester
   belongs_to :user
