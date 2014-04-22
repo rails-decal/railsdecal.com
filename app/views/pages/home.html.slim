@@ -87,7 +87,7 @@ css:
                      h1.white Schedule
                   .row
                     .small-1.small-centered.columns.timeline-image
-                      = image_tag "timeline.png", style: "height:510px"
+                      = image_tag "timeline.png", style: "height:505px"
                   .row.timeline-row1.time-element
                     .medium-5.columns
                       .vcenterer
@@ -96,7 +96,7 @@ css:
                         .time-text
                           | The application opens in ____ and is due on ____.
                     .medium-5.columns
-                      = image_tag "mark_miyashita.jpg", class: "round-with-border"
+                      = image_tag "mark_miyashita.png", class: "round-with-border"
                   .row.timeline-row.time-element
                     .medium-5.columns
                       = image_tag "mark_miyashita.jpg", class: "round-with-border"
@@ -122,3 +122,11 @@ css:
                         .time-text
                           | Final class students will be selected on ___.
 
+javascript:
+  $(document).ready(function(){
+    $(".time-element").hide();
+    $(".time-element").waypoint(function(event, direction) {
+      $(this).stop().fadeToggle("slow");
+    }, {offset:'87%'});
+  });
+    

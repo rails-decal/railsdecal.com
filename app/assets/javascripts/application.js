@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require typed
-
+//= require waypoints
 
 $(document).ready(function() {
 
