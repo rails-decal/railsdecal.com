@@ -26,6 +26,10 @@ class StudentApplicationsController < ApplicationController
     @student_applications = StudentApplication.all
   end
 
+  def show
+    student_application
+  end
+
   private
 
   def student_application
