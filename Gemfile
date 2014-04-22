@@ -16,6 +16,7 @@ gem 'devise', '~> 3.2.3'
 gem 'newrelic_rpm'
 gem 'simple_form', '~> 3.0.2'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'friendly_id', '~> 5.0.3'
 
 # For Lectures
 gem "rails-reveal-js", "~> 2.6.1.2"
