@@ -28,7 +28,7 @@ For faster development, you might want to add yourself to the `db/seeds/developm
 
 Start the server:
 
-    rails s
+    rails s -p 3002
 
 Happy developing!
 
