@@ -3,16 +3,17 @@
     .col-md-12
       h1 All Student Applications
       table.table.table-striped
-        th Name
+        th First Name
+        th Last Name
         th Email
-        th Enabled?
-        th Sign Up Date
+        th Year
+        th Major
+        th Turn in Date
         - @student_applications.each do |student_application|
           tr
             td = student_application.first_name
             td = student_application.last_name
             td = student_application.email
+            td = student_application.year
             td = student_application.major
-            td = student_application.major
-            td = user.enabled
-            td = user.created_at.to_formatted_s(:long_ordinal)
+            td = student_application.created_at.to_formatted_s(:long_ordinal)
