@@ -5,16 +5,15 @@ link href="http://cdn.jsdelivr.net/foundation/5.2.2/css/foundation.css" rel="sty
 / CSS for calendar
 css:
   .timeline-image img{
-    | max-width: 50px;
-    | margin: auto;
-    | display: table;
-    | position: absolute;
-    | z-index: 4;
-    | top: 0;
-    | left: 0;
-    | float: left;
-    | float: right;
-
+    max-width: 50px;
+    margin: auto;
+    display: table;
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    float: left;
+    float: right;
 
 .main
   section#intro
@@ -88,7 +87,7 @@ css:
                      h1.white Schedule
                   .row
                     .small-1.small-centered.columns.timeline-image
-                      = image_tag "timeline.png"
+                      = image_tag "timeline.png", style: "height:510px"
                   .row.timeline-row1.time-element
                     .medium-5.columns
                       .vcenterer
