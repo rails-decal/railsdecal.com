@@ -38,6 +38,9 @@ class User < ActiveRecord::Base
   has_many :roles
   has_many :student_applications
 
+  extend FriendlyId
+  friendly_id :name
+
   def first_name
     if name
       name.split(' ').first
