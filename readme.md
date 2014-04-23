@@ -22,7 +22,7 @@ Migrate the database:
 
 To seed the database, we have a rake task that loads users specifically for development purposes only.
 
-    rake db:seed:development
+    rake db:seed
 
 For faster development, you might want to add yourself to the `db/seeds/development.rb` file.
 
