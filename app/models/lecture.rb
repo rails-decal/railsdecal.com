@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: lectures
+#
+#  id          :integer          not null, primary key
+#  number      :integer
+#  title       :string(255)
+#  partial     :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  semester_id :integer
+#
+
 class Lecture < ActiveRecord::Base
   belongs_to :semester
 
