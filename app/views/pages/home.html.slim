@@ -45,7 +45,7 @@
           .about-section
             .row
               .col-md-5
-                .image-container.image-top
+                .image-container.image-bottom
                   = image_tag "sam_lau.jpeg", class: "round-with-border"
               .col-md-5.col-md-offset-2
                 h2 About Sam
@@ -57,7 +57,42 @@
         .col-md-12.center
           .tas-wrapper
             h2 Teaching Assistants
-            .row
+            .ta
+              .row
+                .col-md-5.col-md-offset-2
+                  h3 Jessica Lin
+                  .description.left
+                    = render partial: "shared/tas/jessica"
+                .col-md-5
+                  .image-container.image-bottom
+                    = image_tag "jessica_lin.jpg", class: "round-with-border"
+            .ta
+              .row
+                .col-md-5
+                  .image-container.image-top
+                    = image_tag "jessica_lin.jpg", class: "round-with-border"
+                .col-md-5
+                  h3 Jessica Lin
+                  .description.right
+                    = render partial: "shared/tas/jessica"
+            .ta
+              .row
+                .col-md-5.col-md-offset-2
+                  h3 Jessica Lin
+                  .description.left
+                    = render partial: "shared/tas/jessica"
+                .col-md-5
+                  .image-container.image-bottom
+                    = image_tag "jessica_lin.jpg", class: "round-with-border"
+            .ta
+              .row
+                .col-md-5
+                  .image-container.image-top
+                    = image_tag "jessica_lin.jpg", class: "round-with-border"
+                .col-md-5
+                  h3 Jessica Lin
+                  .description.right
+                    = render partial: "shared/tas/jessica"
   section#schedule
     .container
       .row

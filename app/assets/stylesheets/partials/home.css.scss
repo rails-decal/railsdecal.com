@@ -20,6 +20,36 @@
   section#tas {
     .tas-wrapper {
       padding: 100px 0;
+      margin: 0 auto;
+      content: "";
+      display: table;
+      max-width: 1000px;
+      width: 100%;
+
+      .ta {
+        margin: 50px auto;
+      }
+
+      .description {
+        line-height: 1.8em;
+        position: relative;
+        height: 100%;
+        text-align:left;
+      }
+
+      .image {
+        float: right;
+        width: 33.33333333333333%;
+        margin-left: 16.666666666666664%;
+        padding-top: 50px;
+        display: inline;
+      }
+
+      .image-container {
+        @include breakpoint($mobile) {
+          text-align: center;
+        }
+      }
     }
   }
 
@@ -57,7 +87,7 @@
       }
 
       .image-bottom {
-        padding-top: 50px;
+        padding-top: 100px;
       }
     }
   }
@@ -71,7 +101,7 @@
   }
 
   section#schedule {
-    background-color: $rails-red;
+    background-color: $tan;
 
     .schedule-container {
       padding: 100px 0;
