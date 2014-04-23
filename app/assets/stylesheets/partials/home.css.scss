@@ -68,6 +68,71 @@
         height: 100%;
       }
 
+      .bubble {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        padding-top: 0;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        border: #7F7F7F solid 3px;
+      }
+
+      .bubble.left:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 15px 0 15px 15px;
+        border-color: transparent #FFFFFF;
+        display: block;
+        width: 0;
+        z-index: 1;
+        right: -15px;
+        top: 190px;
+      }
+
+      .bubble.left:before {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 17px 0 17px 17px;
+        border-color: transparent #7F7F7F;
+        display: block;
+        width: 0;
+        z-index: 0;
+        right: -20px;
+        top: 188px;
+      }
+
+      .bubble.right:after {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 15px 15px 15px 0;
+        border-color: transparent $light-gray;
+        display: block;
+        width: 0;
+        z-index: 1;
+        left: -15px;
+        top: 190px;
+      }
+
+      .bubble.right:before {
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-width: 17px 17px 17px 0;
+        border-color: transparent #7F7F7F;
+        display: block;
+        width: 0;
+        z-index: 0;
+        left: -20px;
+        top: 188px;
+      }
+
+
       .image {
         float: right;
         width: 33.33333333333333%;
