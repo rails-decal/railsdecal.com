@@ -1,6 +1,7 @@
 $desktop: "(min-width: 1024px)";
 $mobile: "(max-width: 767px)";
 $not-mobile: "(min-width: 768px)";
+$not-desktop: "(max-width: 1023px)";
 
 @mixin breakpoint($querystring) {
   $valid: true;

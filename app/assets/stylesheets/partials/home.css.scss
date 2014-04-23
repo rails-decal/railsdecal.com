@@ -46,9 +46,7 @@
       }
 
       .image-container {
-        @include breakpoint($mobile) {
-          text-align: center;
-        }
+        text-align: center;
       }
     }
   }
@@ -91,6 +89,15 @@
         z-index: 1;
         right: -15px;
         top: 190px;
+        @include breakpoint($not-desktop) {
+          border-width: 15px 15px 0;
+          border-color: #FFFFFF transparent;
+          display: block;
+          width: 0;
+          z-index: 1;
+          top: 99%;
+          left: 48%;
+        }
       }
 
       .bubble.left:before {
@@ -104,6 +111,15 @@
         z-index: 0;
         right: -20px;
         top: 188px;
+        @include breakpoint($not-desktop) {
+          border-width: 17px 17px 0;
+          border-color: #7F7F7F transparent;
+          display: block;
+          width: 0;
+          z-index: 0;
+          top: 100%;
+          left: 47.5%;
+        }
       }
 
       .bubble.right:after {
@@ -117,6 +133,15 @@
         z-index: 1;
         left: -15px;
         top: 190px;
+        @include breakpoint($not-desktop) {
+          border-width: 0 15px 15px;
+          border-color: $light-gray transparent;
+          display: block;
+          width: 0;
+          z-index: 1;
+          top: -15px;
+          left: 48%;
+        }
       }
 
       .bubble.right:before {
@@ -130,8 +155,16 @@
         z-index: 0;
         left: -20px;
         top: 188px;
+        @include breakpoint($not-desktop) {
+          border-width: 0 17px 17px;
+          border-color: #7F7F7F transparent;
+          display: block;
+          width: 0;
+          z-index: 0;
+          top: -19px;
+          left: 47.5%;
+        }
       }
-
 
       .image {
         float: right;
@@ -142,9 +175,7 @@
       }
 
       .image-container {
-        @include breakpoint($mobile) {
-          text-align: center;
-        }
+        text-align: center;
       }
 
       .image-top {
@@ -153,6 +184,9 @@
 
       .image-bottom {
         padding-top: 100px;
+        @include breakpoint($not-desktop) {
+          padding-bottom: 100px;
+        }
       }
     }
   }
