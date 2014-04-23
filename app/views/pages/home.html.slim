@@ -63,5 +63,45 @@
       .row
         .col-md-8.col-md-offset-2
           .schedule-container
-            h1.white Schedule
-            p.white Coming soon!
+            .basic-panel.timeline
+              .row
+                .col-md-9.col-md-offset-2.columns
+                  .row.timeline-sub
+                     h1.white Schedule
+                  .row
+                    .col-sm-1.col-md-offset-5.columns.timeline-image
+                      = image_tag "timeline.png", style: "height:605px"
+                  .row.timeline-row1.time-element
+                    .col-md-5.columns
+                      .vcenterer
+                      .time-title.one
+                        h3 application opens
+                        .time-text
+                          | The application opens in ____ and is due on ____.
+                    .col-md-5.columns.col-md-offset-1
+                      = image_tag "mark_miyashita.png", class: "round-with-border"
+                  .row.timeline-row.time-element
+                    .col-md-5.columns
+                      = image_tag "mark_miyashita.jpg", class: "round-with-border"
+                    .col-md-5.columns.col-md-offset-1
+                      .vcenterer
+                      .time-title.three
+                        h3 applications reviewed
+                        .time-text
+                          | The course staff will select and contact applicants.
+                  .row.timeline-row.time-element
+                    .col-md-5.columns
+                      .vcenterer
+                      .time-title.two
+                        h3 interview process
+                        .time-text
+                          | The purpose of the interview process is to learn more about you!
+                    .col-md-5.columns.col-md-offset-1
+                      = image_tag "mark_miyashita.jpg", class: "round-with-border"
+                  .row.timeline-row.time-element
+                    .medium-4.col-md-offset-3.columns
+                      .time-title
+                        h3 selection
+                        .time-text
+                          | Final class students will be selected on ___.
+    
