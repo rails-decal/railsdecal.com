@@ -1,8 +1,13 @@
 .main {
   section#intro {
     background-image:url('otherbg.jpg');
-    background-size: cover; 
-    background-position: 0px -200px; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    @include breakpoint($desktop) {
+      background-position: 0px -200px; 
+    }
     background-attachment:fixed;
 
     .about-intro {
@@ -202,8 +207,13 @@
 
   section#schedule {
     background-image: url('campanile.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-position: 0px -300px;
+    @include breakpoint($desktop) {
+      background-position: 0px -300px;
+    }
     background-attachment:fixed;
 
     .schedule-container {
