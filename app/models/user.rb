@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   has_many :student_applications
 
   extend FriendlyId
-  friendly_id :name
+  friendly_id :nickname
 
   def first_name
     if name
