@@ -4,7 +4,7 @@ RailsDecal::Application.routes.draw do
   match 'why', to: 'pages#why_this_class', via: :get
   match "apply", to: "student_applications#new", as: "apply", via: :get
   match "apply", to: "student_applications#create", as: "student_applications", via: :post
-  match "all_applications", to: "student_applications#index", as: "all_applications", via: :get
+  resources :student_applications
 
   resources :lectures, only: [:show, :index]
 

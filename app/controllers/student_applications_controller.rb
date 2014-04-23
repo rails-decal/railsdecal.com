@@ -1,5 +1,5 @@
 class StudentApplicationsController < ApplicationController
-  before_filter :student_application, only: []
+  before_filter :student_application, only: [:show]
 
   def new
     if enabled_user?
@@ -27,7 +27,6 @@ class StudentApplicationsController < ApplicationController
   end
 
   def show
-    student_application
   end
 
   private
