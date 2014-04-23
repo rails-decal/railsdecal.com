@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-md-12
+      h1 All Student Applications
+      table.table.table-striped
+        th Name
+        th Email
+        th Year
+        th Major
+        th Turn in Date
+        - @student_applications.each do |student_application|
+          tr
+            td = link_to student_application.name, student_application_path(student_application)
+            td = student_application.email
+            td = student_application.year
+            td = student_application.major
+            td = student_application.created_at.to_formatted_s(:long_ordinal)

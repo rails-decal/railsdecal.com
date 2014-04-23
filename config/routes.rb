@@ -6,6 +6,7 @@ RailsDecal::Application.routes.draw do
   match "apply", to: "student_applications#create", as: "student_applications", via: :post
 
   resources :lectures, only: [:show, :index]
+  resources :student_applications
 
   devise_for :users, path: '',
                      path_names: { sign_in: 'login', sign_up: 'sign-up', sign_out: 'logout'},

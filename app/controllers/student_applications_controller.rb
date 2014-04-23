@@ -1,5 +1,5 @@
 class StudentApplicationsController < ApplicationController
-  before_filter :student_application, only: []
+  before_filter :student_application, only: [:show]
 
   def new
     if enabled_user?
@@ -20,6 +20,13 @@ class StudentApplicationsController < ApplicationController
       flash[:danger] = "There was an error submitting your application. Please fix it and try again."
       render 'new'
     end
+  end
+
+  def index
+    @student_applications = StudentApplication.all
+  end
+
+  def show
   end
 
   private
