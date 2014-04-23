@@ -200,7 +200,9 @@
   }
 
   section#schedule {
-    background-color: $tan;
+    background-image: url('campanile.jpg');
+    background-size: cover;
+    background-position: 0px -300px;
 
     .schedule-container {
       padding: 100px 0;
