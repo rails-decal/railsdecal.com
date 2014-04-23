@@ -1,14 +1,16 @@
 .main {
   section#intro {
-    background-color: $founders-rock-blue;
+    background-image:url('otherbg.jpg');
+    background-size: cover; 
+    background-position:center; 
 
     .about-intro {
-      padding: 100px 0;
+      padding: 150px 0;
     }
   }
 
   section#about {
-    background-color: $medalist-gold;
+    background-color: $lighter-blue ;
 
     .attention-grabber {
       padding: 100px 0;
