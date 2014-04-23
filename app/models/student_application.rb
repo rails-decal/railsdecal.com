@@ -6,6 +6,6 @@ class StudentApplication < ActiveRecord::Base
                         :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us
 
   def name
-    '#{first_name} #{last_name}'
+    "#{first_name} #{last_name}"
   end
 end
