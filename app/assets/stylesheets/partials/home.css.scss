@@ -2,7 +2,8 @@
   section#intro {
     background-image:url('otherbg.jpg');
     background-size: cover; 
-    background-position:center; 
+    background-position: 0px -200px; 
+    background-attachment:fixed;
 
     .about-intro {
       padding: 150px 0;
@@ -203,6 +204,7 @@
     background-image: url('campanile.jpg');
     background-size: cover;
     background-position: 0px -300px;
+    background-attachment:fixed;
 
     .schedule-container {
       padding: 100px 0;
