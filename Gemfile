@@ -16,6 +16,7 @@ gem 'devise', '~> 3.2.3'
 gem 'newrelic_rpm'
 gem 'simple_form', '~> 3.0.2'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'friendly_id', '~> 5.0.3'
 
 # For Lectures
 gem "rails-reveal-js", "~> 2.6.1.2"
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'rails_best_practices', '~> 1.15.1'
   gem 'rspec-rails', '~> 2.14.1'
   gem 'rails-rename', '~> 1.0.0'
+  gem 'quiet_assets', '~> 1.0.2'
 end
 
 group :production do

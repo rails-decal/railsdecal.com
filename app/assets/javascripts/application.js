@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require typed
-
+//= require waypoints
 
 $(document).ready(function() {
 
@@ -33,5 +33,10 @@ $(document).ready(function() {
     typeSpeed: 80,
     backDelay: 500
   });
+
+  $(".time-element").hide();
+  $(".time-element").waypoint(function(event, direction) {
+    $(this).stop().fadeToggle("slow");
+  }, {offset:'87%'});
 
 });

@@ -76,6 +76,30 @@
     .schedule-container {
       padding: 100px 0;
     }
+
+    .one {
+      margin-top: 80px;
+    }
+
+    .two {
+      margin-top: 55px;
+    }
+
+    .three {
+      margin-top: 50px;
+    }
+
+    .timeline-image img {
+      max-width: 50px;
+      margin: auto;
+      display: table;
+      position: absolute;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      float: left;
+      float: right;
+    }
   }
 }
 
