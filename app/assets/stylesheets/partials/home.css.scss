@@ -208,17 +208,7 @@
   }
 
   section#schedule {
-    background-image: url('campanile.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 1000px;
-    @include breakpoint($desktop) {
-      background-position: 0px -300px;
-    }
-    background-attachment:fixed;
-
+    background-color: #1d1f20;
     .schedule-container {
       padding: 100px 0;
     }
