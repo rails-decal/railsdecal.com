@@ -1,25 +1,54 @@
 .container
   .row
-    .col-md-12
-      h1 Learn Web Development
-
-      #content
+    .col-md-6.col-md-offset-3
+      h1 Why should you take this class?
+      h2 Learn Web Development
+      .content
         p
           | Web development is a skill that is in high demand.  The
-          |  Rails Decal will teach you the skills to create dynamic web
+          |  Rails DeCal will teach you the skills to create dynamic web
           |  applications for any purpose.  Why learn the Ruby on Rails
-          |  framework? By the time you finish reading this sentence you can
-          |  write and deloy a website on Rails.  It is also backed by a
+          |  framework? By the time you finish reading this paragraph you can
+          |  write and deloy a website using Rails.  It is also backed by a
           |  vibrant community and it's very popular in the industry, for
-          |  example GitHub, LivingSocial, Hulu, and Groupon.
+          |  example GitHub, LivingSocial, Hulu, and Groupon all use Rails
+          |  to build web applications.
 
-      h1 Learn with a Team
-
-      #content
+      h2 Learn with a Team
+      .content
         p
-          | Have fun learning Rails with a team!  In the Ruby on Rails decal
+          | Have fun learning Rails with a team!  In the Ruby on Rails DeCal
           |  you will be working in a small group to turn any of
           |  your ideas for a webapp into reality.  To collaborate, we will be teaching you
           |  Git, a powerful tool for version control that is heavily used in the
           |  industry.  You will be pushing your project onto Github so anyone
           |  can see your new web development skills.
+
+      h2 Get Your Dream Internship
+      .content
+        p
+          | The skills that you learn in this class are directly applicable
+          |  to industry. After taking this class, you'll have projects
+          |  that you can proudly display on your resume and you'll be able
+          |  to ace web development interview questions. You'll also have extensive
+          |  knowledge of a popular web framework allowing you to take what you've learned
+          |  and create even more projects!
+
+      h2 Make Side Projects
+      .content
+        p
+          | Building things is fun. With this class, you'll be able to create
+          |  and scaffold any idea you can think of. Companies love seeing
+          |  side projects on your resume and this class will give you the
+          |  skills necessary to deploy those ideas onto the web.
+
+      .apply
+        h2 Ready to take the next step?
+        - if signed_in?
+          - if current_user.submitted_current_semester_application?
+            p
+              | You have already submitted your app for this semester!
+          - else
+            = link_to "Apply Now!", apply_path, class: "flat-button full-width"
+        - else
+          = link_to "First, Sign in with GitHub", user_omniauth_authorize_path(:github), class: "flat-button full-width"
