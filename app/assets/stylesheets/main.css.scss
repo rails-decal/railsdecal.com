@@ -12,6 +12,15 @@ body {
   }
 }
 
+footer {
+  padding: 50px;
+  background-color: $main-color;
+
+  p {
+    margin: 0;
+  }
+}
+
 .center {
   text-align: center;
 }
