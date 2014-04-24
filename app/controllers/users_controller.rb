@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_to(root_url) unless current_user == @user || admin_user
+    redirect_to(root_url) unless (current_user == @user && enabled_user?) || (current_user && current_user.is_staff?)
   end
 
 end
