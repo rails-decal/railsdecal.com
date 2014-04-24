@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-tablesorter
 //= require bootstrap
 //= require typed
 //= require waypoints
@@ -39,4 +40,7 @@ $(document).ready(function() {
     $(this).stop().fadeToggle("slow");
   }, {offset:'87%'});
 
+  $("#evaluations").tablesorter({
+    sortList: [[2,1], [3,1]]
+  });
 });

@@ -26,6 +26,8 @@ class StudentApplication < ActiveRecord::Base
   belongs_to :user
   belongs_to :semester
 
+  has_many :evaluations, dependent: :destroy
+
   validates_presence_of :first_name, :last_name, :email, :year,
                         :major, :why_join, :cs_classes_taken, :current_courseload,
                         :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us
@@ -34,4 +36,34 @@ class StudentApplication < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def next
+    # Returns nil if it cannot find the next application.
+    StudentApplication.find_by_id(id + 1)
+  end
+
+  def evaluations_by_users(users)
+    sorted_evaluations = []
+    users.each do |user|
+      evaluation = evaluations.find_by_user_id(user.id)
+      sorted_evaluations.push(evaluation)
+    end
+    sorted_evaluations
+  end
+
+  # Evaluation totals
+  def total(decision)
+    evaluations.where(decision: decision).count
+  end
+
+  def total_yes
+    total('yes')
+  end
+
+  def total_maybe
+    total('maybe')
+  end
+
+  def total_no
+    total('no')
+  end
 end

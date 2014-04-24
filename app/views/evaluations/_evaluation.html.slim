@@ -1,0 +1,16 @@
+.evaluation
+  h1 Evaluation
+  span.bold
+    | Do you think #{application.name} should move on?
+  = form_for evaluation, url: student_application_evaluate_path(student_application_id: application.id) do |form|
+    .controls
+      = form.radio_button :decision, "yes"
+      |  Yes &nbsp;&nbsp;&nbsp;
+      = form.radio_button :decision, "no"
+      |  No &nbsp;&nbsp;&nbsp;
+      = form.radio_button :decision, "maybe"
+      |  Maybe
+    = form.label :comment
+    .controls
+      = form.text_area :comment, rows: 6, class: 'text-field'
+    = form.submit "Submit Evaluation", class: 'flat-button'
