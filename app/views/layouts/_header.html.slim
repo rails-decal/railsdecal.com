@@ -9,11 +9,8 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
       = link_to "Rails DeCal", root_path, class: "navbar-brand"
     .collapse.navbar-collapse#collapsed-navbar
       ul.nav.navbar-nav
-        = active_li_link "Home", root_path
-      ul.nav.navbar-nav#header-links
-        - if content_for?(:header_links)
-          = render partial: yield(:header_links)
-      ul.nav.navbar-nav
+        = active_li_link "Home", root_path, class: "home"
+        = active_li_link "Schedule", "#{root_path}#schedule", class: "schedule"
         = active_li_link "Why Take This Class?", why_path
         - if enabled_user? && !current_user.submitted_current_semester_application?
           = active_li_link "Apply", apply_path
