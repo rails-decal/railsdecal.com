@@ -1,6 +1,7 @@
 class LecturesController < ApplicationController
   before_filter :lecture, only: [:show]
   before_filter :lectures, only: [:index]
+  before_filter :authorize_user, only: [:show, :index]
 
   def show
   end
