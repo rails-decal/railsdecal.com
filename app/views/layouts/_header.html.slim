@@ -25,6 +25,9 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
               - if enabled_user?
                 li
                   = link_to "Profile", current_user
+                - unless current_user.submitted_current_semester_application?
+                  li
+                    = link_to "Apply Now", apply_path
                 li.divider
               - if current_user.is_staff?
                 li
