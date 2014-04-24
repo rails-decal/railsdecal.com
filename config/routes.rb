@@ -12,8 +12,9 @@ RailsDecal::Application.routes.draw do
   end
 
   devise_for :users, path: '',
+                     skip: [:registrations],
                      path_names: { sign_in: 'login', sign_up: 'sign-up', sign_out: 'logout'},
-                     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+                     controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'sessions' }
 
   resources :users, param: :nickname, only: [:show]
 
