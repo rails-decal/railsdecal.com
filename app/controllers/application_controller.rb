@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def admin_user
+    redirect_to(root_url) unless current_user && current_user.is_staff?
+  end
+
   def after_sign_in_path_for(user)
     if user.submitted_current_semester_application?
       if user.enabled

@@ -32,10 +32,6 @@ class StudentApplicationsController < ApplicationController
 
   private
 
-  def admin_user
-    redirect_to(root_url) unless current_user && current_user.is_staff?
-  end
-
   def student_application
     @student_application = StudentApplication.find(params[:id])
   end
