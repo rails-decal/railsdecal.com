@@ -22,7 +22,6 @@ $(document).ready(function() {
   $(".header-link").click(function(event) {
     event.preventDefault();
 
-
     $("ul.nav li").removeClass("active");
     $(this).parent().addClass("active");
     $('html, body').animate({
@@ -43,5 +42,15 @@ $(document).ready(function() {
 
   $("#evaluations").tablesorter({
     sortList: [[2,1], [3,1]]
+  });
+
+  $("#schedule").waypoint(function(direction) {
+    if (direction == "up") {
+      $("ul.nav li").removeClass("active");
+      $("ul.nav li.home").addClass("active");
+    } else {
+      $("ul.nav li").removeClass("active");
+      $("ul.nav li.schedule").addClass("active");
+    }
   });
 });
