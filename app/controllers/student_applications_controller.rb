@@ -1,5 +1,6 @@
 class StudentApplicationsController < ApplicationController
   before_filter :student_application, only: [:show]
+  before_action :admin_user
 
   def new
     if enabled_user?
