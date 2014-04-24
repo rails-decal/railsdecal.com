@@ -73,7 +73,7 @@ $red: #2D637F
   display: block
   position: absolute
 
-.content
+.timeline-content
   @if $vertical
     max-height: 20px
     padding: 50px 20px 0
@@ -130,7 +130,7 @@ $red: #2D637F
     hyphens: auto
     overflow: hidden
 
-label
+label.timeline
   font-size: 1.3em
   color: $white
   position: absolute
@@ -153,7 +153,7 @@ label
   display: none
 .radio:checked
   & + .relative
-    label
+    label.timeline
       cursor: auto
       color: $white
       @if $vertical
@@ -163,7 +163,7 @@ label
         transition: width 0.3s linear 0.2s
     .circle
       background: $red
-  & ~ .content
+  & ~ .timeline-content
     max-height: 180px
     border-color: $white
     @if $vertical
@@ -188,7 +188,7 @@ label
       border-left: none
       li
         margin: 50px 0
-    label
+    label.timeline
       width: 85%
       font-size: 1.1em
       white-space: nowrap
@@ -196,7 +196,7 @@ label
       overflow: hidden
       display: block
       transform: translateX(18px)
-    .content
+    .timeline-content
       padding-top: 45px
       border-color: $white
       &:before, &:after
