@@ -1,9 +1,9 @@
 class StudentApplicationsController < ApplicationController
   before_filter :student_application, only: [:show]
-  before_action :admin_user
+  before_action :admin_user, only: [:index, :show]
 
   def new
-    if enabled_user?
+    if signed_in?
       @student_application = StudentApplication.new
     else
       redirect_to why_path
