@@ -1,4 +1,4 @@
-app1 = StudentApplication.create(
+app1 = StudentApplication.where(
   first_name: 'Howie',
   last_name: 'Bear',
   email: 'yolo@swag.com',
@@ -10,9 +10,9 @@ app1 = StudentApplication.create(
   other_commitments: '61 Swag',
   how_many_hours_willing: 'All day err day',
   how_did_you_hear_about_us: 'friendz'
-)
+).first_or_create
 
-app2 = StudentApplication.create(
+app2 = StudentApplication.where(
   first_name: 'Marky',
   last_name: 'Mark',
   email: 'mush@room.com',
@@ -24,4 +24,4 @@ app2 = StudentApplication.create(
   other_commitments: 'This git commitment',
   how_many_hours_willing: '5 minutes',
   how_did_you_hear_about_us: 'Google Search'
-)
+).first_or_create
