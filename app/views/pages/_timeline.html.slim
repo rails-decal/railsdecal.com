@@ -1,69 +1,64 @@
 h1.white Schedule
 
-<ul id='timeline'>
-  <li class='work'>
-    <input class='radio' id='work5' name='works' type='radio' checked>
-    <div class="relative">
-      <label class="timeline" for='work5'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>12 May 2013</span>
-      <span class='circle'></span>
-    </div>
-    <div class='timeline-content'>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work4' name='works' type='radio'>
-    <div class="relative">
-      <label class="timeline" for='work4'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>11 May 2013</span>
-      <span class='circle'></span>
-    </div>
-    <div class='timeline-content'>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work3' name='works' type='radio'>
-    <div class="relative">
-      <label class="timeline" for='work3'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>10 May 2013</span>
-      <span class='circle'></span>
-    </div>
-    <div class='timeline-content'>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work2' name='works' type='radio'>
-    <div class="relative">
-      <label class="timeline" for='work2'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>09 May 2013</span>
-      <span class='circle'></span>
-    </div>
-    <div class='timeline-content'>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work1' name='works' type='radio'>
-    <div class="relative">
-      <label class="timeline" for='work1'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>08 May 2013</span>
-      <span class='circle'></span>
-    </div>
-    <div class='timeline-content'>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
-      </p>
-    </div>
-  </li>
-</ul>
+ul#timeline
+  li.work
+    input.radio#apply type="radio" checked="true"
+    .relative
+      label.timeline for="apply" Submit your application!
+      span.date May - August 2014
+      span.circle
+    .timeline-content
+      p
+        ' Submit your application online
+        = link_to "here.", apply_path
+        |  We'll review your applications toward the end of the summer and you'll
+        |  hear back from us at the beginning of the Fall 2014 semester.
+
+  li.work
+    input.radio#week1 type="radio"
+    .relative
+      label.timeline for="week1" Introduction, General Web Development, and MVC
+      span.date Week 1
+      span.circle
+    .timeline-content
+      p
+        | Overview of the course and what you can expect. Work time will be setting up your environment.
+
+  li.work
+    input.radio#week2 type="radio"
+    .relative
+      label.timeline for="week2" Static Pages and Basic Ruby
+      span.date Week 2
+      span.circle
+    .timeline-content
+      p
+
+  li.work
+    input.radio#week3 type="radio"
+    .relative
+      label.timeline for="week3" Databases and Models
+      span.date Week 3
+      span.circle
+    .timeline-content
+      p
+
+  li.work
+    input.radio#week4 type="radio"
+    .relative
+      label.timeline for="week4" CRUD
+      span.date Week 4
+      span.circle
+    .timeline-content
+      p
+
+  li.work
+    input.radio#more type="radio"
+    .relative
+      label.timeline for="more" We have lots more in store for you!
+      span.date More!
+      span.circle
+    .timeline-content
+      p
+        | You'll just have to take the course to find out!
+
+= render partial: "student_applications/apply"

@@ -42,13 +42,6 @@
           |  side projects on your resume and this class will give you the
           |  skills necessary to deploy those ideas onto the web.
 
-      .apply
-        h2 Ready to take the next step?
-        - if signed_in?
-          - if current_user.submitted_current_semester_application?
-            p
-              | You have already submitted your app for this semester!
-          - else
-            = link_to "Apply Now!", apply_path, class: "flat-button full-width"
-        - else
-          = link_to "First, Sign in with GitHub", user_omniauth_authorize_path(:github), class: "flat-button full-width"
+
+      h2 Ready to take the next step?
+      = render partial: "student_applications/apply"
