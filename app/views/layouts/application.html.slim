@@ -21,5 +21,7 @@ html
   body
     = render partial: "layouts/header"
     = render partial: "shared/flash"
-    = yield
-    = render partial: "layouts/footer"
+    .page-container
+      .content-container
+        = yield
+      = render partial: "layouts/footer"
