@@ -45,6 +45,8 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :nickname
 
+  after_create :make_default_role
+
   def first_name
     if name
       name.split(' ').first
@@ -61,20 +63,26 @@ class User < ActiveRecord::Base
     end
   end
 
+  def make_default_role
+    add_role_for_current_semester(Role::OBSERVER)
+  end
+
   def current_role
     self.roles.where(semester: Semester.current).first
   end
 
   def add_role_for_semester(role_name, semester)
-    self.enabled = true
-    current_role = self.roles.where(semester: Semester.current)
+    if role_name != Role::OBSERVER
+      self.enabled = true
+      self.save!
+    end
+    current_role = self.roles.find_by(semester: Semester.current)
     position = Position.find_by(name: role_name)
-    if current_role
+    unless current_role.nil?
       current_role.update(position: position)
     else
-      self.roles.where(semester: Semester.current, position: position).first_or_create
+      self.roles.create(semester: Semester.current, position: position)
     end
-    self.save!
   end
 
   def add_role_for_current_semester(role_name)
@@ -82,7 +90,7 @@ class User < ActiveRecord::Base
   end
 
   def is_staff?
-    self.current_role.name == "Instructor" || self.current_role.name == "TA"
+    self.current_role.name == Role::INSTRUCTOR || self.current_role.name == Role::TA
   end
 
   def submitted_current_semester_application?
