@@ -21,6 +21,14 @@ footer {
   }
 }
 
+.page-container {
+  min-height: 100%;
+
+  .content-container {
+    min-height: 100%;
+  }
+}
+
 .alert {
   margin: 0;
 }
