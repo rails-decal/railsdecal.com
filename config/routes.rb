@@ -24,4 +24,5 @@ RailsDecal::Application.routes.draw do
     resources :users, only: [:index]
   end
 
+  match "*path", to: 'pages#error', as: 'error_page', via: :get
 end
