@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
   end
 
   def submitted_current_semester_application?
-    unless student_applications.find_by(semester_id: Semester.current.id).nil?
+    unless student_applications.find_by(semester: Semester.current).nil?
       true
     else
       false
