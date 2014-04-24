@@ -15,16 +15,17 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
         - if enabled_user? && !current_user.submitted_current_semester_application?
           = active_li_link "Apply", apply_path
       ul.nav.navbar-nav.navbar-right
-        - if enabled_user?
+        - if signed_in?
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown"
               ' Hi,
               = current_user.name
               b.caret
             ul.dropdown-menu
-              li
-                = link_to "Profile", current_user
-              li.divider
+              - if enabled_user?
+                li
+                  = link_to "Profile", current_user
+                li.divider
               - if current_user.is_staff?
                 li
                   = link_to "Admin Dashboard", admin_dashboard_path
