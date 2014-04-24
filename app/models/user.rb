@@ -32,9 +32,13 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
+         :recoverable, :rememberable, :trackable,
          :omniauthable, omniauth_providers: [:github]
 
+  validates_uniqueness_of :email, :case_sensitive => false,
+                          :allow_blank => true, :if => :email_changed?
+  validates_format_of :email, :with  => Devise.email_regexp,
+                      :allow_blank => true, :if => :email_changed?
   has_many :roles
   has_many :student_applications
 
@@ -93,7 +97,7 @@ class User < ActiveRecord::Base
     where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.email = auth.info.email
+        user.email = auth.info.email || ""
         user.password = Devise.friendly_token[0,20]
         user.name = auth.info.name
         user.nickname = auth.info.nickname
@@ -110,6 +114,10 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def self.email_required?
+    false
   end
 
 end
