@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420174815) do
+ActiveRecord::Schema.define(version: 20140424055124) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "evaluations", force: true do |t|
+    t.text     "decision"
+    t.integer  "user_id"
+    t.integer  "student_application_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "evaluations", ["student_application_id"], name: "index_evaluations_on_student_application_id", using: :btree
+  add_index "evaluations", ["user_id"], name: "index_evaluations_on_user_id", using: :btree
 
   create_table "lectures", force: true do |t|
     t.integer  "number"

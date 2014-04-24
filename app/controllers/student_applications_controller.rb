@@ -27,6 +27,7 @@ class StudentApplicationsController < ApplicationController
   end
 
   def show
+    @evaluation = @student_application.evaluations.find_by_user_id(current_user.id) || @student_application.evaluations.build
   end
 
   private
