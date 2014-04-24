@@ -18,6 +18,11 @@ class Role < ActiveRecord::Base
 
   before_create :set_name
 
+  INSTRUCTOR = "Instructor"
+  TA = "TA"
+  STUDENT = "Student"
+  OBSERVER = "Observer"
+
   def set_name
     self.name = self.position.name
   end
