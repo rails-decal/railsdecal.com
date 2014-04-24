@@ -1,22 +1,24 @@
 .main {
   section#intro {
-    background-image:url('otherbg.jpg');
+    background-image:url('bg.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     @include breakpoint($desktop) {
-      background-position: 0px -200px; 
+      background-position: 0px -140px; 
+    }
+    @include breakpoint($not-desktop) {
+      background-position: 0px 0px; 
+    }
+    @include breakpoint($big-desktop) {
+      background-position: 0px -400px; 
     }
     background-attachment:fixed;
 
     .about-intro {
       padding: 150px 0;
     }
-  }
-
-  section#about {
-    background-color: $lighter-blue ;
 
     .attention-grabber {
       padding: 100px 0;
