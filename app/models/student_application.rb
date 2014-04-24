@@ -24,6 +24,7 @@
 
 class StudentApplication < ActiveRecord::Base
   belongs_to :user
+  belongs_to :semester
 
   validates_presence_of :first_name, :last_name, :email, :year,
                         :major, :why_join, :cs_classes_taken, :current_courseload,
