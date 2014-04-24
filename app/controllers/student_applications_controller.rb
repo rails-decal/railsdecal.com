@@ -1,5 +1,6 @@
 class StudentApplicationsController < ApplicationController
   before_filter :student_application, only: [:show]
+  before_action :admin_user
 
   def new
     if enabled_user?
@@ -30,6 +31,10 @@ class StudentApplicationsController < ApplicationController
   end
 
   private
+
+  def admin_user
+    redirect_to(root_url) unless current_user && current_user.is_staff?
+  end
 
   def student_application
     @student_application = StudentApplication.find(params[:id])
