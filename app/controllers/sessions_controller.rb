@@ -1,7 +1,10 @@
 class SessionsController < Devise::SessionsController
 
   def new
-    redirect_to root_url if Rails.env.production?
+    if Rails.env.production?
+      redirect_to root_path
+      return
+    end
     self.resource = resource_class.new(sign_in_params)
     clean_up_passwords(resource)
     respond_with(resource, serialize_options(resource))
