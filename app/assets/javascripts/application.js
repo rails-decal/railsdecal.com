@@ -21,7 +21,8 @@ $(document).ready(function() {
   $(".header-link").click(function(event) {
     event.preventDefault();
 
-    $("ul#header-links li").removeClass("active");
+
+    $("ul.nav li").removeClass("active");
     $(this).parent().addClass("active");
     $('html, body').animate({
       scrollTop: $("#" + $(this).data().element).offset().top - 70
