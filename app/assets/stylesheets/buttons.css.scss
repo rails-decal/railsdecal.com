@@ -7,13 +7,17 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   color: #FFF;
-  background-color: $founders-rock-blue;
+  background-color: $lighter-blue;
   text-transform: uppercase;
   margin-top: 15px;
   margin-bottom: 15px;
   top: 0;
   font-size: 16px;
   font-weight: 700;
+}
+
+.flat-button:hover {
+  color: white;
 }
 
 .round-with-border {

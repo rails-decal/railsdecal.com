@@ -14,6 +14,7 @@ $navbar-padding-bottom: 25px;
 }
 
 .navbar-nav > li > a {
+  transition: background-color 0.5s ease;
   padding-top: $navbar-padding-top;
   padding-bottom: $navbar-padding-bottom;
 }
@@ -28,19 +29,19 @@ $navbar-padding-bottom: 25px;
   padding-top: 15px;
   padding-bottom: 15px;
   color: white;
-  background-color: $founders-rock-blue;
+  background-color: $lighter-red;
 }
 
 .nav > li > a:hover, .nav > li > a:focus,
 .navbar-default .navbar-nav > li > a:hover {
-  background-color: $founders-rock-blue;
+  background-color: $lighter-red;
   color: white;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  background-color: $founders-rock-blue;
+  background-color: $lighter-red;
   color: white;
 }
 
