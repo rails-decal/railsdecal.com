@@ -35,11 +35,6 @@ $(document).ready(function() {
     backDelay: 500
   });
 
-  $(".time-element").hide();
-  $(".time-element").waypoint(function(event, direction) {
-    $(this).stop().fadeToggle("slow");
-  }, {offset:'87%'});
-
   $("#evaluations").tablesorter({
     sortList: [[2,1], [3,1]]
   });
