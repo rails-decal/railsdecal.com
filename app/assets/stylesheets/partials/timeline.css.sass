@@ -1,0 +1,221 @@
+/* -------------------------------------
+ * For horizontal version, set the
+ * $vertical variable to false
+ * ------------------------------------- */
+$vertical: true
+
+/* -------------------------------------
+ * General Style
+ * ------------------------------------- */
+
+// Colours
+$bg: #1d1f20
+$white: #eee9dc
+$red: #2D637F
+
+/* -------------------------------------
+ * timeline
+ * ------------------------------------- */
+
+#timeline
+  list-style: none
+  @if $vertical
+    margin: 50px 0 30px 120px
+    padding-left: 30px
+    border-left: 8px solid $white
+  @else
+    margin: 120px 0 0
+    padding: 0
+    border-top: 8px solid $white
+    display: table
+    border-spacing: 30px 0
+  li
+    @if $vertical
+      margin: 40px 0
+      position: relative
+    @else
+      display: table-cell
+      // for Firefox
+      .relative
+        position: relative
+  p
+    margin: 0 0 15px
+
+.date
+  @if $vertical
+    margin-top: -10px
+    top: 50%
+    left: -158px
+  @else
+    text-align: center
+    top: -55px
+    left: 0
+    right: 0
+  font-size: 0.95em
+  line-height: 20px
+  position: absolute
+  color: $white
+.circle
+  @if $vertical
+    margin-top: -10px
+    top: 50%
+    left: -44px
+  @else
+    margin: 0 auto
+    top: -14px
+    left: 0
+    right: 0
+  width: 20px
+  height: 20px
+  background: $bg
+  border: 5px solid $white
+  border-radius: 50%
+  display: block
+  position: absolute
+
+.content
+  @if $vertical
+    max-height: 20px
+    padding: 50px 20px 0
+    border-color: transparent
+  @else
+    width: 200px
+    max-height: 0
+    margin-top: 40px
+    vertical-align: top
+    padding: 50px 15px 15px
+    transition: width 0.4s linear, max-height 0.4s linear
+  border-width: 2px
+  border-style: solid
+  border-radius: 0.5em
+  position: relative
+  &:before, &:after
+    content: ""
+    width: 0
+    height: 0
+    border: solid transparent
+    position: absolute
+    pointer-events: none
+    @if $vertical
+      right: 100%
+    @else
+      bottom: 100%
+  &:before
+    @if $vertical
+      border-right-color: inherit
+      border-width: 20px
+      top: 50%
+      margin-top: -20px
+    @else
+      border-bottom-color: inherit
+      border-width: 15px
+      left: 50%
+      margin-left: -15px
+  &:after
+    @if $vertical
+      border-right-color: $bg
+      border-width: 17px
+      top: 50%
+      margin-top: -17px
+    @else
+      border-bottom-color: $bg
+      border-width: 12px
+      left: 50%
+      margin-left: -12px
+  p
+    max-height: 0
+    color: transparent
+    text-align: justify
+    word-break: break-word
+    hyphens: auto
+    overflow: hidden
+
+label
+  font-size: 1.3em
+  color: $white
+  position: absolute
+  z-index: 100
+  cursor: pointer
+  @if $vertical
+    top: 15px
+    left: 20px
+    transition: transform 0.2s linear
+  @else
+    width: 200px
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    display: block
+    top: 60px
+    left: 15px
+
+.radio
+  display: none
+.radio:checked
+  & + .relative
+    label
+      cursor: auto
+      color: $white
+      @if $vertical
+        transform: translateX(42px)
+      @else
+        width: 400px
+        transition: width 0.3s linear 0.2s
+    .circle
+      background: $red
+  & ~ .content
+    max-height: 180px
+    border-color: $white
+    @if $vertical
+      margin-right: 20px
+      transform: translateX(20px)
+      transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear
+    @else
+      width: 400px
+    p
+      max-height: 200px
+      color: $white
+      transition: color 0.3s linear 0.3s
+
+/* -------------------------------------
+ * mobile phones (vertical version only)
+ * ------------------------------------- */
+@if $vertical
+  @media screen and (max-width: 767px)
+    #timeline
+      margin-left: 0
+      padding-left: 0
+      border-left: none
+      li
+        margin: 50px 0
+    label
+      width: 85%
+      font-size: 1.1em
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+      display: block
+      transform: translateX(18px)
+    .content
+      padding-top: 45px
+      border-color: $white
+      &:before, &:after
+        border: solid transparent
+        bottom: 100%
+      &:before
+        border-bottom-color: inherit
+        border-width: 17px
+        top: -16px
+        left: 50px
+        margin-left: -17px
+      &:after
+        border-bottom-color: $bg
+        border-width: 20px
+        top: -20px
+        left: 50px
+        margin-left: -20px
+      p
+        font-size: 0.9em
+        line-height: 1.4
+    .circle, .date
+      display: none
