@@ -58,7 +58,7 @@ $(document).ready(function() {
   $(".timeline-row").hide();
   $(".timeline-row").waypoint(function(event, direction) {
     $(this).stop().fadeToggle("slow");
-    console.log($("#apply").prop("checked", true));
   }, {offset:'87%'});
+
 
 });
