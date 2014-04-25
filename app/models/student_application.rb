@@ -32,6 +32,9 @@ class StudentApplication < ActiveRecord::Base
                         :major, :why_join, :cs_classes_taken, :current_courseload,
                         :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
+
   def name
     "#{first_name} #{last_name}"
   end
