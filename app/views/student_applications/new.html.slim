@@ -19,7 +19,7 @@
                 .form-inputs
                   = f.input :first_name, input_html: { value: current_user.first_name }
                   = f.input :last_name, input_html: { value: current_user.last_name }
-                  = f.input :email, input_html: { value: (current_user.email.empty? ? params[:student_application][:email] : current_user.email) }
+                  = f.input :email, input_html: { value: current_user.email }
                   = f.input :year
                   = f.input :major
                   = f.input :why_join, label: "Why do you want to take the Rails DeCal?"
