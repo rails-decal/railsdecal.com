@@ -38,4 +38,4 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
                 = link_to "Sign Out", destroy_user_session_path, method: :delete
         - else
           li
-            = link_to "Sign In with GitHub", user_omniauth_authorize_path(:github), class: "flat-button"
+            = link_to "Use GitHub to Apply", user_omniauth_authorize_path(:github), class: "flat-button"
