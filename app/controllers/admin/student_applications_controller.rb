@@ -1,4 +1,4 @@
-class StudentApplicationsController < ApplicationController
+class Admin::StudentApplicationsController < ApplicationController
   before_filter :student_application, only: [:show]
   before_action :admin_user, only: [:index, :show]
 
