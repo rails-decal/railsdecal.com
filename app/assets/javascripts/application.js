@@ -19,6 +19,25 @@
 
 $(document).ready(function() {
 
+  jQuery("a").click(function(event){
+    //check if it has a hash (i.e. if it's an anchor link)
+    if(this.hash){
+      var hash = this.hash.substr(1);
+      var $toElement = jQuery("[id="+hash+"]");
+      var toPosition = $toElement.position().top;
+      //scroll to element
+      $("body,html").animate({
+        scrollTop : toPosition - 70
+      } ,1000)
+    }
+  });
+  //do the same with urls with hash too (so on page load it will slide nicely)
+  if (location.hash) {
+    var hash = location.hash;
+    window.scroll(0,0);
+    $("a[href='"+ location.pathname + hash +"']").click();
+  }
+
   $(".header-link").click(function(event) {
     event.preventDefault();
 
@@ -47,7 +66,7 @@ $(document).ready(function() {
       $("ul.nav li").removeClass("active");
       $("ul.nav li.schedule").addClass("active");
     }
-  });
+  }, {offset: '50%'});
 
   // This allows the white timeline line to already exist
   // before the fadein of each row
