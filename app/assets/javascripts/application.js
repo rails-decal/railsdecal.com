@@ -48,4 +48,17 @@ $(document).ready(function() {
       $("ul.nav li.schedule").addClass("active");
     }
   });
+
+  // This allows the white timeline line to already exist
+  // before the fadein of each row
+  $("#timeline").css("min-height", function(){
+    return $( ".timeline-row" ).size()*100;
+  });
+
+  $(".timeline-row").hide();
+  $(".timeline-row").waypoint(function(event, direction) {
+    $(this).stop().fadeToggle("slow");
+  }, {offset:'87%'});
+
+
 });
