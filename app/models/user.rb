@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
     current_role = self.roles.find_by(semester: Semester.current)
     position = Position.find_by(name: role_name)
     unless current_role.nil?
-      current_role.update(position: position)
+      current_role.update_position(position)
     else
       self.roles.create(semester: Semester.current, position: position)
     end

@@ -27,4 +27,10 @@ class Role < ActiveRecord::Base
     self.name = self.position.name
   end
 
+  def update_position(position)
+    self.position = position
+    self.set_name
+    self.save!
+  end
+
 end
