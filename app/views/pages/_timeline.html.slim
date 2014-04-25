@@ -4,20 +4,19 @@ h1.white
     | (subject to change)
 
 ul#timeline
-  li.work
-    input.radio#apply type="radio" checked="true"
+  li.work.timeline-row
+    input.radio#apply type="radio"
     .relative
       label.timeline for="apply" Submit your application!
       span.date Summer 2014
       span.circle
     .timeline-content
       p
-        ' Submit your application online
-        = link_to "here.", apply_path
+        ' Submit your application online #{link_to "here.", apply_path}
         |  We'll review your applications toward the end of the summer and you'll
         |  hear back from us at the beginning of the Fall 2014 semester.
 
-  li.work
+  li.work.timeline-row
     input.radio#week1 type="radio"
     .relative
       label.timeline for="week1" Introduction, General Web Development, and MVC
@@ -27,7 +26,7 @@ ul#timeline
       p
         | Overview of the course and what you can expect. Work time will be setting up your environment.
 
-  li.work
+  li.work.timeline-row
     input.radio#week2 type="radio"
     .relative
       label.timeline for="week2" Static Pages and Basic Ruby
@@ -36,7 +35,7 @@ ul#timeline
     .timeline-content
       p
 
-  li.work
+  li.work.timeline-row
     input.radio#week3 type="radio"
     .relative
       label.timeline for="week3" Databases and Models
@@ -45,7 +44,16 @@ ul#timeline
     .timeline-content
       p
 
-  li.work
+  li.work.timeline-row
+    input.radio#week4 type="radio"
+    .relative
+      label.timeline for="week4" CRUD
+      span.date Week 4
+      span.circle
+    .timeline-content
+      p
+
+  li.work.timeline-row
     input.radio#more type="radio"
     .relative
       label.timeline for="more" We have lots more in store for you!
