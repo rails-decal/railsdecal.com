@@ -6,13 +6,13 @@
     -o-background-size: cover;
     background-size: cover;
     @include breakpoint($desktop) {
-      background-position: 0px -140px; 
+      background-position: 0px -140px;
     }
     @include breakpoint($not-desktop) {
-      background-position: 0px 0px; 
+      background-position: 0px 0px;
     }
     @include breakpoint($big-desktop) {
-      background-position: 0px -400px; 
+      background-position: 0px -400px;
     }
     background-attachment:fixed;
 
@@ -33,14 +33,22 @@
       display: table;
       max-width: 1000px;
       width: 100%;
+      overflow: hidden;
 
       .ta {
         margin: 50px auto;
       }
+      .left-side {
+        position:relative;
+        right: 600px;
+      }
+      .right-side {
+        position:relative;
+        left: 600px;
+      }
 
       .description {
         line-height: 1.8em;
-        position: relative;
         height: 100%;
         text-align:left;
       }
@@ -67,13 +75,21 @@
       display: table;
       max-width: 1000px;
       width: 100%;
+      overflow: hidden;
 
       .description {
         line-height: 1.8em;
         position: relative;
         height: 100%;
       }
-
+      .left-side {
+        position:relative;
+        right: 600px;
+      }
+      .right-side {
+        position:relative;
+        left: 600px;
+      }
       .bubble {
         position: relative;
         width: 100%;

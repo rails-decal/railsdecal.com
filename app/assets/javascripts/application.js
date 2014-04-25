@@ -79,5 +79,11 @@ $(document).ready(function() {
     $(this).stop().fadeToggle("slow");
   }, {offset:'87%'});
 
+  $(".left-side").waypoint(function(event, direction) {
+    $(this).animate({right:'0'}, 700);
+  }, {offset:'75%'}, {triggerOnce: true});
+  $(".right-side").waypoint(function(event, direction) {
+    $(this).animate({left:'0'}, 700);
+  }, {offset:'75%'}, {triggerOnce: true});
 
 });

@@ -30,12 +30,12 @@
           .about-section
             .row
               .col-md-5
-                .bubble.left
+                .bubble.left.left-side
                   h2 About Mark
                   .description
                     = render partial: "shared/instructors/mark"
               .col-md-5.col-md-offset-2
-                .image-container.image-bottom
+                .image-container.image-bottom.right-side
                   = image_tag "mark_miyashita.jpg", class: "round-with-border"
   section#about-sam
     .container
@@ -44,10 +44,10 @@
           .about-section
             .row
               .col-md-5
-                .image-container.image-bottom
+                .image-container.image-bottom.left-side
                   = image_tag "sam_lau.jpeg", class: "round-with-border"
               .col-md-5.col-md-offset-2
-                .bubble.right
+                .bubble.right.right-side
                   h2 About Sam
                   .description
                     = render partial: "shared/instructors/sam"
@@ -60,37 +60,37 @@
             .ta
               .row
                 .col-md-5.col-md-offset-2
-                  .description.left
-                    h3 Howard Chen
-                    = render partial: "shared/tas/howard"
+                    .description.left.left-side
+                      h3 Howard Chen
+                      = render partial: "shared/tas/howard"
                 .col-md-5
-                  .image-container.image-bottom
-                    = image_tag "howard.jpeg", class: "round-with-border"
+                    .image-container.image-bottom.right-side
+                      = image_tag "howard.jpeg", class: "round-with-border"
             .ta
               .row
                 .col-md-5
-                  .image-container.image-top
+                  .image-container.image-top.left-side
                     = image_tag "jessica_lin.jpg", class: "round-with-border"
                 .col-md-5
-                  .description.right
+                  .description.right.right-side
                     h3 Jessica Lin
                     = render partial: "shared/tas/jessica"
             .ta
               .row
                 .col-md-5.col-md-offset-2
-                  .description.left
+                  .description.left.left-side
                     h3 Vincent Tian
                     = render partial: "shared/tas/vincent"
                 .col-md-5
-                  .image-container.image-bottom
+                  .image-container.image-bottom.right-side
                     = image_tag "vincent.jpg", class: "round-with-border"
             .ta
               .row
                 .col-md-5
-                  .image-container.image-top
+                  .image-container.image-top.left-side
                     = image_tag "moose.jpeg", class: "round-with-border"
                 .col-md-5
-                  .description.right
+                  .description.right.right-side
                     h3 Wonjun Jeong
                     = render partial: "shared/tas/wonjun"
   section#schedule
