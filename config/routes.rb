@@ -6,6 +6,7 @@ RailsDecal::Application.routes.draw do
   match "apply", to: "student_applications#create", as: "student_applications", via: :post
 
   resources :lectures, only: [:show, :index]
+  resources :student_applications, only: [:new, :create]
 
   devise_for :users, path: '',
                      skip: [:registrations],
@@ -18,7 +19,7 @@ RailsDecal::Application.routes.draw do
     match '/', to: redirect('/admin/dashboard'), via: :get
     match 'dashboard', to: 'pages#dashboard', via: :get
     match 'student_applications/evaluations', to: 'evaluations#index', as: 'evaluations', via: :get
-    resources :student_applications do
+    resources :student_applications, only: [:show, :index] do
       match 'evaluate', to: 'evaluations#create', as: 'evaluate', via: [:post, :patch]
     end
     resources :users, only: [:index]

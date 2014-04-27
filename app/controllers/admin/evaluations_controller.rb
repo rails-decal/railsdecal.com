@@ -1,4 +1,4 @@
-class Admin::EvaluationsController < ApplicationController
+class Admin::EvaluationsController < Admin::BaseController
 
   def create
     @student_application = StudentApplication.find(params[:student_application_id])
