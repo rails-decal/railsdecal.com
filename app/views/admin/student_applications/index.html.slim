@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-12
-      = link_to "Evaluations", evaluations_path
+      = link_to "Evaluations", admin_evaluations_path
       h1 All Student Applications
       table.table.table-striped
         th Name
@@ -11,7 +11,7 @@
         th Turn in Date
         - @student_applications.each do |student_application|
           tr
-            td = link_to student_application.name, student_application_path(student_application)
+            td = link_to student_application.name, admin_student_application_path(student_application)
             td = student_application.email
             td = student_application.year
             td = student_application.major

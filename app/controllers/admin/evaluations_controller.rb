@@ -1,4 +1,4 @@
-class EvaluationsController < ApplicationController
+class Admin::EvaluationsController < Admin::BaseController
 
   def create
     @student_application = StudentApplication.find(params[:student_application_id])
@@ -8,12 +8,12 @@ class EvaluationsController < ApplicationController
     @evaluation.user = current_user
     if @evaluation.save
       if @student_application.next.nil?
-        redirect_to "/student_applications"
+        redirect_to admin_student_applications_path
       else
-        redirect_to student_application_path(@student_application.next)
+        redirect_to admin_student_application_path(@student_application.next)
       end
     else
-      redirect_to student_application_path(@student_applicaiton)
+      redirect_to admin_student_application_path(@student_applicaiton)
     end
   end
 

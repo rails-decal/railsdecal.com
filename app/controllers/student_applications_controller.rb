@@ -1,6 +1,4 @@
 class StudentApplicationsController < ApplicationController
-  before_filter :student_application, only: [:show]
-  before_action :admin_user, only: [:index, :show]
 
   def new
     if signed_in?
@@ -23,19 +21,7 @@ class StudentApplicationsController < ApplicationController
     end
   end
 
-  def index
-    @student_applications = StudentApplication.all
-  end
-
-  def show
-    @evaluation = @student_application.evaluations.find_by_user_id(current_user.id) || @student_application.evaluations.build
-  end
-
   private
-
-  def student_application
-    @student_application = StudentApplication.find(params[:id])
-  end
 
   def student_application_params
     params.require(:student_application).permit(
