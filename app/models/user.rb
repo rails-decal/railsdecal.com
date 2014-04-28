@@ -109,11 +109,7 @@ class User < ActiveRecord::Base
   end
 
   def submitted_current_semester_application?
-    unless student_applications.find_by(semester: Semester.current).nil?
-      true
-    else
-      false
-    end
+    !student_applications.find_by(semester: Semester.current).nil?
   end
 
   def self.find_for_github_oauth(auth)
