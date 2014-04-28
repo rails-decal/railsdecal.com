@@ -1,11 +1,8 @@
 class StudentApplicationsController < ApplicationController
+  load_and_authorize_resource
 
   def new
-    if signed_in?
-      @student_application = StudentApplication.new
-    else
-      redirect_to why_path
-    end
+    @student_application = StudentApplication.new
   end
 
   def create
