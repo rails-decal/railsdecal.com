@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   has_many :student_applications
 
   extend FriendlyId
-  friendly_id :nickname
+  friendly_id :nickname, use: :finders
 
   after_create :make_default_role
 
