@@ -12,8 +12,8 @@ class Ability
     elsif user.enabled?
       can :show, User, id: user.id
       can :view, Lecture
+    elsif !user.new_record? # signed in but not enabled
       can :apply, StudentApplication if !user.submitted_current_semester_application?
-    else # not enabled or not signed in
     end
   end
 end
