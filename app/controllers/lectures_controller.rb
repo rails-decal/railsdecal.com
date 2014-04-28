@@ -1,7 +1,7 @@
 class LecturesController < ApplicationController
-  before_filter :lecture, only: [:show]
+  load_and_authorize_resource
+
   before_filter :lectures, only: [:index]
-  before_filter :authorize_user, only: [:show, :index]
 
   def show
   end
@@ -10,10 +10,6 @@ class LecturesController < ApplicationController
   end
 
   private
-
-  def lecture
-    @lecture = Lecture.find(params[:id])
-  end
 
   def lectures
     @lectures = Lecture.by_year_and_semester
