@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :enabled_user?, :authorize_user
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = 'You aren\'t allowed to view that page!'
+    if current_user
+      redirect_to after_sign_in_path_for(current_user)
+    else
+      redirect_to root_url
+    end
+  end
+
   def enabled_user?
     current_user && current_user.enabled
   end
