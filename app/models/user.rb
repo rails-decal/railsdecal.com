@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
 
   after_create :make_default_role
 
+  scope :all_enabled, -> { where(enabled: true) }
+
   def first_name
     if name
       name.split(' ').first
@@ -68,7 +70,11 @@ class User < ActiveRecord::Base
   end
 
   def current_role
-    self.roles.where(semester: Semester.current).first
+    role_for_semester Semester.current
+  end
+
+  def role_for_semester(semester)
+    self.roles.find_by(semester: semester)
   end
 
   def add_role_for_semester(role_name, semester)
@@ -90,7 +96,16 @@ class User < ActiveRecord::Base
   end
 
   def is_staff?
+    # TODO: Remove this helper and change all instances to is_current_staff?
     self.current_role.name == Role::INSTRUCTOR || self.current_role.name == Role::TA
+  end
+
+  def is_current_staff?
+    is_staff_for_semester? Semester.current
+  end
+
+  def is_staff_for_semester?(semester)
+    self.role_for_semester(semester).name == Role::INSTRUCTOR || self.role_for_semester == Role::TA
   end
 
   def submitted_current_semester_application?
@@ -126,6 +141,14 @@ class User < ActiveRecord::Base
 
   def self.email_required?
     false
+  end
+
+  class << self
+
+    def current_staff
+      User.all_enabled.select { |user| user.is_current_staff? }
+    end
+
   end
 
 end

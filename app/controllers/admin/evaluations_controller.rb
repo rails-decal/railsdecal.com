@@ -20,8 +20,7 @@ class Admin::EvaluationsController < Admin::BaseController
   def index
     @semester = Semester.current
     @applications = StudentApplication.all
-    # TODO add helper for this
-    @users = User.all
+    @users = User.current_staff
   end
 
   private
