@@ -20,6 +20,10 @@ class Semester < ActiveRecord::Base
     self.url = "#{semester.downcase}-#{year}"
   end
 
+  def name
+    "#{semester} #{year}"
+  end
+
   class << self
     def current
       last
