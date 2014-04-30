@@ -19,7 +19,7 @@ RailsDecal::Application.routes.draw do
     match '/', to: redirect('/admin/dashboard'), via: :get
     match 'dashboard', to: 'pages#dashboard', via: :get
 
-    match 'student-applications', to: 'pages#student_applications', as: 'student_applications', via: :get
+    match 'student-applications', to: 'pages#student_applications', as: 'student_applications_per_semester', via: :get
     scope 'student-applications' do
       scope ':semester_url' do
         match 'evaluations', to: 'evaluations#index', as: 'evaluations', via: :get

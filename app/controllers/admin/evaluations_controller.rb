@@ -9,7 +9,7 @@ class Admin::EvaluationsController < Admin::BaseController
     @evaluation.user = current_user
     if @evaluation.save
       if @student_application.next.nil?
-        redirect_to admin_student_applications_path
+        redirect_to admin_student_applications_path(semester_url: @semester.url)
       else
         redirect_to admin_student_application_path(semester_url: @semester.url, id: @student_application.next.id)
       end
