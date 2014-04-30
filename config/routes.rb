@@ -18,10 +18,15 @@ RailsDecal::Application.routes.draw do
   namespace :admin do
     match '/', to: redirect('/admin/dashboard'), via: :get
     match 'dashboard', to: 'pages#dashboard', via: :get
-    match 'student_applications/evaluations', to: 'evaluations#index', as: 'evaluations', via: :get
-    resources :student_applications, only: [:show, :index] do
-      match 'evaluate', to: 'evaluations#create', as: 'evaluate', via: [:post, :patch]
+
+    match 'student_applications', to: 'student_applications#index', via: :get
+    scope 'student_applications/:semester_url' do
+      match 'evaluations', to: 'evaluations#index', as: 'evaluations', via: :get
+      resources :student_applications, path: '', only: [:show, :index] do
+        match 'evaluate', to: 'evaluations#create', as: 'evaluate', via: [:post, :patch]
+      end
     end
+
     resources :users, only: [:index]
   end
 
