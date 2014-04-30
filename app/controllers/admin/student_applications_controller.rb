@@ -1,6 +1,7 @@
 class Admin::StudentApplicationsController < Admin::BaseController
   before_filter :student_applications, only: [:index]
   before_filter :student_application, only: [:show]
+  before_filter :semester, except: [:index]
 
   def index
   end
@@ -18,6 +19,10 @@ class Admin::StudentApplicationsController < Admin::BaseController
 
   def student_application
     @student_application = StudentApplication.find(params[:id])
+  end
+
+  def semester
+    @semester = Semester.find_by(url: params[:semester_url])
   end
 
 end
