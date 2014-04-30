@@ -52,18 +52,18 @@ class User < ActiveRecord::Base
   scope :all_enabled, -> { where(enabled: true) }
 
   def first_name
-    if name
-      name.split(' ').first
-    else
+    if name.nil? || name == nickname
       ''
+    else
+      name.split(' ').first
     end
   end
 
   def last_name
-    if name
-      name.split(' ').last
-    else
+    if name.nil? || name == nickname
       ''
+    else
+      name.split(' ').last
     end
   end
 
