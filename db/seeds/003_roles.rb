@@ -7,7 +7,5 @@ fall_2014 = Semester.where(semester: "Fall", year: 2014).first
 
 user = User.first
 unless user.nil?
-  user.enabled = true
-  user.save
-  user.roles << Role.create!(position: instructor, semester: Semester.current)
+  user.add_role_for_current_semester(Role::INSTRUCTOR)
 end
