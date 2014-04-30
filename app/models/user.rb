@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   has_many :student_applications
 
   extend FriendlyId
-  friendly_id :nickname
+  friendly_id :nickname, use: :finders
 
   after_create :make_default_role
 
@@ -105,29 +105,26 @@ class User < ActiveRecord::Base
   end
 
   def is_staff_for_semester?(semester)
-    self.role_for_semester(semester).name == Role::INSTRUCTOR || self.role_for_semester(semester).name == Role::TA
+    self.role_for_semester(semester).name == Role::INSTRUCTOR ||
+    self.role_for_semester(semester).name == Role::TA
   end
 
   def submitted_current_semester_application?
-    unless student_applications.find_by(semester: Semester.current).nil?
-      true
-    else
-      false
-    end
+    !student_applications.find_by(semester: Semester.current).nil?
   end
 
   def self.find_for_github_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
-        user.provider = auth.provider
-        user.uid = auth.uid
-        user.email = auth.info.email || ""
-        user.password = Devise.friendly_token[0,20]
-        user.name = auth.info.name
-        user.nickname = auth.info.nickname
-        user.bio = auth.extra.raw_info.bio
-        user.blog = auth.extra.raw_info.blog
-        user.location = auth.extra.raw_info.location
-        user.image_url = auth.info.image
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email || ""
+      user.password = Devise.friendly_token[0,20]
+      user.name = auth.info.name
+      user.nickname = auth.info.nickname
+      user.bio = auth.extra.raw_info.bio
+      user.blog = auth.extra.raw_info.blog
+      user.location = auth.extra.raw_info.location
+      user.image_url = auth.info.image
     end
   end
 

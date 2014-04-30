@@ -6,7 +6,8 @@ class Admin::StudentApplicationsController < Admin::BaseController
   end
 
   def show
-    @evaluation = @student_application.evaluations.find_by_user_id(current_user.id) || @student_application.evaluations.build
+    evaluations = @student_application.evaluations
+    @evaluation = evaluations.find_by_user_id(current_user.id) || evaluations.build
   end
 
   private

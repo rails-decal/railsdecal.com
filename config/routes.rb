@@ -13,7 +13,7 @@ RailsDecal::Application.routes.draw do
                      path_names: { sign_in: 'login', sign_up: 'sign-up', sign_out: 'logout'},
                      controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'sessions' }
 
-  resources :users, param: :nickname, only: [:show]
+  resources :users, only: [:show]
 
   namespace :admin do
     match '/', to: redirect('/admin/dashboard'), via: :get

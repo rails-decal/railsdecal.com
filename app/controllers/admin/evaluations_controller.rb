@@ -1,5 +1,4 @@
 class Admin::EvaluationsController < Admin::BaseController
-
   def create
     @student_application = StudentApplication.find(params[:student_application_id])
     @evaluation = Evaluation.find_by_user_id_and_student_application_id(current_user.id, @student_application.id) || Evaluation.new(evaluation_params)
@@ -24,7 +23,8 @@ class Admin::EvaluationsController < Admin::BaseController
   end
 
   private
-    def evaluation_params
-      params.require(:evaluation).permit(:decision, :comment, :application_id)
-    end
+
+  def evaluation_params
+    params.require(:evaluation).permit(:decision, :comment, :application_id)
+  end
 end
