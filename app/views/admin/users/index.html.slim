@@ -1,7 +1,10 @@
 .container
   .row
     .col-md-12
-      h1 All Users
+      h1
+        | All Users (
+        = @users.count
+        | )
       table.table.table-striped
         th Name
         th Email
