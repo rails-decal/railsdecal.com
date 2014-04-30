@@ -107,8 +107,9 @@ class User < ActiveRecord::Base
   end
 
   def is_staff_for_semester?(semester)
-    self.role_for_semester(semester).name == Role::INSTRUCTOR ||
-    self.role_for_semester(semester).name == Role::TA
+    return false if role_for_semester(semester).nil?
+    role_for_semester(semester).name == Role::INSTRUCTOR ||
+    role_for_semester(semester).name == Role::TA
   end
 
   def submitted_current_semester_application?
