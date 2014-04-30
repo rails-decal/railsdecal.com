@@ -39,6 +39,8 @@ class User < ActiveRecord::Base
                     :allow_blank => true, :if => :email_changed?
   validates_format_of :email, :with  => Devise.email_regexp,
                       :allow_blank => true, :if => :email_changed?
+  validates_uniqueness_of :nickname
+
   has_many :roles
   has_many :student_applications
 
