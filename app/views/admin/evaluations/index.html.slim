@@ -15,7 +15,7 @@
     tbody
       - @applications.each do |application|
         tr
-          td= link_to application.last_name, admin_student_application_path(application)
+          td= link_to application.last_name, admin_student_application_path(semester_url: @semester.url, id: application.id)
           td= application.first_name
           td= application.total_yes
           td= application.total_maybe
