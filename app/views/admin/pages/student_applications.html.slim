@@ -1,0 +1,11 @@
+= provide :title, "Student Applications"
+
+.container
+  .row
+    .col-md-12
+      h1 Student Applications
+      .row
+        .col-md-12
+          - Semester.all.each do |semester|
+            .semester-link
+              = link_to semester.name, admin_student_applications_path(semester_url: semester.url), class: "flat-button"
