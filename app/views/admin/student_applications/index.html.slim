@@ -2,7 +2,10 @@
   .row
     .col-md-12
       = link_to "Evaluations", admin_evaluations_path
-      h1 All Student Applications
+      h1
+        | All Student Applications (
+        = @student_applications.count
+        | )
       table.table.table-striped
         th Name
         th Email
