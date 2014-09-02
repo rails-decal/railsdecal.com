@@ -9,9 +9,7 @@
             h1.white Ruby on Rails DeCal
             h3.white UC Berkeley - Fall 2014
             p.white
-              ' Instructors:
-              = link_to "Mark Miyashita", "http://markmiyashita.com", class: "light-link underline"
-              '  and
+              ' Instructor:
               = link_to "Sam Lau", "https://github.com/SamLau95", class: "light-link underline"
       .row
         .col-md-12.center
@@ -23,20 +21,24 @@
               .col-md-8.col-md-offset-2.center
                 p.white
                   | The Rails DeCal is a 2-unit class for students who want to learn how to create complex, dynamic websites.
-  section#about-mark
-    .container
-      .row
-        .col-md-8.col-md-offset-2
-          .about-section
-            .row
-              .col-md-5
-                .bubble.left.left-side
-                  h2 About Mark
-                  .description
-                    = render partial: "shared/instructors/mark"
-              .col-md-5.col-md-offset-2
-                .image-container.image-bottom.right-side
-                  = image_tag "mark_miyashita.jpg", class: "round-with-border"
+                  br
+                  | Applications are due 11:59pm, Friday, September 5!
+                  br
+                  | Decisions will be released the following week.
+  / section#about-mark
+  /   .container
+  /     .row
+  /       .col-md-8.col-md-offset-2
+  /         .about-section
+  /           .row
+  /             .col-md-5
+  /               .bubble.left.left-side
+  /                 h2 About Mark
+  /                 .description
+  /                   = render partial: "shared/instructors/mark"
+  /             .col-md-5.col-md-offset-2
+  /               .image-container.image-bottom.right-side
+  /                 = image_tag "mark_miyashita.jpg", class: "round-with-border"
   section#about-sam
     .container
       .row
@@ -59,13 +61,22 @@
             h2 Teaching Assistants
             .ta
               .row
-                .col-md-5.col-md-offset-2
-                    .description.left.left-side
+                .col-md-5
+                    .image-container.image-top.left-side
+                      = image_tag "howard.jpeg", class: "round-with-border"
+                .col-md-5
+                    .description.right.right-side
                       h3 Howard Chen
                       = render partial: "shared/tas/howard"
+            .ta
+              .row
+                .col-md-5.col-md-offset-2
+                    .description.left.left-side
+                      h3 Mark Miyashita
+                      = render partial: "shared/tas/mark"
                 .col-md-5
                     .image-container.image-bottom.right-side
-                      = image_tag "howard.jpeg", class: "round-with-border"
+                      = image_tag "mark_miyashita.jpg", class: "round-with-border"
             .ta
               .row
                 .col-md-5
