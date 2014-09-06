@@ -14,4 +14,6 @@
 class Evaluation < ActiveRecord::Base
   belongs_to :user
   belongs_to :student_application
+
+  validates_presence_of :decision
 end
