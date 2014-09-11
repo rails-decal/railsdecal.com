@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430171653) do
+ActiveRecord::Schema.define(version: 20140911055755) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "check_in_codes", force: true do |t|
+    t.string   "code"
+    t.date     "class_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "evaluations", force: true do |t|
     t.text     "decision"
