@@ -24,6 +24,16 @@ class Admin::CheckInCodesController < Admin::BaseController
     end
   end
 
+  def disable
+    @check_in_code.update(enabled: false)
+    redirect_to admin_check_in_codes_path
+  end
+
+  def enable
+    @check_in_code.update(enabled: true)
+    redirect_to admin_check_in_codes_path
+  end
+
   private
 
   def check_in_code_params
