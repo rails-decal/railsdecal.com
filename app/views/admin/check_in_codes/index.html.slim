@@ -1,0 +1,20 @@
+.container
+  .row
+    .col-md-12
+      = link_to "New Check In Code", new_admin_check_in_code_path, class: "flat-button"
+      table.table.table-striped
+        th Date
+        th Value
+        th Check Ins
+        th Enabled?
+        th Toggle
+        - @check_in_codes.each do |check_in_code|
+          tr
+            td = link_to check_in_code.class_date, admin_check_in_code_path(check_in_code)
+            td = check_in_code.code
+            td = check_in_code.users.count
+            td = check_in_code.enabled
+            - if check_in_code.enabled
+              td = link_to "Disable", disable_admin_check_in_code_path(check_in_code), method: :post
+            - else
+              td = link_to "Enable", enable_admin_check_in_code_path(check_in_code), method: :post

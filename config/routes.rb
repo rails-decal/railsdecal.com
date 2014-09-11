@@ -13,7 +13,11 @@ RailsDecal::Application.routes.draw do
                      path_names: { sign_in: 'login', sign_up: 'sign-up', sign_out: 'logout'},
                      controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'sessions' }
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      match "check-in", to: "check_ins#create", via: :post
+    end
+  end
 
   namespace :admin do
     match '/', to: redirect('/admin/dashboard'), via: :get
@@ -32,6 +36,12 @@ RailsDecal::Application.routes.draw do
     end
 
     resources :users, only: [:index]
+    resources :check_in_codes, path: "check-in-codes", only: [:index, :show, :new, :create] do
+      member do
+        match "disable", to: "check_in_codes#disable", via: :post
+        match "enable",  to: "check_in_codes#enable",  via: :post
+      end
+    end
   end
 
   match "*path", to: 'pages#error', as: 'error_page', via: :get

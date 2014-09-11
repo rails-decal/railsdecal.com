@@ -7,6 +7,8 @@ class Ability
     alias_action :index, :show, to: :view
     alias_action :new, :create, to: :apply
 
+    can :create, CheckIn
+
     if user.is_current_staff?
       can :manage, :all
     elsif user.enabled?

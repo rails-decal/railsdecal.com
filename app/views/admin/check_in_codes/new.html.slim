@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-12
+      h1 Create a Check In Code
+
+      = simple_form_for @check_in_code, url: admin_check_in_codes_path do |f|
+        .form-inputs
+          = f.input :class_date, collection: (Date.today - 7.days)..(Date.today + 7.days), selected: Date.today
+          = f.input :code
+        .form-actions
+          = f.submit

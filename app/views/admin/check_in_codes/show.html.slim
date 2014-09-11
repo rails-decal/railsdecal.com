@@ -1,0 +1,16 @@
+
+.container
+  .row
+    .col-md-12
+      h1
+        = @check_in_code.code
+        '  for
+        = @check_in_code.class_date
+
+  .row
+    .col-md-12
+      table.table.table-striped
+        th User
+        - @check_in_code.users.each do |user|
+          tr
+            td = link_to user.name, user_path(user)
