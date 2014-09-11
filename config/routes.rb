@@ -32,6 +32,7 @@ RailsDecal::Application.routes.draw do
     end
 
     resources :users, only: [:index]
+    resources :check_in_codes, path: "check-in-codes", only: [:index, :show, :new, :create]
   end
 
   match "*path", to: 'pages#error', as: 'error_page', via: :get
