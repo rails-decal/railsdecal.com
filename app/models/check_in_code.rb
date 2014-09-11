@@ -12,4 +12,12 @@
 class CheckInCode < ActiveRecord::Base
   has_many :check_ins
   has_many :users, through: :check_ins
+
+  scope :active, -> { where(enabled: true) }
+
+  class << self
+    def current
+      active.last
+    end
+  end
 end
