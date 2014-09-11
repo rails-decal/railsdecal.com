@@ -1,21 +1,6 @@
 = provide(:header_links, "header/home")
 
 .main
-  - if signed_in? &&signed_in? &&  CheckInCode.has_current?
-    section#check-in
-      .container
-        .row
-          .col-md-12.center
-            h1 Check In
-        .row
-          .col-md-6.col-md-offset-3.center
-            h3 Enter this week's check in code:
-            = simple_form_for @check_in, url: check_in_user_path(current_user) do |f|
-              .form-inputs
-                = f.input :code, label: false, placeholder: "Code"
-              .form-actions
-                = f.submit "Check In!", class: "flat-button"
-
   section#intro
     .container
       .row
@@ -54,6 +39,21 @@
   /             .col-md-5.col-md-offset-2
   /               .image-container.image-bottom.right-side
   /                 = image_tag "mark_miyashita.jpg", class: "round-with-border"
+  - if signed_in? &&signed_in? && CheckInCode.has_current?
+    section#check-in
+      .container
+        .row
+          .col-md-12.center
+            h1 Check In
+        .row
+          .col-md-6.col-md-offset-3.center
+            h3 Enter this week's check in code:
+            = simple_form_for @check_in, url: check_in_user_path(current_user) do |f|
+              .form-inputs
+                = f.input :code, label: false, placeholder: "Code"
+              .form-actions
+                = f.submit "Check In!", class: "flat-button"
+
   section#about-sam
     .container
       .row
