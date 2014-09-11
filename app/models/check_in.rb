@@ -12,4 +12,6 @@
 class CheckIn < ActiveRecord::Base
   belongs_to :user
   belongs_to :check_in_code
+
+  delegate :code, to: :check_in_code, allow_nil: true
 end
