@@ -6,3 +6,11 @@
         = @check_in_code.code
         '  for
         = @check_in_code.class_date
+
+  .row
+    .col-md-12
+      table.table.table-striped
+        th User
+        - @check_in_code.users do |user|
+          tr
+            td = link_to user.name, admin_user_path(user)

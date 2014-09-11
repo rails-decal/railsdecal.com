@@ -5,7 +5,9 @@
       table.table.table-striped
         th Date
         th Value
+        th Check Ins
         - @check_in_codes.each do |check_in_code|
           tr
             td = link_to check_in_code.class_date, admin_check_in_code_path(check_in_code)
             td = check_in_code.code
+            td = check_in_code.users.count
