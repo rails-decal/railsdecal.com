@@ -11,6 +11,6 @@
     .col-md-12
       table.table.table-striped
         th User
-        - @check_in_code.users do |user|
+        - @check_in_code.users.each do |user|
           tr
-            td = link_to user.name, admin_user_path(user)
+            td = link_to user.name, user_path(user)
