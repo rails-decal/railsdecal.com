@@ -16,6 +16,10 @@ class CheckInCode < ActiveRecord::Base
   scope :active, -> { where(enabled: true) }
 
   class << self
+    def has_current?
+      active.count > 0
+    end
+
     def current
       active.last
     end
