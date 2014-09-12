@@ -1,6 +1,6 @@
 .container
   .row
-    .col-md-12
+    .col-md-6
       .lectures-container
         - @lectures.each do |lectures_for_year|
           - lectures_for_year.each do |year, lectures_for_semester|
@@ -12,3 +12,10 @@
                 - lectures.each do |lecture|
                   .lecture
                     = link_to "Lecture #{lecture.number} - #{lecture.title}", lecture
+    .col-md-6
+      .updates-container
+        h1 Updates
+        h2 9-12-14
+        p Welcome to the Rails Decal! Lecture slides will be posted after lecture every week, as well as homework assignments and projects.
+        p Our upper division CCN is full at the moment - we're currently working things out with the department to open up more spots.
+        p Seating looks to be full but not too full - if you are interested in auditing please email the staff at railsdecal-staff@googlegroups.com for the room and time.
