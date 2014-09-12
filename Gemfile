@@ -19,6 +19,8 @@ gem 'newrelic_rpm'
 gem 'simple_form', '~> 3.0.2'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'friendly_id', '~> 5.0.3'
+gem 'turbolinks', '~> 2.3.0'
+gem 'jquery-turbolinks', '~> 2.1.0'
 
 gem 'pry-rails'
 gem 'awesome_print'

@@ -94,6 +94,9 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-tablesorter (1.9.5)
       railties (>= 3.1, < 5)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
@@ -223,6 +226,8 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    turbolinks (2.3.0)
+      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
@@ -252,6 +257,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails (~> 2.2.1)
   jquery-tablesorter (= 1.9.5)
+  jquery-turbolinks
   newrelic_rpm
   omniauth-github!
   pg (= 0.17.1)
@@ -267,4 +273,5 @@ DEPENDENCIES
   sdoc
   simple_form (~> 3.0.2)
   slim-rails (~> 2.1.0)
+  turbolinks
   uglifier (>= 1.3.0)
