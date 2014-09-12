@@ -20,6 +20,9 @@ gem 'simple_form', '~> 3.0.2'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 gem 'friendly_id', '~> 5.0.3'
 
+gem 'pry-rails'
+gem 'awesome_print'
+
 # For Lectures
 gem "rails-reveal-js", "~> 2.6.1.2"
 
