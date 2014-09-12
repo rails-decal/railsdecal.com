@@ -19,12 +19,10 @@
               span#typer
             .row
               .col-md-8.col-md-offset-2.center
-                p.white
-                  | The Rails DeCal is a 2-unit class for students who want to learn how to create complex, dynamic websites.
-                  br
-                  | Applications are due 11:59pm, Friday, September 5!
-                  br
-                  | Decisions will be released the following week.
+                p.white The Rails DeCal is a 2-unit class for students who want to learn how to create complex, dynamic websites.
+      .row
+        .col-md-12.center
+          = link_to 'View Our Material'
   / section#about-mark
   /   .container
   /     .row
@@ -96,29 +94,38 @@
               .row
                 .col-md-5
                   .image-container.image-top.left-side
-                    = image_tag "mark_miyashita.jpg", class: "round-with-border"
+                    = image_tag "derrick.jpg", class: "round-with-border"
                 .col-md-5
                   .description.right.right-side
-                    h3 Mark Miyashita
-                    = render partial: "shared/tas/mark"
+                    h3 Derrick Mar
+                    = render partial: "shared/tas/derrick"
             .ta
               .row
                 .col-md-5.col-md-offset-2
                   .description.left.left-side
-                    h3 Vincent Tian
-                    = render partial: "shared/tas/vincent"
+                    h3 Mark Miyashita
+                    = render partial: "shared/tas/mark"
                 .col-md-5
                   .image-container.image-bottom.right-side
-                    = image_tag "vincent.jpg", class: "round-with-border"
+                    = image_tag "mark_miyashita.jpg", class: "round-with-border"
             .ta
               .row
                 .col-md-5
                   .image-container.image-top.left-side
-                    = image_tag "moose.jpeg", class: "round-with-border"
+                    = image_tag "vincent.jpg", class: "round-with-border"
                 .col-md-5
                   .description.right.right-side
+                    h3 Vincent Tian
+                    = render partial: "shared/tas/vincent"
+            .ta
+              .row
+                .col-md-5.col-md-offset-2
+                  .description.left.left-side
                     h3 Wonjun Jeong
                     = render partial: "shared/tas/wonjun"
+                .col-md-5
+                  .image-container.image-bottom.right-side
+                    = image_tag "moose.jpeg", class: "round-with-border"
   section#schedule
     .container
       .row
