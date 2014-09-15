@@ -7,4 +7,7 @@ class PagesController < ApplicationController
   def why_this_class
   end
 
+  def office_hours
+  end
+
 end
