@@ -12,9 +12,9 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
         = active_li_link "Home", root_path, class: "home"
         = active_li_link "Schedule", "#{root_path}#schedule", class: "schedule"
         = active_li_link "Material", lectures_path, class: "material"
+        = active_li_link "Office Hours", office_hours_path
         = active_li_link "Why Take This Class?", why_path
         - if signed_in?
-          = active_li_link "Office Hours", office_hours_path
           - unless current_user.submitted_current_semester_application?
             = active_li_link "Apply", apply_path
       ul.nav.navbar-nav.navbar-right
