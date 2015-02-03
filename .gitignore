@@ -25,3 +25,7 @@
 # Ignore rvm gemset
 .ruby-version
 .ruby-gemset
+
+
+# Ignore .swp file.
+/*.swp
