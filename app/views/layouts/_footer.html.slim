@@ -1,3 +1,9 @@
 footer
-  p.white.center
-    | &copy; The Rails DeCal 2015
+  .row
+    .col-md-4
+      p.white.center
+        | &copy; The Rails DeCal 2015
+    .col-md-4.col-md-offset-4
+      p.white.center
+        | Powered by
+        = link_to image_tag("bp_logo.png", :class => "bp-logo"), "https://www.calblueprint.org"
