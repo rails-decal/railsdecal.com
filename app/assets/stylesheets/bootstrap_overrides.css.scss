@@ -13,6 +13,11 @@ $navbar-padding-bottom: 25px;
   margin-bottom: 12px;
 }
 
+.navbar-default {
+  background: white;
+  border-color: white;
+}
+
 .navbar-nav > li > a {
   transition: background-color 0.5s ease;
   padding-top: $navbar-padding-top;
