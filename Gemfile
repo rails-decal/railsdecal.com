@@ -38,7 +38,7 @@ group :development, :test do
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'bullet', '~> 4.8.0'
   gem 'commands', '~> 0.2.1'
-  gem 'factory_girl', '~> 4.4.0'
+  gem 'factory_girl_rails', '~> 4.4.0'
   gem 'rails_best_practices', '~> 1.15.1'
   gem 'rspec-rails', '~> 2.14.1'
   gem 'rails-rename', '~> 1.0.0'

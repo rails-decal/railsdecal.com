@@ -29,5 +29,20 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validation" do
+
+    it "should allow blank emails" do
+      user = User.new
+
+      expect(user).to be_valid
+    end
+
+    it "should not allow duplicate nicknames" do
+      used_nickname = FactoryGirl.create(:user).nickname
+      user = User.new(nickname: used_nickname)
+
+      expect(user).to_not be_valid
+    end
+
+  end
 end
