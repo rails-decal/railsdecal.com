@@ -29,6 +29,7 @@
 require 'spec_helper'
 
 describe User do
+
   describe "validation" do
 
     it "should allow blank emails" do
@@ -54,6 +55,22 @@ describe User do
       user = User.new(nickname: used_nickname)
 
       expect(user).to_not be_valid
+    end
+
+  end
+
+  describe "methods" do
+
+    it "should get the first name" do
+      user = User.new(name: "First Last")
+
+      expect(user.first_name).to eq("First")
+    end
+
+    it "should get the last name" do
+      user = User.new(name: "First Last")
+
+      expect(user.last_name).to eq("Last")
     end
 
   end
