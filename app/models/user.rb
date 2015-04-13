@@ -33,10 +33,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :omniauthable, omniauth_providers: [:github]
 
-  validates :email, :case_sensitive => false,
-                    :allow_blank => true, :if => :email_changed?
-  validates_format_of :email, :with  => Devise.email_regexp,
-                      :allow_blank => true, :if => :email_changed?
+  validates :email, case_sensitive: false,
+                    allow_blank: true, if: :email_changed?
+  validates_format_of :email, with: Devise.email_regexp,
+                      allow_blank: true, if: :email_changed?
   validates_uniqueness_of :nickname
 
   has_many :roles
