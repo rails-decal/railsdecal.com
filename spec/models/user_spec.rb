@@ -37,6 +37,18 @@ describe User do
       expect(user).to be_valid
     end
 
+    it "should now allow invalid email formats" do
+      user = User.new(email: "bademail")
+
+      expect(user).to_not be_valid
+    end
+
+    it "should allow valid email formats" do
+      user = User.new(email: "good@email.com")
+
+      expect(user).to be_valid
+    end
+
     it "should not allow duplicate nicknames" do
       used_nickname = FactoryGirl.create(:user).nickname
       user = User.new(nickname: used_nickname)
