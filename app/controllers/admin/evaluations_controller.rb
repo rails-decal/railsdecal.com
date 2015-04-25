@@ -19,7 +19,7 @@ class Admin::EvaluationsController < Admin::BaseController
   end
 
   def index
-    @applications = StudentApplication.all
+    @applications = StudentApplication.where(semester: @semester)
     @users = User.current_staff
   end
 
