@@ -33,10 +33,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :omniauthable, omniauth_providers: [:github]
 
-  validates :email, :case_sensitive => false,
-                    :allow_blank => true, :if => :email_changed?
-  validates_format_of :email, :with  => Devise.email_regexp,
-                      :allow_blank => true, :if => :email_changed?
+  validates :email, case_sensitive: false,
+                    allow_blank: true, if: :email_changed?
+  validates_format_of :email, with: Devise.email_regexp,
+                      allow_blank: true, if: :email_changed?
   validates_uniqueness_of :nickname
 
   has_many :roles
@@ -118,7 +118,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_github_oauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
+    where(auth.permit(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email || ""
