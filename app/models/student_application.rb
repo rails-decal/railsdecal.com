@@ -44,6 +44,10 @@ class StudentApplication < ActiveRecord::Base
     StudentApplication.find_by_id(id + 1)
   end
 
+  def save_and_update_user
+    save && user.update(standing: standing)
+  end
+
   def evaluations_by_users(users)
     sorted_evaluations = []
     users.each do |user|
