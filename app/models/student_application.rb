@@ -23,6 +23,8 @@
 #
 
 class StudentApplication < ActiveRecord::Base
+  include StandingEnum
+
   belongs_to :user
   belongs_to :semester
 
