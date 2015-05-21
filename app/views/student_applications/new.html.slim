@@ -22,14 +22,15 @@
                   = f.input :first_name, input_html: { value: current_user.first_name }
                   = f.input :last_name, input_html: { value: current_user.last_name }
                   = f.input :email, input_html: { value: current_user.email }
-                  = f.input :year, :label => "What year will you be in Spring 2015?", :collection => [['Freshman', 'Freshman'], ['Sophomore','Sophomore'], ['Junior','Junior'], ['Senior','Senior'], ['Fifth Year','Fifth Year']]
+                  = f.input :year, label: "What year will you be in Spring 2015?", collection: [['Freshman', 'Freshman'], ['Sophomore','Sophomore'], ['Junior','Junior'], ['Senior','Senior'], ['Fifth Year','Fifth Year']]
+                  = f.input :standing, label: "Standing based off units. (You can be a Freshman with Junior standing if you have enough units).", collection: [["Lowerclassman", "lowerclassman"], ["Upperclassman", "upperclassman"]]
                   = f.input :major
                   = f.input :why_join, label: "Why do you want to take the Rails DeCal?"
                   = f.input :cs_classes_taken, label: "List all of the CS classes you have taken separated by a comma. Include any courses taken in Fall 2014. Do not include classes you are taking this semseter."
                   = f.input :current_courseload, label: "List all of the classes you are taking this semester (Spring 2015, CS and non-CS)."
                   = f.input :other_commitments, label: "Tell us about yourself. What other commitments do you have this semester?"
                   = f.input :how_many_hours_willing, label: "How many hours are you willing to dedicate to this course?"
-                  = f.input :how_did_you_hear_about_us, :label => "How did you hear about us?", :collection => [['Facebook', 'Facebook'], ['Friend','Friend'], ['Flyer','Flyer'], ['Decal.org','Decal.org'], ['Rails Decal Staff', 'Rails Decal Staff'], ['Other','Other']]
+                  = f.input :how_did_you_hear_about_us, label: "How did you hear about us?", collection: [['Facebook', 'Facebook'], ['Friend','Friend'], ['Flyer','Flyer'], ['Decal.org','Decal.org'], ['Rails Decal Staff', 'Rails Decal Staff'], ['Other','Other']]
                 .form-actions
                   = f.button :submit, "Submit", class: 'flat-button'
             .col-md-6
