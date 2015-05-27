@@ -9,14 +9,12 @@ class Ability
 
     can :create, CheckIn
     can :view, Lecture
-    can :show, User, id: user.id
 
     if user.is_current_staff?
       can :manage, :all
-    #Readd when enabled is added.
-    #elsif user.enabled?
-    #  can :show, User, id: user.id
-    elsif !user.new_record? # signed in but not enabled
+    elsif user.enabled?
+      can :show, User, id: user.id
+    elsif !user.new_record?
       can :apply, StudentApplication if !user.submitted_current_semester_application?
     end
   end

@@ -23,12 +23,14 @@
 #
 
 class StudentApplication < ActiveRecord::Base
+  include StandingEnum
+
   belongs_to :user
   belongs_to :semester
 
   has_many :evaluations, dependent: :destroy
 
-  validates_presence_of :first_name, :last_name, :email, :year,
+  validates_presence_of :first_name, :last_name, :email, :year, :standing,
                         :major, :why_join, :cs_classes_taken, :current_courseload,
                         :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us
 
@@ -42,6 +44,10 @@ class StudentApplication < ActiveRecord::Base
   def next
     # Returns nil if it cannot find the next application.
     StudentApplication.find_by_id(id + 1)
+  end
+
+  def save_and_update_user
+    save && user.update(standing: standing)
   end
 
   def evaluations_by_users(users)

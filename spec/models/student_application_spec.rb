@@ -25,5 +25,27 @@
 require 'spec_helper'
 
 describe StudentApplication do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "validation" do
+    it "should be valid if all form fields are filled" do
+      student_application = FactoryGirl.build(:student_application)
+
+      expect(student_application).to be_valid
+    end
+
+    it "should have a first name" do
+      student_application = FactoryGirl.build(:student_application)
+      student_application.first_name = nil
+
+      expect(student_application).to_not be_valid
+    end
+
+    it "should have a last name" do
+      student_application = FactoryGirl.build(:student_application)
+      student_application.last_name = nil
+
+      expect(student_application).to_not be_valid
+    end
+
+  end
 end
