@@ -1,4 +1,4 @@
-# Website for the Ruby on Rails DeCal at UC Berkeley - Fall 2014
+# Website for the Ruby on Rails DeCal at UC Berkeley - Fall 2015
 
 ## Setup
 
