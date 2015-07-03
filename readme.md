@@ -1,4 +1,4 @@
-# Website for the Ruby on Rails DeCal at UC Berkeley - Fall 2014
+# Website for the Ruby on Rails DeCal at UC Berkeley
 
 ## Setup
 
@@ -6,7 +6,7 @@ First, make a file for your environment variables:
 
     touch config/initializers/_environment_variables.rb
 
-We're using Devise so you should set `Devise.secret_key` in the `environment_variables.rb` file.
+We're using Devise so you should set `Devise.secret_key` in the `_environment_variables.rb` file.
 
 Copy over the `database.yml` file from `config/sample/database.yml` to `config/database.yml`:
 
