@@ -100,11 +100,6 @@ class User < ActiveRecord::Base
     add_role_for_semester(role_name, Semester.current)
   end
 
-  def is_staff?
-    # TODO: Remove this helper and change all instances to is_current_staff?
-    self.current_role.name == Role::INSTRUCTOR || self.current_role.name == Role::TA
-  end
-
   def is_current_staff?
     is_staff_for_semester? Semester.current
   end
