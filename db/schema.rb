@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520232223) do
+ActiveRecord::Schema.define(version: 20150703035943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "semester_id"
+    t.string   "link"
+    t.float    "weight"
+    t.integer  "points"
+    t.datetime "deadline"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "assignments", ["semester_id"], name: "index_assignments_on_semester_id", using: :btree
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id", using: :btree
 
   create_table "check_in_codes", force: :cascade do |t|
     t.string   "code",       limit: 255
@@ -123,4 +137,6 @@ ActiveRecord::Schema.define(version: 20150520232223) do
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "assignments", "semesters"
+  add_foreign_key "assignments", "users"
 end
