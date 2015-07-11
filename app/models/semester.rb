@@ -13,6 +13,7 @@
 class Semester < ActiveRecord::Base
   has_many :lectures
   has_many :roles
+  has_many :assignments
 
   before_create :set_url
 

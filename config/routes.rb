@@ -1,6 +1,8 @@
 RailsDecal::Application.routes.draw do
   root to: "pages#home"
 
+  resources :assignments, only: [:index, :show]
+
   match 'why', to: 'pages#why_this_class', via: :get
   match 'office-hours', to: 'pages#office_hours', via: :get
   match "apply", to: "student_applications#new", as: "apply", via: :get

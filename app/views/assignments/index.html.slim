@@ -1,0 +1,6 @@
+.container
+  h1 Assignements
+  .row
+    .col-md-6
+      - @assignments.each do |a|
+        p = "#{a.name}, due: #{a.deadline} link: #{a.link}"
