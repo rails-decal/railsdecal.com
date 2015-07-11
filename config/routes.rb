@@ -36,7 +36,12 @@ RailsDecal::Application.routes.draw do
       end
     end
 
-    resources :users, only: [:index]
+    resources :users, only: [:index] do
+      collection do
+        get 'students', to: 'users#students'
+      end
+    end
+
     resources :check_in_codes, path: "check-in-codes", only: [:index, :show, :new, :create] do
       member do
         match "disable", to: "check_in_codes#disable", via: :post

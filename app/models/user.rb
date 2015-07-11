@@ -53,6 +53,8 @@ class User < ActiveRecord::Base
   after_create :make_default_role
 
   scope :all_enabled, -> { where(enabled: true) }
+  scope :current_students, -> { Role.where({ name: Role::STUDENT, semester: Semester.last })
+    .includes(:user).map(&:user) }
 
   def first_name
     if name.nil? || name == nickname

@@ -4,6 +4,10 @@ class Admin::UsersController < Admin::BaseController
   def index
   end
 
+  def students
+    @users = User.current_students
+  end
+
   private
 
   def users

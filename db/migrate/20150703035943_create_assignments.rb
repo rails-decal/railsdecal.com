@@ -3,6 +3,7 @@ class CreateAssignments < ActiveRecord::Migration
     create_table :assignments do |t|
       t.references :semester, index: true
       t.string :link
+      t.string :name
       t.integer :category, default: 0
       t.float :weight, default: 1
       t.integer :points
