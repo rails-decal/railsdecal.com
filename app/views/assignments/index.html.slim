@@ -3,4 +3,6 @@
   .row
     .col-md-6
       - @assignments.each do |a|
-        p = "#{a.name}, due: #{a.deadline} link: #{a.link}"
+        h2
+          a href= assignment_path(a) #{a.name}
+        p = "due: #{a.deadline.strftime("%B %d, %Y")}"
