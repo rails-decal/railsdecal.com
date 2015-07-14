@@ -43,4 +43,9 @@ class AssignmentsController <  ApplicationController
       redirect_to :index
     end
   end
+
+  private
+  def  assignment_params
+    params.require(:assignment).permit(:name, :link, :category, :points, :deadline)
+  end
 end
