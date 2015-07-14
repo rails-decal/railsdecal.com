@@ -6,3 +6,9 @@
         h2
           a href= assignment_path(a) #{a.name}
         p = "due: #{a.deadline.strftime("%B %d, %Y")}"
+  - if can? :create, Assignment
+    .row
+      .col-md-12.center
+        .lecture-link
+          = link_to "View Our Material", new_assignment_path, class: "flat-button"
+          
