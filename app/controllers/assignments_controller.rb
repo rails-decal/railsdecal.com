@@ -13,7 +13,7 @@ class AssignmentsController <  ApplicationController
 
   def create
     @assignment = Assignment.new assignment_params
-    if @assignment.save
+    if @assignment.update(semester: Semester.current)
       flash[:success] = "#{@assignment.name} has been created."
       redirect_to assignment_path @assignment
     else
@@ -22,9 +22,14 @@ class AssignmentsController <  ApplicationController
     end
   end
 
+  def edit
+    @assignment = Assignment.find(params[:id])
+    render :new
+  end
+
   def update
     @assignment = Assignment.find(params[:id])
-    if @assignment.update(@assignment_params)
+    if @assignment.update(assignment_params)
       flash[:success] = "#{@assignment.name} has been updated."
       redirect_to assignment_path @assignment
     else

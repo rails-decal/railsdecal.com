@@ -3,3 +3,6 @@
   h2 = "Due #{@assignment.deadline}"
   h2 = "Points: #{@assignment.points}"
   a href= @assignment.link Link
+  - if can? :edit, @assignment
+    .lecture-link
+      = link_to "Edit", edit_assignment_path(@assignment)
