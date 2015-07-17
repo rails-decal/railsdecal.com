@@ -1,4 +1,4 @@
-class AssignmentsController <  ApplicationController
+class AssignmentsController < ApplicationController
   def index
     @assignments = Semester.current.assignments
   end

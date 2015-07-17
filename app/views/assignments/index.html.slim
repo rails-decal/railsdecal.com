@@ -1,5 +1,5 @@
 .container
-  h1 Assignements
+  h1 Assignments
   .row
     .col-md-6
       - @assignments.each do |a|
@@ -11,4 +11,4 @@
       .col-md-12.center
         .lecture-link
           = link_to "Create Assignment", new_assignment_path, class: "flat-button"
-          
+
