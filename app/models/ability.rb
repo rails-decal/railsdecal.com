@@ -9,6 +9,7 @@ class Ability
 
     can :create, CheckIn
     can :view, Lecture
+    can :view, Assignment
 
     if user.is_current_staff?
       can :manage, :all

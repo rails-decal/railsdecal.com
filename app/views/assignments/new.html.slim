@@ -1,0 +1,14 @@
+.container
+  h1 Assignment Creation
+  .row
+    .col-md-6
+      = simple_form_for(@assignment, html: {class: 'form-vertical'}) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :name, label: "Name"
+          = f.input :link, label: "Link"
+          = f.input :category,  label: "Category", collection: [['Homework', 'Homework'], ['Project 1','Project 1'], ['Project 2','Project 2']]
+          = f.input :points, label: "Points"
+          = f.input :deadline, label: "Deadline", as: :datetime, html5: true
+        .form-actions
+          = f.button :submit, "Submit", class: 'flat-button'

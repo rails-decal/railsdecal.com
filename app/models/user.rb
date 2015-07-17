@@ -53,6 +53,8 @@ class User < ActiveRecord::Base
   after_create :make_default_role
 
   scope :all_enabled, -> { where(enabled: true) }
+  scope :current_students, -> { Role.where({ name: Role::STUDENT, semester: Semester.last })
+    .includes(:user).map(&:user) }
 
   def first_name
     if name.nil? || name == nickname
@@ -100,19 +102,24 @@ class User < ActiveRecord::Base
     add_role_for_semester(role_name, Semester.current)
   end
 
-  def is_staff?
-    # TODO: Remove this helper and change all instances to is_current_staff?
-    self.current_role.name == Role::INSTRUCTOR || self.current_role.name == Role::TA
-  end
-
   def is_current_staff?
     is_staff_for_semester? Semester.current
   end
+
+  def is_current_student?
+    is_student_for_semester? Semester.current
+  end
+
 
   def is_staff_for_semester?(semester)
     return false if role_for_semester(semester).nil?
     role_for_semester(semester).name == Role::INSTRUCTOR ||
     role_for_semester(semester).name == Role::TA
+  end
+
+  def is_student_for_semester?(semester)
+    return false if role_for_semester(semester).nil?
+    role_for_semester(semester).name == Role::STUDENT
   end
 
   def submitted_current_semester_application?

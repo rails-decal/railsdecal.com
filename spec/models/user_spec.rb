@@ -30,6 +30,8 @@ require 'spec_helper'
 
 describe User do
 
+  subject(:user) { create :user }
+
   describe "validation" do
 
     it "should allow blank emails" do
@@ -71,6 +73,38 @@ describe User do
       user = User.new(name: "First Last")
 
       expect(user.last_name).to eq("Last")
+    end
+
+  end
+
+  describe "roles" do
+
+    context "without adding a role" do
+      it "should default to observer" do
+        expect(user.current_role.name).to eq(Role::OBSERVER)
+      end
+
+      it "should not seem like a student" do
+        expect(user.is_current_student?).to be_false
+      end
+
+      it "should not seem like a staff" do
+        expect(user.is_current_staff?).to be_false
+      end
+    end
+
+    context "with adding student role" do
+      before do
+        user.add_role_for_current_semester(Role::STUDENT)
+      end
+
+      it "should be recognize that the user is a current student" do
+        expect(user.is_current_student?).to be_true
+      end
+
+      it "should not seem like a staff" do
+        expect(user.is_current_staff?).to be_false
+      end
     end
 
   end

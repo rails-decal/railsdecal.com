@@ -11,17 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520232223) do
+ActiveRecord::Schema.define(version: 20150710194918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "assignment_submissions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "assignment_id"
+    t.integer  "points"
+    t.datetime "time_submitted"
+    t.integer  "grader_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "assignment_submissions", ["assignment_id"], name: "index_assignment_submissions_on_assignment_id", using: :btree
+  add_index "assignment_submissions", ["grader_id"], name: "index_assignment_submissions_on_grader_id", using: :btree
+  add_index "assignment_submissions", ["user_id"], name: "index_assignment_submissions_on_user_id", using: :btree
+
+  create_table "assignments", force: :cascade do |t|
+    t.integer  "semester_id"
+    t.string   "link"
+    t.string   "name"
+    t.integer  "category",    default: 0
+    t.float    "weight",      default: 1.0
+    t.integer  "points"
+    t.datetime "deadline"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "assignments", ["semester_id"], name: "index_assignments_on_semester_id", using: :btree
+
   create_table "check_in_codes", force: :cascade do |t|
-    t.string   "code",       limit: 255
+    t.string   "code"
     t.date     "class_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "enabled",                default: false
+    t.boolean  "enabled",    default: false
   end
 
   create_table "check_ins", force: :cascade do |t|
@@ -45,8 +73,8 @@ ActiveRecord::Schema.define(version: 20150520232223) do
 
   create_table "lectures", force: :cascade do |t|
     t.integer  "number"
-    t.string   "title",       limit: 255
-    t.string   "partial",     limit: 255
+    t.string   "title"
+    t.string   "partial"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "semester_id"
@@ -55,11 +83,11 @@ ActiveRecord::Schema.define(version: 20150520232223) do
   create_table "positions", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",       limit: 255
+    t.string   "name"
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string   "name",        limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -68,21 +96,21 @@ ActiveRecord::Schema.define(version: 20150520232223) do
   end
 
   create_table "semesters", force: :cascade do |t|
-    t.string   "semester",   limit: 255
+    t.string   "semester"
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "url",        limit: 255
+    t.string   "url"
   end
 
   create_table "student_applications", force: :cascade do |t|
-    t.string   "first_name",                limit: 255
-    t.string   "last_name",                 limit: 255
-    t.string   "email",                     limit: 255
-    t.string   "phone_number",              limit: 255
-    t.string   "year",                      limit: 255
-    t.string   "major",                     limit: 255
-    t.string   "gpa",                       limit: 255
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "year"
+    t.string   "major"
+    t.string   "gpa"
     t.text     "why_join"
     t.text     "cs_classes_taken"
     t.text     "current_courseload"
@@ -93,34 +121,37 @@ ActiveRecord::Schema.define(version: 20150520232223) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "semester_id"
-    t.integer  "standing",                              default: 0
+    t.integer  "standing",                  default: 0
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider",               limit: 255
-    t.string   "uid",                    limit: 255
-    t.string   "name",                   limit: 255
-    t.string   "nickname",               limit: 255
-    t.string   "image_url",              limit: 255
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "image_url"
     t.text     "bio"
-    t.string   "blog",                   limit: 255
-    t.string   "location",               limit: 255
-    t.boolean  "enabled",                            default: false
-    t.integer  "standing",                           default: 0
+    t.string   "blog"
+    t.string   "location"
+    t.boolean  "enabled",                default: false
+    t.integer  "standing",               default: 0
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "assignment_submissions", "assignments"
+  add_foreign_key "assignment_submissions", "users"
+  add_foreign_key "assignments", "semesters"
 end
