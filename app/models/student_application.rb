@@ -25,6 +25,8 @@
 class StudentApplication < ActiveRecord::Base
   include StandingEnum
 
+  enum status: [ :pending, :accepted, :rejected ]
+
   belongs_to :user
   belongs_to :semester
 
