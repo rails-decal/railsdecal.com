@@ -18,8 +18,20 @@ FactoryGirl.define do
     user
     semester
 
-    factory :upper_division_student_application do
+    trait :accepted do
+      status :accepted
+    end
+
+    trait :upper_division do
       standing :upperclassman
     end
+
+    trait :lower_division do
+      standing :lowerclassman
+    end
+
+    factory :accepted_upper_division_student_application, traits: [:upper_division, :accepted]
+    factory :accepted_lower_division_student_application, traits: [:lower_division, :accepted]
+
   end
 end

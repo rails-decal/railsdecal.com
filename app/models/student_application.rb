@@ -77,4 +77,24 @@ class StudentApplication < ActiveRecord::Base
   def total_no
     total('no')
   end
+
+  def total_accepted_in_standing
+    semester.accepted_student_applications.where(standing: standing).count
+  end
+
+  def limit_for_standing
+    if standing == "upperclassman"
+      semester.upper_division_limit
+    else
+      semester.lower_division_limit
+    end
+  end
+
+  def accept
+    if total_accepted_in_standing < limit_for_standing
+      accepted!
+    end
+    accepted?
+  end
+
 end

@@ -50,11 +50,24 @@ describe StudentApplication do
   end
 
   describe "class sizes" do
+    let(:semester) { create :semester }
 
-    it "should know how many upperclassmen are signed up" do
-      (0..20).each do
-        create :upper_division_student_application
+    before do
+      20.times do
+        create :accepted_upper_division_student_application, semester: semester
       end
+
+      30.times do
+        create :accepted_lower_division_student_application, semester: semester
+      end
+    end
+
+    it "should know how many upperclassmen are accepted" do
+      expect(semester.number_of_accepted_upperclassmen).to be 20
+    end
+
+    it "should know how many lowerclassmen are accepted" do
+      expect(semester.number_of_accepted_lowerclassmen).to be 30
     end
   end
 end

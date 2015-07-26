@@ -14,6 +14,7 @@ class Semester < ActiveRecord::Base
   has_many :lectures
   has_many :roles
   has_many :assignments
+  has_many :student_applications
 
   before_create :set_url
 
@@ -23,6 +24,19 @@ class Semester < ActiveRecord::Base
 
   def name
     "#{semester} #{year}"
+  end
+
+
+  def accepted_student_applications
+    student_applications.accepted
+  end
+
+  def number_of_accepted_upperclassmen
+    accepted_student_applications.upperclassman.count
+  end
+
+  def number_of_accepted_lowerclassmen
+    accepted_student_applications.lowerclassman.count
   end
 
   class << self
