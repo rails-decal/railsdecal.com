@@ -69,5 +69,16 @@ describe StudentApplication do
     it "should know how many lowerclassmen are accepted" do
       expect(semester.number_of_accepted_lowerclassmen).to be 30
     end
+
+    it "should be able to add more students in upper division" do
+      unaccepted_student_application = create :upper_division_student_application
+      expect(unaccepted_student_application.accept).to be true
+    end
+
+    it "should be able to add more students in lower division" do
+      unaccepted_student_application = create :lower_division_student_application
+      expect(unaccepted_student_application.accept).to be true
+    end
+
   end
 end

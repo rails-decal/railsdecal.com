@@ -30,6 +30,8 @@ FactoryGirl.define do
       standing :lowerclassman
     end
 
+    factory :upper_division_student_application, traits: [:upper_division]
+    factory :lower_division_student_application, traits: [:lower_division]
     factory :accepted_upper_division_student_application, traits: [:upper_division, :accepted]
     factory :accepted_lower_division_student_application, traits: [:lower_division, :accepted]
 
