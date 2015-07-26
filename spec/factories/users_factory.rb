@@ -1,7 +1,9 @@
 FactoryGirl.define do
   factory :user do
     name "Howard Chen"
-    nickname "Howie"
+    sequence :nickname do |n|
+      "Student #{n}"
+    end
     sequence :email do |n|
       "person#{n}@example.com"
     end

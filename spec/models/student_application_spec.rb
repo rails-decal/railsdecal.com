@@ -48,4 +48,13 @@ describe StudentApplication do
     end
 
   end
+
+  describe "class sizes" do
+
+    it "should know how many upperclassmen are signed up" do
+      (0..20).each do
+        create :upper_division_student_application
+      end
+    end
+  end
 end
