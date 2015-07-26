@@ -79,7 +79,7 @@ class StudentApplication < ActiveRecord::Base
   end
 
   def total_accepted_in_standing
-    semester.accepted_student_applications.where(standing: standing).count
+    semester.accepted_student_applications.send(standing).count
   end
 
   def limit_for_standing

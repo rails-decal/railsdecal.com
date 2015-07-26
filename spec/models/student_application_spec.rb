@@ -80,5 +80,21 @@ describe StudentApplication do
       expect(unaccepted_student_application.accept).to be true
     end
 
+    it "should not add more students in lower division" do
+      50.times do
+        create :accepted_lower_division_student_application, semester: semester
+      end
+      unaccepted_student_application = create :lower_division_student_application, semester: semester
+      expect(unaccepted_student_application.accept).to be false
+    end
+
+    it "should not add more students in upper division" do
+      40.times do
+        create :accepted_upper_division_student_application, semester: semester
+      end
+      unaccepted_student_application = create :upper_division_student_application, semester: semester
+      expect(unaccepted_student_application.accept).to be false
+    end
+
   end
 end
