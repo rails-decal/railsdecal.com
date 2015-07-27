@@ -97,4 +97,9 @@ class StudentApplication < ActiveRecord::Base
     accepted?
   end
 
+  def pend
+    pending!
+    pending?
+  end
+
 end

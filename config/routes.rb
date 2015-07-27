@@ -33,6 +33,8 @@ RailsDecal::Application.routes.draw do
         resources :student_applications, path: '', only: [:show, :index] do
           member do
             match 'evaluate', to: 'evaluations#create', as: 'evaluate', via: [:post, :patch]
+            patch 'accept', to: 'student_applications#accept', as: 'accept'
+            patch 'pend', to: 'student_applications#pend', as: 'pend'
           end
         end
       end
