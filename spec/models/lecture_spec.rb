@@ -4,8 +4,8 @@
 #
 #  id          :integer          not null, primary key
 #  number      :integer
-#  title       :string(255)
-#  partial     :string(255)
+#  title       :string
+#  partial     :string
 #  created_at  :datetime
 #  updated_at  :datetime
 #  semester_id :integer

@@ -14,6 +14,7 @@
         th Year
         th Major
         th Turn in Date
+        th Status
         - @student_applications.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
@@ -21,5 +22,4 @@
             td = student_application.year
             td = student_application.major
             td = student_application.created_at.to_formatted_s(:long_ordinal)
-
-
+            td = student_application.status

@@ -3,27 +3,28 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
 #  created_at             :datetime
 #  updated_at             :datetime
-#  provider               :string(255)
-#  uid                    :string(255)
-#  name                   :string(255)
-#  nickname               :string(255)
-#  image_url              :string(255)
+#  provider               :string
+#  uid                    :string
+#  name                   :string
+#  nickname               :string
+#  image_url              :string
 #  bio                    :text
-#  blog                   :string(255)
-#  location               :string(255)
+#  blog                   :string
+#  location               :string
 #  enabled                :boolean          default(FALSE)
+#  standing               :integer          default(0)
 #
 
 require 'spec_helper'
