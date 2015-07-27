@@ -3,13 +3,13 @@
 # Table name: student_applications
 #
 #  id                        :integer          not null, primary key
-#  first_name                :string(255)
-#  last_name                 :string(255)
-#  email                     :string(255)
-#  phone_number              :string(255)
-#  year                      :string(255)
-#  major                     :string(255)
-#  gpa                       :string(255)
+#  first_name                :string
+#  last_name                 :string
+#  email                     :string
+#  phone_number              :string
+#  year                      :string
+#  major                     :string
+#  gpa                       :string
 #  why_join                  :text
 #  cs_classes_taken          :text
 #  current_courseload        :text
@@ -20,6 +20,8 @@
 #  updated_at                :datetime
 #  user_id                   :integer
 #  semester_id               :integer
+#  standing                  :integer          default(0)
+#  status                    :integer          default(0)
 #
 
 class StudentApplication < ActiveRecord::Base
