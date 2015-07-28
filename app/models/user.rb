@@ -3,40 +3,43 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
 #  created_at             :datetime
 #  updated_at             :datetime
-#  provider               :string(255)
-#  uid                    :string(255)
-#  name                   :string(255)
-#  nickname               :string(255)
-#  image_url              :string(255)
+#  provider               :string
+#  uid                    :string
+#  name                   :string
+#  nickname               :string
+#  image_url              :string
 #  bio                    :text
-#  blog                   :string(255)
-#  location               :string(255)
+#  blog                   :string
+#  location               :string
 #  enabled                :boolean          default(FALSE)
+#  standing               :integer          default(0)
 #
 
 class User < ActiveRecord::Base
+  include StandingEnum
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          :omniauthable, omniauth_providers: [:github]
 
-  validates :email, :case_sensitive => false,
-                    :allow_blank => true, :if => :email_changed?
-  validates_format_of :email, :with  => Devise.email_regexp,
-                      :allow_blank => true, :if => :email_changed?
+  validates :email, case_sensitive: false,
+                    allow_blank: true, if: :email_changed?
+  validates_format_of :email, with: Devise.email_regexp,
+                      allow_blank: true, if: :email_changed?
   validates_uniqueness_of :nickname
 
   has_many :roles
@@ -51,6 +54,8 @@ class User < ActiveRecord::Base
   after_create :make_default_role
 
   scope :all_enabled, -> { where(enabled: true) }
+  scope :current_students, -> { Role.where({ name: Role::STUDENT, semester: Semester.last })
+    .includes(:user).map(&:user) }
 
   def first_name
     if name.nil? || name == nickname
@@ -98,14 +103,14 @@ class User < ActiveRecord::Base
     add_role_for_semester(role_name, Semester.current)
   end
 
-  def is_staff?
-    # TODO: Remove this helper and change all instances to is_current_staff?
-    self.current_role.name == Role::INSTRUCTOR || self.current_role.name == Role::TA
-  end
-
   def is_current_staff?
     is_staff_for_semester? Semester.current
   end
+
+  def is_current_student?
+    is_student_for_semester? Semester.current
+  end
+
 
   def is_staff_for_semester?(semester)
     return false if role_for_semester(semester).nil?
@@ -113,12 +118,17 @@ class User < ActiveRecord::Base
     role_for_semester(semester).name == Role::TA
   end
 
+  def is_student_for_semester?(semester)
+    return false if role_for_semester(semester).nil?
+    role_for_semester(semester).name == Role::STUDENT
+  end
+
   def submitted_current_semester_application?
     !student_applications.find_by(semester: Semester.current).nil?
   end
 
   def self.find_for_github_oauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email || ""

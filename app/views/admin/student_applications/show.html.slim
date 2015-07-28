@@ -31,4 +31,9 @@
           td How did you hear about us?
           td = @student_application.how_did_you_hear_about_us
 
+    - if @student_application.pending?
+      = button_to "Accept", accept_admin_student_application_path, method: :patch, class: 'flat-button'
+    - if @student_application.accepted?
+      = button_to "Pend", pend_admin_student_application_path, method: :patch, class: 'flat-button'
+
     = render partial: "admin/evaluations/evaluation", locals: { application: @student_application, evaluation: @evaluation }

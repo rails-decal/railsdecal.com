@@ -3,10 +3,11 @@
 # Table name: check_in_codes
 #
 #  id         :integer          not null, primary key
-#  code       :string(255)
+#  code       :string
 #  class_date :date
 #  created_at :datetime
 #  updated_at :datetime
+#  enabled    :boolean          default(FALSE)
 #
 
 class CheckInCode < ActiveRecord::Base

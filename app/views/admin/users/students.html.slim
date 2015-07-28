@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-md-12
+      h1
+        | Current Students (
+        = @users.count
+        | )
+      table.table.table-striped
+        th Name
+        th Email
+        th Enabled?
+        th Sign Up Date
+        - @users.each do |user|
+          tr
+            td = user.name
+            td = user.email
+            td = user.enabled
+            td = user.created_at.to_formatted_s(:long_ordinal)
