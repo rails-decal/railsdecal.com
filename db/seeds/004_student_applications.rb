@@ -29,5 +29,20 @@ if Rails.env.development?
       how_did_you_hear_about_us: 'Google Search',
       semester: semester
     ).first_or_create
+
+    app3 = StudentApplication.where(
+      first_name: 'Howie Bear',
+      last_name: 'Chen',
+      email: 'howardxchen@gmail.com',
+      year: 'Graduate',
+      major: 'ECCS',
+      why_join: 'To learn how trains work',
+      cs_classes_taken: 'None',
+      current_courseload: 'Grad Classez',
+      other_commitments: 'This git commitment',
+      how_many_hours_willing: '5 minutes',
+      how_did_you_hear_about_us: 'Google Search',
+      semester: semester
+    ).first_or_create
   end
 end
