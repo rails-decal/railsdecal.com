@@ -42,6 +42,7 @@ group :development, :test do
   gem "commands", "~> 0.2.1"
   gem "factory_girl_rails", "~> 4.4.0"
   gem "figaro", "1.1.0"
+  gem "letter_opener"
   gem "rails_best_practices", "~> 1.15.1"
   gem "rspec-rails", "~> 2.14.1"
   gem "rails-rename", "~> 1.0.0"
