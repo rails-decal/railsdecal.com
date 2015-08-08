@@ -11,9 +11,6 @@ class StudentApplicationsController < ApplicationController
     @student_application.semester = Semester.current
     if @student_application.save_and_update_user
       flash[:info] = "Thanks for applying! We'll get back to you with our decision."
-      puts :YOLO
-      puts @student_application.id
-      puts "DOLO"
       ApplicationSubmissionMailer.delay.send_confirmation(@student_application.id)
       redirect_to why_path
     else
