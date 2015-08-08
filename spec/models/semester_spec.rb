@@ -2,14 +2,16 @@
 #
 # Table name: semesters
 #
-#  id                   :integer          not null, primary key
-#  semester             :string
-#  year                 :integer
-#  created_at           :datetime
-#  updated_at           :datetime
-#  url                  :string
-#  lower_division_limit :integer
-#  upper_division_limit :integer
+#  id                      :integer          not null, primary key
+#  semester                :string
+#  year                    :integer
+#  created_at              :datetime
+#  updated_at              :datetime
+#  url                     :string
+#  lower_division_limit    :integer
+#  upper_division_limit    :integer
+#  application_deadline    :datetime
+#  acceptance_release_date :datetime
 #
 
 require 'spec_helper'
