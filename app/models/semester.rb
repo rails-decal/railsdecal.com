@@ -43,10 +43,24 @@ class Semester < ActiveRecord::Base
     accepted_student_applications.lowerclassman.count
   end
 
+  def formatted_application_deadline
+    formatted_date application_deadline
+  end
+
+  def formatted_acceptance_release_date
+    formatted_date acceptance_release_date
+  end
+
   class << self
     def current
       last
     end
+  end
+
+  private
+
+  def formatted_date(datetime)
+    datetime.strftime('%B %-d, %C')
   end
 
 end
