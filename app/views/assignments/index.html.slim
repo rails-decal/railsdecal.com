@@ -1,7 +1,10 @@
 .container
-  h1 Assignments
   .row
     .col-md-6
+      h1 Assignments
+    - if @assignments.empty?
+      h3 We will post our assignments here when the semester starts.
+    - else
       - @assignments.each do |a|
         h2
           a href= assignment_path(a) #{a.name}
@@ -11,4 +14,3 @@
       .col-md-12.center
         .lecture-link
           = link_to "Create Assignment", new_assignment_path, class: "flat-button"
-
