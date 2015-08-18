@@ -10,8 +10,8 @@ class StudentApplicationsController < ApplicationController
     @student_application.user = current_user
     @student_application.semester = Semester.current
     if @student_application.save_and_update_user
-      flash[:info] = "Thanks for applying! Please check your email for a confirmation."
-      ApplicationSubmissionMailer.delay.send_confirmation(@student_application.id)
+      flash[:info] = "Thanks for applying! We will get back to you as soon as possible."
+      #ApplicationSubmissionMailer.delay.send_confirmation(@student_application.id) patch fix mailer.
       redirect_to why_path
     else
       flash[:danger] = "There was an error submitting your application. Please fix it and try again."
