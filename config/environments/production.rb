@@ -88,7 +88,7 @@ RailsDecal::Application.configure do
     domain:               'gmail.com',
     user_name:            ENV['GMAIL_USERNAME'],
     password:             ENV['GMAIL_PASSWORD'],
-    authentication:       'plain',
+    authentication:       'login',
     enable_starttls_auto: true  }
 
 end
