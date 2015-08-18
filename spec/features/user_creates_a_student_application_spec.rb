@@ -37,7 +37,7 @@ feature "User creates a Student Application" do
     click_button "Submit"
 
     expect(page).to have_text(
-      "Thanks for applying! We'll get back to you with our decision."
+      "Thanks for applying! Please check your email for a confirmation."
     )
   end
 
