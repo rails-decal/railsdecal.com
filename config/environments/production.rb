@@ -79,4 +79,16 @@ RailsDecal::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   GA.tracker = "UA-48665683-1"
+
+  # Mailer config
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'railsdecal.com',
+    user_name:            '#{ ENV['GMAIL_USERNAME'] }',
+    password:             '#{ ENV['GMAIL_PASSWORD']}',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+
 end
