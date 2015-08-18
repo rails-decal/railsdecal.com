@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725024617) do
+ActiveRecord::Schema.define(version: 20150808223130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,8 @@ ActiveRecord::Schema.define(version: 20150725024617) do
     t.string   "url"
     t.integer  "lower_division_limit"
     t.integer  "upper_division_limit"
+    t.datetime "application_deadline"
+    t.datetime "acceptance_release_date"
   end
 
   create_table "student_applications", force: :cascade do |t|
