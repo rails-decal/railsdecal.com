@@ -39,6 +39,8 @@ For example:
 
     ENV['SECRET_KEY'] = 'secret-password'
 
+Make sure to set up GITHUB_KEY and GITHUB_SECRET to have the auth work!
+
 Since we use Git to deploy to Heroku, this file won't be included, so you'll have to set the environment variables manually, and this can be done just once. The equivalent of the above on Heroku is:
 
     heroku config:set SECRET_KEY=secret-password
