@@ -6,3 +6,5 @@
   - if can? :edit, @assignment
     .lecture-link
       = link_to "Edit", edit_assignment_path(@assignment)
+    .lecture-link
+      = link_to "Delete", assignment_path(@assignment), method: :DELETE

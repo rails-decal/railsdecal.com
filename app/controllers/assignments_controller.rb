@@ -18,7 +18,7 @@ class AssignmentsController < ApplicationController
       redirect_to assignment_path @assignment
     else
       flash[:error] = "An error has occured while saving the #{@assignment.name}."
-      redirect_to :index
+      redirect_to action: :index
     end
   end
 
@@ -42,11 +42,10 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
     if @assignment.destroy
       flash[:success] = "#{@assignment.name} has been destroyed"
-      redirect_to assignment_path @assignment
     else
       flash[:error] = "An error has occured while destroying #{@assignment.name}"
-      redirect_to :index
     end
+    redirect_to action: :index
   end
 
   private
