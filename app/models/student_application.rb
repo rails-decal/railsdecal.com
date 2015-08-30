@@ -27,7 +27,9 @@
 class StudentApplication < ActiveRecord::Base
   include StandingEnum
 
-  enum status: [ :pending, :accepted, :rejected ]
+  scope :current, -> { where(semester: Semester.current) }
+
+  enum status: [ :pending, :accepted, :rejected, :waitlisted ]
 
   belongs_to :user
   belongs_to :semester
@@ -102,6 +104,10 @@ class StudentApplication < ActiveRecord::Base
   def pend
     pending!
     pending?
+  end
+
+  def self.current
+    StudentApplication.where(semester: Semester.current)
   end
 
 end

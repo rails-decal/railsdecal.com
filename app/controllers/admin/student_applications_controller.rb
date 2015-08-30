@@ -32,7 +32,7 @@ class Admin::StudentApplicationsController < Admin::BaseController
   private
 
   def student_applications
-    @student_applications = StudentApplication.where(semester: @semester)
+    @student_applications = StudentApplication.current
   end
 
   def student_application
