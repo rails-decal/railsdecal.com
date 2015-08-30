@@ -6,7 +6,7 @@
         ' Student Applications -
         = @semester.name
         |  (
-        = @student_applications.count
+        = @student_applications_count
         | )
       h2
         ' Pending Applications
@@ -17,7 +17,7 @@
         th Major
         th Turn in Date
         th Status
-        - @student_applications.pending.each do |student_application|
+        - @pending.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
             td = student_application.email
@@ -34,7 +34,7 @@
         th Major
         th Turn in Date
         th Status
-        - @student_applications.accepted.upperclassman.each do |student_application|
+        - @accepted_upperclassmen.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
             td = student_application.email
@@ -51,7 +51,7 @@
         th Major
         th Turn in Date
         th Status
-        - @student_applications.accepted.lowerclassman.each do |student_application|
+        - @accepted_lowerclassmen.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
             td = student_application.email
@@ -68,7 +68,7 @@
         th Major
         th Turn in Date
         th Status
-        - @student_applications.waitlisted.upperclassman.each do |student_application|
+        - @waitlisted_upperclassmen.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
             td = student_application.email
@@ -85,7 +85,7 @@
         th Major
         th Turn in Date
         th Status
-        - @student_applications.waitlisted.lowerclassman.each do |student_application|
+        - @waitlisted_lowerclassmen.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
             td = student_application.email
@@ -102,7 +102,7 @@
         th Major
         th Turn in Date
         th Status
-        - @student_applications.rejected.lowerclassman.each do |student_application|
+        - @rejected.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
             td = student_application.email

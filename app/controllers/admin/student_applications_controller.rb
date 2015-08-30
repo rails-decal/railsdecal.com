@@ -32,7 +32,16 @@ class Admin::StudentApplicationsController < Admin::BaseController
   private
 
   def student_applications
-    @student_applications = StudentApplication.current
+    student_applications = StudentApplication.current
+    @application_count = student_applications.count
+    @pending = student_applications.pending
+    upperclassmen = student_applications.upperclassman
+    lowerclassmen = student_applications.lowerclassman
+    @accepted_upperclassmen = upperclassmen.accepted
+    @accepted_lowerclassmen = lowerclassmen.accepted
+    @waitlisted_upperclassmen = upperclassmen.waitlisted
+    @waitlisted_lowerclassmen = lowerclassmen.waitlisted
+    @rejected = student_applications.rejected
   end
 
   def student_application
