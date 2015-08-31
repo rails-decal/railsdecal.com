@@ -106,8 +106,4 @@ class StudentApplication < ActiveRecord::Base
     pending?
   end
 
-  def self.current
-    StudentApplication.where(semester: Semester.current)
-  end
-
 end
