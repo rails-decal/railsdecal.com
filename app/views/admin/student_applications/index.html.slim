@@ -6,10 +6,10 @@
         ' Student Applications -
         = @semester.name
         |  (
-        = @application_count
+        = @application_size
         | )
       h2
-        = "Pending Applications (#{@pending.count })"
+        = "Pending Applications (#{ @pending.size })"
       table.table.table-striped
         th Name
         th Email
@@ -26,7 +26,7 @@
             td = student_application.created_at.to_formatted_s(:long_ordinal)
             td = student_application.status
       h2
-        = "Accepted Upperclassman Applications (#{ @accepted_upperclassmen.count }/#{ @semester.upper_division_limit })"
+        = "Accepted Upperclassman Applications (#{ @accepted_upperclassmen.size }/#{ @semester.upper_division_limit })"
       table.table.table-striped
         th Name
         th Email
@@ -43,7 +43,7 @@
             td = student_application.created_at.to_formatted_s(:long_ordinal)
             td = student_application.status
       h2
-        = "Accepted Lowerclassman Applications (#{ @accepted_lowerclassmen.count }/#{ @semester.lower_division_limit })"
+        = "Accepted Lowerclassman Applications (#{ @accepted_lowerclassmen.size }/#{ @semester.lower_division_limit })"
       table.table.table-striped
         th Name
         th Email
@@ -60,7 +60,7 @@
             td = student_application.created_at.to_formatted_s(:long_ordinal)
             td = student_application.status
       h2
-        = "Waitlisted Upperclassman Applications (#{ @waitlisted_upperclassmen.count })"
+        = "Waitlisted Upperclassman Applications (#{ @waitlisted_upperclassmen.size })"
       table.table.table-striped
         th Name
         th Email
@@ -77,7 +77,7 @@
             td = student_application.created_at.to_formatted_s(:long_ordinal)
             td = student_application.status
       h2
-        = "Waitlisted Lowerclassman Applications (#{ @waitlisted_lowerclassmen.count })"
+        = "Waitlisted Lowerclassman Applications (#{ @waitlisted_lowerclassmen.size })"
       table.table.table-striped
         th Name
         th Email
@@ -94,7 +94,7 @@
             td = student_application.created_at.to_formatted_s(:long_ordinal)
             td = student_application.status
       h2
-        = "Rejected Applications (#{ @rejected.count })"
+        = "Rejected Applications (#{ @rejected.size })"
       table.table.table-striped
         th Name
         th Email

@@ -33,7 +33,7 @@ class Admin::StudentApplicationsController < Admin::BaseController
 
   def student_applications
     student_applications = StudentApplication.current
-    @application_count = student_applications.count
+    @application_size = student_applications.size
     @pending = student_applications.pending
     upperclassmen = student_applications.upperclassman
     lowerclassmen = student_applications.lowerclassman
