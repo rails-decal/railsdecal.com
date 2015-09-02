@@ -6,8 +6,10 @@
         ' Student Applications -
         = @semester.name
         |  (
-        = @student_applications.count
+        = @application_size
         | )
+      h2
+        = "Pending Applications (#{ @pending.size })"
       table.table.table-striped
         th Name
         th Email
@@ -15,7 +17,92 @@
         th Major
         th Turn in Date
         th Status
-        - @student_applications.each do |student_application|
+        - @pending.each do |student_application|
+          tr
+            td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
+            td = student_application.email
+            td = student_application.year
+            td = student_application.major
+            td = student_application.created_at.to_formatted_s(:long_ordinal)
+            td = student_application.status
+      h2
+        = "Accepted Upperclassman Applications (#{ @accepted_upperclassmen.size }/#{ @semester.upper_division_limit })"
+      table.table.table-striped
+        th Name
+        th Email
+        th Year
+        th Major
+        th Turn in Date
+        th Status
+        - @accepted_upperclassmen.each do |student_application|
+          tr
+            td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
+            td = student_application.email
+            td = student_application.year
+            td = student_application.major
+            td = student_application.created_at.to_formatted_s(:long_ordinal)
+            td = student_application.status
+      h2
+        = "Accepted Lowerclassman Applications (#{ @accepted_lowerclassmen.size }/#{ @semester.lower_division_limit })"
+      table.table.table-striped
+        th Name
+        th Email
+        th Year
+        th Major
+        th Turn in Date
+        th Status
+        - @accepted_lowerclassmen.each do |student_application|
+          tr
+            td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
+            td = student_application.email
+            td = student_application.year
+            td = student_application.major
+            td = student_application.created_at.to_formatted_s(:long_ordinal)
+            td = student_application.status
+      h2
+        = "Waitlisted Upperclassman Applications (#{ @waitlisted_upperclassmen.size })"
+      table.table.table-striped
+        th Name
+        th Email
+        th Year
+        th Major
+        th Turn in Date
+        th Status
+        - @waitlisted_upperclassmen.each do |student_application|
+          tr
+            td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
+            td = student_application.email
+            td = student_application.year
+            td = student_application.major
+            td = student_application.created_at.to_formatted_s(:long_ordinal)
+            td = student_application.status
+      h2
+        = "Waitlisted Lowerclassman Applications (#{ @waitlisted_lowerclassmen.size })"
+      table.table.table-striped
+        th Name
+        th Email
+        th Year
+        th Major
+        th Turn in Date
+        th Status
+        - @waitlisted_lowerclassmen.each do |student_application|
+          tr
+            td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
+            td = student_application.email
+            td = student_application.year
+            td = student_application.major
+            td = student_application.created_at.to_formatted_s(:long_ordinal)
+            td = student_application.status
+      h2
+        = "Rejected Applications (#{ @rejected.size })"
+      table.table.table-striped
+        th Name
+        th Email
+        th Year
+        th Major
+        th Turn in Date
+        th Status
+        - @rejected.each do |student_application|
           tr
             td = link_to student_application.name, admin_student_application_path(semester_url: @semester.url, id: student_application.id)
             td = student_application.email
