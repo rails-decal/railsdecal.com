@@ -4,6 +4,10 @@ class Admin::StudentApplicationsController < Admin::BaseController
   before_filter :student_application, only: [:show, :accept, :pend]
 
   def index
+    respond_to do |format|
+      format.html
+      format.csv { send_data StudentApplicationCsv.to_csv @student_applications }
+    end
   end
 
   def show
@@ -32,16 +36,16 @@ class Admin::StudentApplicationsController < Admin::BaseController
   private
 
   def student_applications
-    student_applications = StudentApplication.current
-    @application_size = student_applications.size
-    @pending = student_applications.pending
-    upperclassmen = student_applications.upperclassman
-    lowerclassmen = student_applications.lowerclassman
+    @student_applications = StudentApplication.current
+    @application_size = @student_applications.size
+    @pending = @student_applications.pending
+    upperclassmen = @student_applications.upperclassman
+    lowerclassmen = @student_applications.lowerclassman
     @accepted_upperclassmen = upperclassmen.accepted
     @accepted_lowerclassmen = lowerclassmen.accepted
     @waitlisted_upperclassmen = upperclassmen.waitlisted
     @waitlisted_lowerclassmen = lowerclassmen.waitlisted
-    @rejected = student_applications.rejected
+    @rejected = @student_applications.rejected
   end
 
   def student_application

@@ -2,6 +2,7 @@
   .row
     .col-md-12
       = link_to "Evaluations", admin_evaluations_path(semester_url: @semester.url)
+      = link_to "Download CSV", admin_student_applications_path(format: "csv")
       h1
         ' Student Applications -
         = @semester.name
