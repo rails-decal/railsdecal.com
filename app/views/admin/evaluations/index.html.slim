@@ -7,6 +7,7 @@
       tr
         th= model_class.human_attribute_name(:last_name)
         th= model_class.human_attribute_name(:first_name)
+        th= model_class.human_attribute_name(:standing)
         th= "Yes"
         th= "Maybe"
         th= "No"
@@ -17,6 +18,7 @@
         tr
           td= link_to application.last_name, admin_student_application_path(semester_url: @semester.url, id: application.id)
           td= application.first_name
+          td= application.standing
           td= application.total_yes
           td= application.total_maybe
           td= application.total_no
