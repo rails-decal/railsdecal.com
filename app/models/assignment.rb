@@ -17,4 +17,8 @@
 class Assignment < ActiveRecord::Base
   belongs_to :semester
   has_many :assignment_submissions
+
+  def formatted_deadline
+    deadline.strftime("%B %d, %Y")
+  end
 end
