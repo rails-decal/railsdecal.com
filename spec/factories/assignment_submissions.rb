@@ -16,9 +16,9 @@
 
 FactoryGirl.define do
   factory :assignment_submission do
-    user nil
-    assignment nil
-    points 1
+    user
+    assignment
+    points nil
     time_submitted "2015-07-10 12:49:18"
   end
 end
