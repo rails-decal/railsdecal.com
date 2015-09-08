@@ -1,4 +1,6 @@
 class AssignmentSubmissionsController < ApplicationController
+  load_and_authorize_resource
+
   def create
     assignment_submission = AssignmentSubmission.new assignment_submission_params_with_user
     if assignment_submission.save
@@ -10,13 +12,12 @@ class AssignmentSubmissionsController < ApplicationController
   end
 
   def update
-    assignment_submission = AssignmentSubmission.find(params[:id])
-    if assignment_submission.update(assignment_submission_params)
+    if @assignment_submission.update(assignment_submission_params)
       flash[:success] = 'Successfully updated assignment'
     else
       flash[:error] = 'An error occured while updating your submission'
     end
-    redirect_to assignments_path(assignment_submission.assignment.id)
+    redirect_to assignments_path(@assignment_submission.assignment.id)
   end
 
   private
