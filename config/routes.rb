@@ -2,6 +2,7 @@ RailsDecal::Application.routes.draw do
   root to: "pages#home"
 
   resources :assignments
+  resources :assignment_submissions, only: [:create, :update]
 
   match 'why', to: 'pages#why_this_class', via: :get
   match 'office-hours', to: 'pages#office_hours', via: :get

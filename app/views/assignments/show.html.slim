@@ -2,7 +2,12 @@
   h1 = @assignment.name
   h2 = "Due #{@assignment.formatted_deadline}"
   h2 = "Points: #{@assignment.points}"
-  a href= @assignment.link Link
+  a href= @assignment.link Link to Assignment
+  - if current_user.is_current_student?
+    = simple_form_for(@assignment_submission) do |f|
+      = f.hidden_field :assignment_id
+      = f.input :link, label: "Link to your Github Repo"
+      = f.button :submit, @button_text
   - if can? :edit, @assignment
     .lecture-link
       = link_to "Edit", edit_assignment_path(@assignment)

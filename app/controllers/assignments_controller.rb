@@ -5,6 +5,12 @@ class AssignmentsController < ApplicationController
 
   def show
     @assignment = Assignment.find(params[:id])
+    users_assignments = @assignment.assignment_submissions.where(user: current_user)
+    @assignment_submission = users_assignments.first_or_initialize
+    @button_text = "Submit Assignment"
+    if @assignment_submission.id
+      @button_text = "Update Submission Link"
+    end
   end
 
   def new
