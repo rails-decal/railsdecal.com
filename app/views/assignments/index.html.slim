@@ -8,7 +8,7 @@
       - @assignments.each do |a|
         h2
           a href= assignment_path(a) #{a.name}
-        p = "due: #{a.deadline.strftime("%B %d, %Y")}"
+        p = "due: #{a.formatted_deadline}"
   - if can? :create, Assignment
     .row
       .col-md-12.center

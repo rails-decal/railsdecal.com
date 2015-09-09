@@ -10,10 +10,15 @@
 #  grader_id      :integer
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  link           :string
 #
 
 require 'spec_helper'
 
 describe AssignmentSubmission do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:assignment_submission) { FactoryGirl.create :assignment_submission }
+  it "should not be valid without a user" do
+    assignment_submission.user = nil
+    expect(assignment_submission).to_not be_valid
+  end
 end

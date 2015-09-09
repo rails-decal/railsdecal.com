@@ -18,7 +18,6 @@
 
 FactoryGirl.define do
   factory :assignment do
-    user
     semester
     link "MyString"
     deadline "2015-07-02 20:59:43"
