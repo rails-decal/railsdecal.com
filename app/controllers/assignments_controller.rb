@@ -7,10 +7,7 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.find(params[:id])
     users_assignments = @assignment.assignment_submissions.where(user: current_user)
     @assignment_submission = users_assignments.first_or_initialize
-    @button_text = "Submit Assignment"
-    if @assignment_submission.id
-      @button_text = "Update Submission Link"
-    end
+    @button_text = @assignment_submission.id.nil? ? "Submit Assignment" : "Update Submission Link"
   end
 
   def new

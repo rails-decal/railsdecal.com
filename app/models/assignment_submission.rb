@@ -26,10 +26,7 @@ class AssignmentSubmission < ActiveRecord::Base
   private
 
   def grader_is_staff?
-    if grader
-      return grader.is_staff_for_semester? assignment.semester
-    end
-    false
+    grader.nil? ? false : grader.is_staff_for_semester?(assignment.semester)
   end
 
   def is_graded?
