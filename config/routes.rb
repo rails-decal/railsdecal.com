@@ -53,6 +53,8 @@ RailsDecal::Application.routes.draw do
         match "enable",  to: "check_in_codes#enable",  via: :post
       end
     end
+
+    resources :assignment_submissions, only: [:index]
   end
 
   match "*path", to: 'pages#error', as: 'error_page', via: :get
