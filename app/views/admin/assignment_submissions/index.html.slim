@@ -1,2 +1,9 @@
 - @assignment_submissions.each do |a|
-  p= a.link 
+  p
+    span= "#{a.user.first_name} #{a.user.last_name}"
+    a< href= a.link Link
+    
+    - if a.is_graded?
+      span< Graded
+    - if not a.is_graded?
+      span< Ungraded

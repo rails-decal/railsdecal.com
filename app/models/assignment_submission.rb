@@ -23,13 +23,14 @@ class AssignmentSubmission < ActiveRecord::Base
   validates :user, presence: true
   validates :grader, presence: true, if: :is_graded?
 
+  def is_graded?
+    points != nil
+  end
+
   private
 
   def grader_is_staff?
     grader.nil? ? false : grader.is_staff_for_semester?(assignment.semester)
   end
 
-  def is_graded?
-    points != nil
-  end
 end
