@@ -54,6 +54,7 @@ RailsDecal::Application.routes.draw do
       end
     end
 
+    resources :assignments, only: [:index]
     resources :assignment_submissions, only: [:index]
   end
 
