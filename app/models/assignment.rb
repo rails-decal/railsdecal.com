@@ -21,4 +21,21 @@ class Assignment < ActiveRecord::Base
   def formatted_deadline
     deadline.strftime("%B %d, %Y")
   end
+
+  def submissions_graded_count
+    assignment_submissions.graded.count
+  end
+
+  def submissions_total_count
+    assignment_submissions.count
+  end
+
+  def submissions_count_string
+    if submissions_total_count == 0
+      return "No submissions"
+    end
+    "#{ submissions_graded_count }/#{ submissions_total_count } graded"
+  end
+
+
 end

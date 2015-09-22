@@ -14,6 +14,8 @@
 #
 
 class AssignmentSubmission < ActiveRecord::Base
+  scope :graded, -> { where.not(grader: nil) }
+
   belongs_to :user
   belongs_to :assignment
   belongs_to :grader, class_name: "User"
