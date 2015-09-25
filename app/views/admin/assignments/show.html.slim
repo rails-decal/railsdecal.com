@@ -1,0 +1,5 @@
+  p
+    span= "#{ @assignment.name }"
+  - @assignment.assignment_submissions.each do |submission|
+    p= submission.user.name
+  
