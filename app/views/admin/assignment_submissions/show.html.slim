@@ -1,0 +1,13 @@
+.container
+  h1 = @assignment.name
+  h2 = "Due #{@assignment.formatted_deadline}"
+  h2 = "Points: #{@assignment.points}"
+  p
+    a href= @assignment.link Link to Assignment
+  p
+    a href= @assignment_submission.link Link to Submission
+  - if current_user.is_current_staff?
+    = simple_form_for(@assignment_submission, url: admin_assignment_submission_path) do |f|
+      = f.hidden_field :assignment_id
+      = f.input :points, label: "Points out of #{@assignment.points}"
+      = f.button :submit, "Grade"

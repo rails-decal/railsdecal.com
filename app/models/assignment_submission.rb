@@ -14,6 +14,8 @@
 #
 
 class AssignmentSubmission < ActiveRecord::Base
+  scope :graded, -> { where.not(grader: nil) }
+
   belongs_to :user
   belongs_to :assignment
   belongs_to :grader, class_name: "User"
@@ -23,13 +25,22 @@ class AssignmentSubmission < ActiveRecord::Base
   validates :user, presence: true
   validates :grader, presence: true, if: :is_graded?
 
+  def is_graded?
+    points != nil
+  end
+
+  def grader_name
+    grader ? grader.name : "Unassigned"
+  end
+
+  def grade
+    points ? "#{points}/#{assignment.points}" : "Not graded"
+  end
+
   private
 
   def grader_is_staff?
     grader.nil? ? false : grader.is_staff_for_semester?(assignment.semester)
   end
 
-  def is_graded?
-    points != nil
-  end
 end

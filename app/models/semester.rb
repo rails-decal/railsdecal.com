@@ -18,6 +18,7 @@ class Semester < ActiveRecord::Base
   has_many :lectures
   has_many :roles
   has_many :assignments
+  has_many :assignment_submissions, through: :assignments
   has_many :student_applications
 
   before_create :set_url
