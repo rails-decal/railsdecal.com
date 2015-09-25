@@ -1,5 +1,6 @@
 h1
   span= "#{ @assignment.name }"
 - @assignment.assignment_submissions.each do |submission|
-  span>= "#{ submission.user.name } #{ submission.grader_name } #{ submission.grade }"
+  span>= link_to "#{ submission.user.name } #{ submission.grader_name } #{ submission.grade }",
+  admin_assignment_submission_path(submission)
   
