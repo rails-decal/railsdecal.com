@@ -29,6 +29,14 @@ class AssignmentSubmission < ActiveRecord::Base
     points != nil
   end
 
+  def grader_name
+    grader ? grader.name : "Unassigned"
+  end
+
+  def grade
+    points ? "#{points}/#{assignment.points}" : "Not graded"
+  end
+
   private
 
   def grader_is_staff?

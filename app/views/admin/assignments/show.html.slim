@@ -1,5 +1,5 @@
-  p
-    span= "#{ @assignment.name }"
-  - @assignment.assignment_submissions.each do |submission|
-    p= submission.user.name
+h1
+  span= "#{ @assignment.name }"
+- @assignment.assignment_submissions.each do |submission|
+  span>= "#{ submission.user.name } #{ submission.grader_name } #{ submission.grade }"
   
