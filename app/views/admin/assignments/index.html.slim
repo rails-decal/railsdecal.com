@@ -1,5 +1,5 @@
 - @assignments.each do |a|
   p
-    span= "#{a.name} "
+    span= link_to "#{a.name}", admin_assignment_path(a)
     a< href= a.link Link
     span<= a.submissions_count_string
