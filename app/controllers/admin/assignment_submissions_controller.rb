@@ -1,10 +1,6 @@
 class Admin::AssignmentSubmissionsController < Admin::BaseController
   load_and_authorize_resource
 
-  def index
-    redirect_to admin_assignments_path
-  end
-
   def show
     @assignment = @assignment_submission.assignment
   end
