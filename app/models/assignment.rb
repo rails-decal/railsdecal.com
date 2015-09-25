@@ -36,6 +36,4 @@ class Assignment < ActiveRecord::Base
     end
     "#{ submissions_graded_count }/#{ submissions_total_count } graded"
   end
-
-
 end
