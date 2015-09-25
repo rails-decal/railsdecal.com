@@ -20,7 +20,9 @@ namespace :change_role do
   end
 
   def user
-    User.find_by_email ENV['PRIMARY_EMAIL']
+    if User.table_exists?
+      User.find_by_email ENV['PRIMARY_EMAIL']
+    end
   end
 
   def change_role(role)
