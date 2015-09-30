@@ -1,7 +1,9 @@
 .container
   h1 = @assignment.name
   h2 = "Due #{@assignment.formatted_deadline}"
-  h2 = "Points: #{@assignment.points}"
+  h2 = "Max Points: #{@assignment.points}"
+  - if @assignment_submission.is_graded?
+    h2 = "Grade: #{ @assignment_submission.points }/#{ @assignment.points }"
   a href= @assignment.link Link to Assignment
   - if current_user.try(:is_current_student?)
     = simple_form_for(@assignment_submission) do |f|
