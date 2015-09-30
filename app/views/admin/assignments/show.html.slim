@@ -1,7 +1,15 @@
-h1
-  span= "#{ @assignment.name }"
-- @assignment.assignment_submissions.each do |submission|
-  p
-    span>= link_to "#{ submission.user.name } #{ submission.grader_name } #{ submission.grade }",
-    admin_assignment_submission_path(submission)
-  
+.container
+  .row
+  .col-md-8
+    h1
+      span= "#{ @assignment.name }"
+    table.table.table-striped
+      th Name
+      th Grader
+      th Points
+      - @assignment.assignment_submissions.each do |submission|
+        tr
+          td = link_to "#{submission.user.first_name} #{submission.user.last_name}", admin_assignment_submission_path(submission)
+          td = submission.grader_name
+          td = submission.grade
+
