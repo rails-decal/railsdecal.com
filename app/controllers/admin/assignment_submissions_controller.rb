@@ -7,7 +7,7 @@ class Admin::AssignmentSubmissionsController < Admin::BaseController
 
   def update
     @assignment_submission.update assignment_params
-    redirect_to admin_assignments_path
+    redirect_to admin_assignment_path @assignment_submission.assignment
   end
 
   private
