@@ -9,7 +9,6 @@
       th Points
       - @assignment.assignment_submissions.each do |submission|
         tr
-          td = link_to "#{submission.user.first_name} #{submission.user.last_name}", admin_assignment_submission_path(submission)
+          td = link_to "#{submission.user.name}", admin_assignment_submission_path(submission)
           td = submission.grader_name
           td = submission.grade
-
