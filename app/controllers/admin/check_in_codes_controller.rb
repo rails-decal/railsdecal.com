@@ -15,6 +15,7 @@ class Admin::CheckInCodesController < Admin::BaseController
 
   def create
     @check_in_code = CheckInCode.new(check_in_code_params)
+    @check_in_code.enabled = true
     if @check_in_code.save
       flash[:info] = "Your check in code was created."
       redirect_to admin_check_in_code_path(@check_in_code)
