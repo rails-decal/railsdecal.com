@@ -17,7 +17,7 @@ RailsDecal::Application.routes.draw do
                      path_names: { sign_in: 'login', sign_up: 'sign-up', sign_out: 'logout'},
                      controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'sessions' }
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     member do
       match "check-in", to: "check_ins#create", via: :post
     end
