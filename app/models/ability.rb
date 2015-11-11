@@ -14,7 +14,7 @@ class Ability
     if user.is_current_staff?
       can :manage, :all
     elsif user.enabled?
-      can :show, User, id: user.id
+      can [:show, :update], User, id: user.id
       can [:create, :read, :update], AssignmentSubmission, user_id: user.id
     elsif !user.new_record?
       can :apply, StudentApplication if !user.submitted_current_semester_application?
