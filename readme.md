@@ -30,6 +30,12 @@ Start the server:
 
     rails s -p 3002
 
+Or use foreman:
+    foreman start -e development.env
+
+And to see development logs run if using foreman:
+    tail -f log/development.log
+
 Happy developing!
 
 ## Heroku Deployment

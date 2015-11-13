@@ -160,6 +160,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    puma (2.15.3)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.6.1)
@@ -314,6 +315,7 @@ DEPENDENCIES
   omniauth-github (= 1.1.2)
   pg (= 0.17.1)
   pry-rails
+  puma (~> 2.15.3)
   quiet_assets (~> 1.0.2)
   rails (= 4.2.0)
   rails-rename (~> 1.0.0)
