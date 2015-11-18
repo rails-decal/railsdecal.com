@@ -13,4 +13,8 @@
       - else
         p Please Update Your SID
       p = "#{@user.check_ins.count} total check ins."
+      h2 Assignments
+      - @user.assignment_submission_pairs.each do |assignment, submission|
+        - if submission
+          p = link_to "#{ assignment.name } #{ submission.points }/#{ assignment.points }", assignment_path(assignment)
       = link_to "Edit Profile", edit_user_path(@user), class: "flat-button"

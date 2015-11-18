@@ -48,6 +48,8 @@ class User < ActiveRecord::Base
   has_many :check_ins
   has_many :check_in_codes, through: :check_ins
 
+  has_many :assignment_submissions
+
   extend FriendlyId
   friendly_id :nickname, use: :finders
 
@@ -56,6 +58,17 @@ class User < ActiveRecord::Base
   scope :all_enabled, -> { where(enabled: true) }
   scope :current_students, -> { Role.where({ name: Role::STUDENT, semester: Semester.last })
     .includes(:user).map(&:user) }
+
+  def assignment_submission_pairs
+    pairs = []
+    assignments = Semester.current.assignments
+    assignments.each do |assignment|
+      submission = assignment_submissions.find { |x| x.assignment == assignment }
+      submission ||= AssignmentSubmission.new points: 0
+      pairs << [assignment, submission]
+    end
+    pairs
+  end
 
   def first_name
     if name.nil? || name == nickname
