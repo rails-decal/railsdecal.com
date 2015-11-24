@@ -5,5 +5,6 @@ class Admin::AssignmentsController < Admin::BaseController
 
   def show
     @assignment = Assignment.find(params[:id])
+    @assignment_submissions = @assignment.assignment_submissions.order(grader_id: :desc)
   end
 end
