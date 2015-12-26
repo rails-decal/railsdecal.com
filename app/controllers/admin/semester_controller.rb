@@ -1,22 +1,21 @@
-class Admin::SemesterController < ApplicationController
+class Admin::SemesterController < Admin::BaseController
+  load_and_authorize_resource
+
   def new
-  	@semester = Semester.new
   end
 
   def create
-  	@semester = Semester.new(semester_params)
-  	if @semester.save
-  	  flash[:info] = "Created semester."
-  	  current_user.add_role_for_semester(Role::INSTRUCTOR, @semester)
-  	  redirect_to admin_semester_path(@semester)
-  	else
-  	  flash[:error] = "Problem creating semester."
-  	  render "new"
+    if @semester.save
+      flash[:info] = "Created semester."
+      current_user.add_role_for_semester(Role::INSTRUCTOR, @semester)
+      redirect_to admin_semester_path(@semester)
+    else
+      flash[:error] = "Problem creating semester."
+      render "new"
     end
   end
 
   def show
-  	@semester = Semester.find(params[:id])
   end
 
   private
