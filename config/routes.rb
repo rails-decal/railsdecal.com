@@ -54,6 +54,7 @@ RailsDecal::Application.routes.draw do
       end
     end
 
+    resources :semester, only: [:show, :new, :create]
     resources :assignments, only: [:index, :show]
     resources :assignment_submissions, only: [:show, :update]
   end
