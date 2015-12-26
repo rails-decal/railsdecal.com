@@ -7,7 +7,7 @@ class Admin::SemesterController < Admin::BaseController
   def create
     if @semester.save
       flash[:info] = "Created semester."
-      current_user.add_role_for_semester(Role::INSTRUCTOR, @semester)
+      #current_user.add_role_for_semester(Role::INSTRUCTOR, @semester)
       redirect_to admin_semester_path(@semester)
     else
       flash[:error] = "Problem creating semester."

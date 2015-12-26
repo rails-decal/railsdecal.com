@@ -117,7 +117,7 @@ class User < ActiveRecord::Base
   end
 
   def is_current_instructor?
-    is_instructor_for_semester Semester.current
+    is_instructor_for_semester? Semester.current
   end
 
   def is_current_staff?
@@ -128,7 +128,7 @@ class User < ActiveRecord::Base
     is_student_for_semester? Semester.current
   end
 
-  def is_instructor_for_semester(semester)
+  def is_instructor_for_semester?(semester)
     return false if role_for_semester(semester).nil?
     role_for_semester(semester).name == Role::INSTRUCTOR
   end
