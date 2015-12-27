@@ -10,6 +10,7 @@ class Ability
     can :create, CheckIn
     can :view, Lecture
     can :view, Assignment
+    can :view, Semester
 
     if user.is_current_instructor?
       can :manage, :all
