@@ -16,6 +16,7 @@ class Ability
     elsif user.enabled?
       can [:show, :update], User, id: user.id
       can [:create, :read, :update], AssignmentSubmission, user_id: user.id
+      can [:create, :read, :update], Absence, user_id: user.id
     elsif !user.new_record?
       can :apply, StudentApplication if !user.submitted_current_semester_application?
     end

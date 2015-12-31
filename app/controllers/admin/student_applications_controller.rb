@@ -28,7 +28,7 @@ class Admin::StudentApplicationsController < Admin::BaseController
     if student_application.pend
       flash[:accept] = "Pended #{student_application.first_name}"
     else
-      flash[:error] = "Error occured"
+      flash[:error] = "Error occurred"
     end
     next_application
   end

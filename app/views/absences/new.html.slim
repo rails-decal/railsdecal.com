@@ -1,0 +1,11 @@
+.container
+  h1 Submit an Absence Request
+  .row
+    .col-md-6
+      = simple_form_for(@absence, html: {class: 'form-vertical'}) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :excuse, label: "Excuse", :as => :text, :input_html => { 'rows' => 5}, placeholder: "I would like to be excused for lecture this Thursday, 3/30 because I have a doctor's appointment. Thank you."
+          = f.hint 'Please note that Absence Requests must be made at least 1 hr in advance to be considered. All others will be ignored. Email the instructor if you have an emergency.'
+        .form-actions
+          = f.button :submit, "Submit", class: 'flat-button'

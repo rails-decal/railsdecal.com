@@ -1,0 +1,4 @@
+.container
+  h1 Absence Request For #{ @user.name }
+  h2 = @absence.created_at.strftime('%c')
+  p = @absence.excuse

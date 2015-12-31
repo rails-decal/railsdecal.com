@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-md-6
+      h1 Absence Requests
+      - if @absences.empty?
+        h3 No Absence requests at this time.
+      - else
+      - @absences.each do |a|
+        h2
+          a href= absence_path(a) #{a.created_at.strftime('%c')}
