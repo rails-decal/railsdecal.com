@@ -21,6 +21,8 @@ class Admin::SemesterController < Admin::BaseController
   private
 
   def semester_params
-    params.require(:semester).permit(:semester, :year, :lower_division_limit, :upper_division_limit, :application_deadline, :acceptance_release_date)
+    params.require(:semester).permit(:semester, :year, :lower_division_limit,
+      :upper_division_limit, :application_deadline, :acceptance_release_date)
   end
+
 end
