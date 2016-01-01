@@ -23,7 +23,7 @@ class StudentApplicationsController < ApplicationController
 
   def student_application_params
     params.require(:student_application).permit(
-      :first_name, :last_name, :email, :year, :standing,
+      :first_name, :last_name, :email, :sid, :year, :standing,
       :major, :why_join, :cs_classes_taken, :current_courseload,
       :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us
     )

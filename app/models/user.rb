@@ -1,4 +1,4 @@
-# == Schema Information
+ # == Schema Information
 #
 # Table name: users
 #
@@ -25,6 +25,7 @@
 #  location               :string
 #  enabled                :boolean          default(FALSE)
 #  standing               :integer          default(0)
+#  sid                    :integer 
 #
 
 class User < ActiveRecord::Base
