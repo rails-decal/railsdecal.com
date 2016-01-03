@@ -116,6 +116,10 @@ class User < ActiveRecord::Base
     add_role_for_semester(role_name, Semester.current)
   end
 
+  def is_current_instructor?
+    is_instructor_for_semester? Semester.current
+  end
+
   def is_current_staff?
     is_staff_for_semester? Semester.current
   end
@@ -124,7 +128,11 @@ class User < ActiveRecord::Base
     is_student_for_semester? Semester.current
   end
 
-
+  def is_instructor_for_semester?(semester)
+    return false if role_for_semester(semester).nil?
+    role_for_semester(semester).name == Role::INSTRUCTOR
+  end
+  
   def is_staff_for_semester?(semester)
     return false if role_for_semester(semester).nil?
     role_for_semester(semester).name == Role::INSTRUCTOR ||
