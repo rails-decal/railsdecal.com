@@ -1,4 +1,4 @@
-class Admin::SemesterController < Admin::BaseController
+class Admin::SemestersController < Admin::BaseController
   load_and_authorize_resource
 
   def new
@@ -21,8 +21,10 @@ class Admin::SemesterController < Admin::BaseController
   private
 
   def semester_params
-    params.require(:semester).permit(:semester, :year, :lower_division_limit,
-      :upper_division_limit, :application_deadline, :acceptance_release_date)
+    params.require(:semester).permit(
+      :semester, :year, :lower_division_limit, :upper_division_limit, :application_deadline,
+      :acceptance_release_date, :start_time, :end_time, :location, :day_of_week
+    )
   end
 
 end

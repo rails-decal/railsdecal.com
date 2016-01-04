@@ -5,12 +5,16 @@
     .col-md-12
       h1 Create a New Semester
 
-      = simple_form_for @semester, url: admin_semester_index_path do |f|
+      = simple_form_for @semester, url: admin_semesters_path do |f|
         .form-inputs
           = f.input :semester, collection: ["Fall", "Spring"], selected: "Fall"
           = f.input :year
           = f.input :lower_division_limit
           = f.input :upper_division_limit
+          = f.input :day_of_week, collection: Semester.day_of_weeks.symbolize_keys.keys
+          = f.input :start_time
+          = f.input :end_time
+          = f.input :location
           = f.input :application_deadline
           = f.input :acceptance_release_date
         .form-actions
