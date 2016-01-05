@@ -25,6 +25,7 @@
 #  location               :string
 #  enabled                :boolean          default(FALSE)
 #  standing               :integer          default(0)
+#  student_id             :integer
 #
 
 require 'spec_helper'

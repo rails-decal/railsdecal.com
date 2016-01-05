@@ -25,7 +25,7 @@
 #  location               :string
 #  enabled                :boolean          default(FALSE)
 #  standing               :integer          default(0)
-#  student_id             :integer 
+#  student_id             :integer
 #
 
 class User < ActiveRecord::Base

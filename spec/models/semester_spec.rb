@@ -12,6 +12,10 @@
 #  upper_division_limit    :integer
 #  application_deadline    :datetime
 #  acceptance_release_date :datetime
+#  day_of_week             :integer
+#  start_time              :string
+#  end_time                :string
+#  location                :string
 #
 
 require 'spec_helper'

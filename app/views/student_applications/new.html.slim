@@ -8,7 +8,7 @@
         - if current_user.submitted_current_semester_application?
           .row
             .col-md-12
-              h4 Thanks for applying, you'll hear back by September 6, 2015.
+              h4 = "Thanks for applying, you'll hear back by #{ Semester.current.formatted_acceptance_release_date }."
               p
                 ' Please email
                 a href="mailto:railsdecal@gmail.com" the staff
@@ -36,7 +36,7 @@
                   = f.button :submit, "Submit", class: 'flat-button'
             .col-md-6
               h2 Application Information
-              h4 Due September 4th, 11:59 pm
+              h4 = "Due #{ Semester.current.formatted_application_deadline }, 11:59 pm"
               p
                 ' Please email
                 a href="mailto:railsdecal@gmail.com" the staff

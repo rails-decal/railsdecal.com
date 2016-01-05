@@ -22,6 +22,7 @@
 #  semester_id               :integer
 #  standing                  :integer          default(0)
 #  status                    :integer          default(0)
+#  student_id                :integer
 #
 
 require 'spec_helper'

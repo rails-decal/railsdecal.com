@@ -12,6 +12,10 @@
 #  upper_division_limit    :integer
 #  application_deadline    :datetime
 #  acceptance_release_date :datetime
+#  day_of_week             :integer
+#  start_time              :string
+#  end_time                :string
+#  location                :string
 #
 
 class Semester < ActiveRecord::Base
@@ -69,7 +73,7 @@ class Semester < ActiveRecord::Base
   private
 
   def formatted_date(datetime)
-    datetime.strftime('%B %-d, %C')
+    datetime.strftime('%B %-d')
   end
 
 end
