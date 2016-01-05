@@ -22,6 +22,7 @@
                   = f.input :first_name, input_html: { value: current_user.first_name }
                   = f.input :last_name, input_html: { value: current_user.last_name }
                   = f.input :email, input_html: { value: current_user.email }
+                  = f.input :student_id, as: :string, label: "Student ID", input_html: { value: current_user.student_id } 
                   = f.input :year, label: "What year will you be in Fall 2015?", collection: [['Freshman', 'Freshman'], ['Sophomore','Sophomore'], ['Junior','Junior'], ['Senior','Senior'], ['Fifth Year','Fifth Year']]
                   = f.input :standing, label: "Standing based off units. (You can be a Freshman with Junior standing if you have enough units).", collection: [["Lowerclassman", "lowerclassman"], ["Upperclassman", "upperclassman"]]
                   = f.input :major
