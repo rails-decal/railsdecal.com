@@ -106,6 +106,10 @@ ActiveRecord::Schema.define(version: 20160105004737) do
     t.integer  "upper_division_limit"
     t.datetime "application_deadline"
     t.datetime "acceptance_release_date"
+    t.integer  "day_of_week"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.string   "location"
   end
 
   create_table "student_applications", force: :cascade do |t|

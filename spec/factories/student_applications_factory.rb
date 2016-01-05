@@ -5,6 +5,7 @@ FactoryGirl.define do
     sequence :email do |n|
       "student#{n}@berkeley.edu"
     end
+    sequence :student_id
     phone_number "510-123-4567"
     year "junior"
     major "Computer Science"

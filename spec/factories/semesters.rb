@@ -20,5 +20,6 @@ FactoryGirl.define do
     year "2015"
     upper_division_limit 60
     lower_division_limit 80
+    day_of_week 0
   end
 end
