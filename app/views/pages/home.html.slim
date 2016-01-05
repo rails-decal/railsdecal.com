@@ -7,7 +7,7 @@
         .col-md-12.center
           .about-intro
             h1.white Ruby on Rails DeCal
-            h3.white UC Berkeley - Fall 2015
+            h3.white = "UC Berkeley - #{ Semester.current.name }"
             p.white
               ' Presented by
               = link_to "Blueprint", "http://www.calblueprint.org", class: "light-link underline"
