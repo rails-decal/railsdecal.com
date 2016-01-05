@@ -6,6 +6,7 @@
 #  first_name                :string
 #  last_name                 :string
 #  email                     :string
+#  student_id                :integer
 #  phone_number              :string
 #  year                      :string
 #  major                     :string
@@ -34,9 +35,11 @@ class StudentApplication < ActiveRecord::Base
   belongs_to :user
   belongs_to :semester
 
+  after_create :update_student_id
+
   has_many :evaluations, dependent: :destroy
 
-  validates_presence_of :first_name, :last_name, :email, :year, :standing,
+  validates_presence_of :first_name, :last_name, :email, :student_id, :year, :standing,
                         :major, :why_join, :cs_classes_taken, :current_courseload,
                         :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us
 
@@ -104,6 +107,10 @@ class StudentApplication < ActiveRecord::Base
   def pend
     pending!
     pending?
+  end
+
+  def update_student_id
+    self.user.update(student_id: self.student_id)
   end
 
 end
