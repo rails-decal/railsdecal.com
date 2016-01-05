@@ -110,8 +110,7 @@ class StudentApplication < ActiveRecord::Base
   end
 
   def update_student_id
-    self.user.student_id = self.student_id
-    self.user.save
+    self.user.update(student_id: self.student_id)
   end
 
 end
