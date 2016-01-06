@@ -118,13 +118,13 @@
                     = render partial: "shared/tas/mei"
             .ta
               .row
-                .col-md-5
-                  .image-container.image-top.left-side
-                    = image_tag "juno_morey.jpg", class: "round-with-border"
-                .col-md-5
-                  .description.right.right-side
+                .col-md-5.col-md-offset-2
+                  .description.left.left-side
                     h3 Juno Morey
-                    = render partial: "shared/tas/juno"        
+                    = render partial: "shared/tas/juno"
+                .col-md-5
+                  .image-container.image-bottom.right-side
+                    = image_tag "juno_morey.jpg", class: "round-with-border"      
   section#schedule
     .container
       .row
