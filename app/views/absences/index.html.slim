@@ -6,5 +6,6 @@
         h3 No Absence requests at this time.
       - else
       - @absences.each do |a|
-        h2
-          a href= absence_path(a) #{a.created_at.strftime('%c')}
+        h2 = a.created_at.strftime('%c')
+        p = a.excuse
+        p = "Status: #{a.approved.capitalize}"

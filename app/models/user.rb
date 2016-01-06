@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
 
   has_many :roles
   has_many :student_applications
+  has_many :absences
 
   has_many :check_ins
   has_many :check_in_codes, through: :check_ins

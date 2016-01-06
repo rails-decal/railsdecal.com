@@ -1,19 +1,14 @@
 class AbsencesController < ApplicationController
   def index
-    @absences = Absence.all
+    @absences = Absence.where(user_id: current_user.id)
   end
 
   def new
     @absence = Absence.new
   end
 
-  def show
-    @absence = Absence.find(params[:id])
-    @user = User.find(@absence.user_id)
-  end
-
   def create
-    absence = Absence.new absence_params
+    absence = Absence.new absence_params_with_user
     if absence.save
       flash[:success] = "Your request has been created."
       redirect_to root_path
@@ -28,7 +23,7 @@ class AbsencesController < ApplicationController
     params.require(:absence).permit(:excuse)
   end
 
-  def absence_submission_params_with_user
+  def absence_params_with_user
     absence_params.merge user_id: current_user.id
   end
 end
