@@ -57,8 +57,8 @@ RailsDecal::Application.routes.draw do
 
     resources :absences do
       member do
-        patch "accept", to: "absences#accept", as: 'accept'
-        patch "reject", to: "absences#reject", as: 'reject'
+        patch "accept", to: "absences#accept", as: "accept"
+        patch "reject", to: "absences#reject", as: "reject"
       end
     end
     resources :assignments, only: [:index, :show]

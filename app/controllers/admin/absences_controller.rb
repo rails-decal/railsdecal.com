@@ -22,11 +22,11 @@ class Admin::AbsencesController < Admin::BaseController
   def reject
     @absence = Absence.find(params[:id])
     @absence.approved = 2
-      if @absence.save
-        flash[:reject] = "Absence request has been rejected!"
-      else
-        flash[:error] = "Please try again."
-      end
+    if @absence.save
+      flash[:reject] = "Absence request has been rejected!"
+    else
+      flash[:error] = "Please try again."
+    end
     redirect_to admin_absences_path
   end
 end

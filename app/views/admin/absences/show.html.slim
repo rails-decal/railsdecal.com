@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-12
-        h1 = "Absence Request for #{@user.name}"
-        h2 = @absence.excuse
-        = button_to "Accept", accept_admin_absence_path(id: @absence.id), method: :patch, class: 'flat-button', data: {confirm: "Are you sure you want to ACCEPT?"}
-        = button_to "Reject", reject_admin_absence_path(id: @absence.id), method: :patch, class: 'flat-button', data: {confirm: "Are you sure you want to REJECT?"}
+      h1 = "Absence Request for #{@user.name}"
+      h2 = @absence.excuse
+      = button_to "Accept", accept_admin_absence_path(id: @absence.id), method: :patch, class: 'flat-button', data: {confirm: "Are you sure you want to ACCEPT?"}
+      = button_to "Reject", reject_admin_absence_path(id: @absence.id), method: :patch, class: 'flat-button', data: {confirm: "Are you sure you want to REJECT?"}
