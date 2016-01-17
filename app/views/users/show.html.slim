@@ -8,8 +8,8 @@
         p = "Email on Record: #{ @user.email }"
       - else
         p Please Update Your Email
-      - if @user.sid
-        p = "SID: #{ @user.sid }"
+      - if @user.student_id
+        p = "SID: #{ @user.student_id }"
       - else
         p Please Update Your SID
       p = "#{@user.check_ins.count} total check ins."

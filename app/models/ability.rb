@@ -11,13 +11,18 @@ class Ability
     can :view, Lecture
     can :view, Assignment
     can :view, Absence
+    can :view, Semester
 
-    if user.is_current_staff?
+    if user.is_current_instructor?
       can :manage, :all
+    elsif user.is_current_staff?
+      can :manage, :all
+      cannot [:apply, :destroy, :update], Semester
     elsif user.enabled?
       can [:show, :update], User, id: user.id
       can [:create, :read, :update], AssignmentSubmission, user_id: user.id
       can [:create, :read, :update], Absence, user_id: user.id
+      can :apply, StudentApplication if !user.submitted_current_semester_application?
     elsif !user.new_record?
       can :apply, StudentApplication if !user.submitted_current_semester_application?
     end

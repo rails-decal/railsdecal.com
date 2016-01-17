@@ -13,6 +13,9 @@
           = link_to "All Student Applications", admin_student_applications_per_semester_path, class: "flat-button"
         .col-md-6
           = link_to "Current Assignments", admin_assignments_path, class: "flat-button"
+        .col-md-6
+          - if current_user.is_current_instructor?
+            = link_to "New Semester", new_admin_semester_path, class: "flat-button"
 
       .row
         .col-md-6

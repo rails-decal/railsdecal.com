@@ -7,7 +7,7 @@
         .col-md-12.center
           .about-intro
             h1.white Ruby on Rails DeCal
-            h3.white UC Berkeley - Fall 2015
+            h3.white = "UC Berkeley - #{ Semester.current.name }"
             p.white
               ' Presented by
               = link_to "Blueprint", "http://www.calblueprint.org", class: "light-link underline"
@@ -21,7 +21,7 @@
               .col-md-8.col-md-offset-2.center
                 p.white The Rails DeCal is a 2-unit class for students who want to learn how to create complex, dynamic websites.
                 p.white
-                   ' The class time is Thursdays, 8 PM - 10 PM at 105 North Gate for Fall 2015. Instructor:
+                   = @info
                    = link_to "Howard Chen", "https://github.com/chenhoward", class: "light-link underline"
       .row
         .col-md-12.center
@@ -116,6 +116,15 @@
                   .description.right.right-side
                     h3 Mei Wan
                     = render partial: "shared/tas/mei"
+            .ta
+              .row
+                .col-md-5.col-md-offset-2
+                  .description.left.left-side
+                    h3 Juno Morey
+                    = render partial: "shared/tas/juno"
+                .col-md-5
+                  .image-container.image-bottom.right-side
+                    = image_tag "juno_morey.jpg", class: "round-with-border"      
   section#schedule
     .container
       .row

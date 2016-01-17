@@ -61,6 +61,7 @@ RailsDecal::Application.routes.draw do
         patch "reject", to: "absences#reject", as: "reject"
       end
     end
+    resources :semesters, only: [:show, :new, :create]
     resources :assignments, only: [:index, :show]
     resources :assignment_submissions, only: [:show, :update]
   end

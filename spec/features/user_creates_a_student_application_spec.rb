@@ -25,6 +25,7 @@ feature "User creates a Student Application" do
     fill_in "student_application_first_name", with: "Howie"
     fill_in "student_application_last_name", with: "Chen"
     fill_in "student_application_email", with: "test@test.com"
+    fill_in "student_application_student_id", with: "19999"
     select "Junior", from: "student_application_year"
     select "Lowerclassman", from: "student_application_standing"
     fill_in "student_application_major", with: "Math"

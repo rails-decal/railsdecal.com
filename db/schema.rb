@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160105071442) do
+=======
+ActiveRecord::Schema.define(version: 20160105004737) do
+>>>>>>> b1c0a6eea80a84a743101ecc4729f6c31f721166
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,6 +118,10 @@ ActiveRecord::Schema.define(version: 20160105071442) do
     t.integer  "upper_division_limit"
     t.datetime "application_deadline"
     t.datetime "acceptance_release_date"
+    t.integer  "day_of_week"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.string   "location"
   end
 
   create_table "student_applications", force: :cascade do |t|
@@ -136,6 +144,7 @@ ActiveRecord::Schema.define(version: 20160105071442) do
     t.integer  "semester_id"
     t.integer  "standing",                  default: 0
     t.integer  "status",                    default: 0
+    t.integer  "student_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -161,7 +170,7 @@ ActiveRecord::Schema.define(version: 20160105071442) do
     t.string   "location"
     t.boolean  "enabled",                default: false
     t.integer  "standing",               default: 0
-    t.integer  "sid"
+    t.integer  "student_id"
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

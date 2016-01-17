@@ -12,15 +12,22 @@
 #  upper_division_limit    :integer
 #  application_deadline    :datetime
 #  acceptance_release_date :datetime
+#  day_of_week             :integer
+#  start_time              :string
+#  end_time                :string
+#  location                :string
 #
 
 class Semester < ActiveRecord::Base
+  validates :day_of_week, presence: true
+
   has_many :lectures
   has_many :roles
   has_many :assignments
   has_many :assignment_submissions, through: :assignments
   has_many :student_applications
 
+  enum day_of_week: [:monday, :tuesday, :wednesday, :thursday, :friday]
   before_create :set_url
 
   def set_url
@@ -52,6 +59,11 @@ class Semester < ActiveRecord::Base
     formatted_date acceptance_release_date
   end
 
+  def info
+    "The class time is #{ day_of_week.humanize }, #{ start_time } -
+      #{ end_time } at #{ location } for #{ name }."
+  end
+
   class << self
     def current
       last
@@ -61,7 +73,7 @@ class Semester < ActiveRecord::Base
   private
 
   def formatted_date(datetime)
-    datetime.strftime('%B %-d, %C')
+    datetime.strftime('%B %-d')
   end
 
 end
