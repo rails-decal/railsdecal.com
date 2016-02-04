@@ -60,7 +60,7 @@ class Semester < ActiveRecord::Base
   end
 
   def info
-    "The class time is #{ day_of_week }.humanize, #{ start_time } -
+    "The class time is #{ day_of_week.humanize }, #{ start_time } -
       #{ end_time } at #{ location } for #{ name }."
   end
 
