@@ -1,6 +1,6 @@
 class AbsencesController < ApplicationController
   def index
-    @absences = Absence.where(user_id: current_user.id)
+    @absences = current_user.absences
   end
 
   def new

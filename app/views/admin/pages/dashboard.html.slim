@@ -16,9 +16,9 @@
         .col-md-6
           - if current_user.is_current_instructor?
             = link_to "New Semester", new_admin_semester_path, class: "flat-button"
+        .col-md-6
+          = link_to "Absence Requests", admin_absences_path, class: "flat-button"
 
       .row
         .col-md-6
           = link_to "Check In Codes", admin_check_in_codes_path, class: "flat-button"
-        .col-md-6
-          = link_to "Absence Requests", admin_absences_path, class: "flat-button"
