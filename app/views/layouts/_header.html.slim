@@ -36,6 +36,12 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
               - if can? :view, :admin_dashboard
                 li
                   = link_to "Admin Dashboard", admin_dashboard_path
+              - if can? :view, Absence
+                li
+                  = link_to "Absence Request Status", absences_path
+              - if can? :create, Absence
+                li
+                  = link_to "Submit an Absence Request", new_absence_path
                 li.divider
               li
                 = link_to "Sign Out", destroy_user_session_path, method: :delete

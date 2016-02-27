@@ -3,6 +3,7 @@ RailsDecal::Application.routes.draw do
 
   resources :assignments
   resources :assignment_submissions, only: [:create, :update]
+  resources :absences, only: [:index, :new, :create]
 
   match 'why', to: 'pages#why_this_class', via: :get
   match 'office-hours', to: 'pages#office_hours', via: :get
@@ -54,6 +55,12 @@ RailsDecal::Application.routes.draw do
       end
     end
 
+    resources :absences do
+      member do
+        patch "accept", to: "absences#accept", as: "accept"
+        patch "reject", to: "absences#reject", as: "reject"
+      end
+    end
     resources :semesters, only: [:show, :new, :create]
     resources :assignments, only: [:index, :show]
     resources :assignment_submissions, only: [:show, :update]

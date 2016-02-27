@@ -1,0 +1,6 @@
+.container
+  h1 Pending Absence Requests
+  - if @absences
+    - @absences.each do |a|
+      ul
+        li =link_to a.created_at, admin_absence_path(id: a.id)
