@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @check_in = CheckIn.new
   end
 
-  def why_this_class
+  def why
   end
 
   def office_hours
