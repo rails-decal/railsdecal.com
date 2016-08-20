@@ -50,27 +50,28 @@
             .row
               .col-md-5
                 .image-container.image-bottom.left-side
-                  = image_tag "howard.jpg", class: "round-with-border"
+                  = image_tag "warren_shen.jpg", class: "round-with-border"
               .col-md-5.col-md-offset-2
                 .bubble.right.right-side
-                  h2 About Howard
+                  h2 About Warren
                   .description
-                    = render partial: "shared/instructors/howard"
+                    = render partial: "shared/instructors/warren"
+            .spacer
+            .row
+              .col-md-5
+                .image-container.image-bottom.left-side
+                  = image_tag "charles.jpg", class: "round-with-border"
+              .col-md-5.col-md-offset-2
+                .bubble.right.right-side
+                  h2 About Charles
+                  .description
+                    = render partial: "shared/instructors/charles"
   section#tas
     .container
       .row
         .col-md-12.center
           .tas-wrapper
             h2 Teaching Assistants
-            .ta
-              .row
-                .col-md-5.col-md-offset-2
-                  .description.left.left-side
-                    h3 Charles Xue
-                    = render partial: "shared/tas/charles"
-                .col-md-5
-                  .image-container.image-bottom.right-side
-                    = image_tag "charles.jpg", class: "round-with-border"
             .ta
               .row
                 .col-md-5
@@ -89,15 +90,6 @@
                 .col-md-5
                   .image-container.image-bottom.right-side
                     = image_tag "junyu_wang.jpg", class: "round-with-border"
-            .ta
-              .row
-                .col-md-5
-                  .image-container.image-top.left-side
-                  = image_tag "warren_shen.jpg", class: "round-with-border"
-                .col-md-5
-                  .description.right.right-side
-                    h3 Warren Shen
-                    = render partial: "shared/tas/warren"
             .ta
               .row
                 .col-md-5.col-md-offset-2
