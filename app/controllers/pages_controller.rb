@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
 
   def home
-    @info = Semester.current.info + " Instructor: "
+    @info = Semester.current.info + " Instructors: "
     @check_in = CheckIn.new
   end
 
-  def why_this_class
+  def why
   end
 
   def office_hours

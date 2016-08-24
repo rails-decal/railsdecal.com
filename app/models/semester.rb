@@ -38,7 +38,6 @@ class Semester < ActiveRecord::Base
     "#{semester} #{year}"
   end
 
-
   def accepted_student_applications
     student_applications.accepted
   end
