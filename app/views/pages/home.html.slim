@@ -21,8 +21,10 @@
               .col-md-8.col-md-offset-2.center
                 p.white The Rails DeCal is a 2-unit class for students who want to learn how to create complex, dynamic websites.
                 p.white
-                   = @info
-                   = link_to "Howard Chen", "https://github.com/chenhoward", class: "light-link underline"
+                  = @info
+                  = link_to "Warren Shen", "https://github.com/warrenshen", class: "light-link underline"
+                  | &nbsp;&&nbsp;
+                  = link_to "Charles Xue", "https://github.com/charlesx2013", class: "light-link underline"
       .row
         .col-md-12.center
           .lecture-link
@@ -50,27 +52,28 @@
             .row
               .col-md-5
                 .image-container.image-bottom.left-side
-                  = image_tag "howard.jpg", class: "round-with-border"
+                  = image_tag "warren_shen.jpg", class: "round-with-border"
               .col-md-5.col-md-offset-2
                 .bubble.right.right-side
-                  h2 About Howard
+                  h2 About Warren
                   .description
-                    = render partial: "shared/instructors/howard"
+                    = render partial: "shared/instructors/warren"
+            .spacer
+            .row
+              .col-md-5
+                .image-container.image-bottom.left-side
+                  = image_tag "charles.jpg", class: "round-with-border"
+              .col-md-5.col-md-offset-2
+                .bubble.right.right-side
+                  h2 About Charles
+                  .description
+                    = render partial: "shared/instructors/charles"
   section#tas
     .container
       .row
         .col-md-12.center
           .tas-wrapper
             h2 Teaching Assistants
-            .ta
-              .row
-                .col-md-5.col-md-offset-2
-                  .description.left.left-side
-                    h3 Charles Xue
-                    = render partial: "shared/tas/charles"
-                .col-md-5
-                  .image-container.image-bottom.right-side
-                    = image_tag "charles.jpg", class: "round-with-border"
             .ta
               .row
                 .col-md-5
@@ -89,15 +92,6 @@
                 .col-md-5
                   .image-container.image-bottom.right-side
                     = image_tag "junyu_wang.jpg", class: "round-with-border"
-            .ta
-              .row
-                .col-md-5
-                  .image-container.image-top.left-side
-                  = image_tag "warren_shen.jpg", class: "round-with-border"
-                .col-md-5
-                  .description.right.right-side
-                    h3 Warren Shen
-                    = render partial: "shared/tas/warren"
             .ta
               .row
                 .col-md-5.col-md-offset-2
