@@ -81,6 +81,10 @@
       width: 100%;
       overflow: hidden;
 
+      .spacer {
+        height: 50px;
+      }
+
       .description {
         line-height: 1.8em;
         position: relative;
