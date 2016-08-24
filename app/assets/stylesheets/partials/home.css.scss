@@ -215,7 +215,7 @@
       }
 
       .image-bottom {
-        padding-top: 100px;
+        padding-top: 50px;
         @include breakpoint($not-desktop) {
           padding-bottom: 100px;
         }
@@ -223,11 +223,7 @@
     }
   }
 
-  section#about-mark {
-    background-color: white;
-  }
-
-  section#about-sam {
+  section#instructors {
     background-color: $light-gray;
   }
 

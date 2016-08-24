@@ -21,7 +21,7 @@ RailsDecal::Application.routes.draw do
   resources :absences, only: [:create, :index, :new]
   resources :assignments
   resources :assignment_submissions, only: [:create, :update]
-  resources :lectures, only: [:index, :show]
+  # resources :lectures, only: [:index, :show]
   resources :student_applications, only: [:create, :new]
   resources :users, only: [:edit, :show, :update] do
     member do

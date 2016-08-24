@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @info = Semester.current.info + " Instructor: "
+    @info = Semester.current.info + " Instructors: "
     @check_in = CheckIn.new
   end
 
