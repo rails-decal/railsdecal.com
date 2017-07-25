@@ -4,20 +4,20 @@ h1.white
     | (subject to change)
 
 ul#timeline
-  / li.work.timeline-row
-  /   input.radio#apply type="radio" checked="true" name="timeline"
-  /   .relative
-  /     label.timeline for="apply" Submit your application!
-  /     span.date Summer 2014
-  /     span.circle
-  /   .timeline-content
-  /     p
-  /       ' Submit your application online #{link_to "here.", apply_path}
-  /       |  We'll review your applications toward the end of the summer and you'll
-  /       |  hear back from us at the beginning of the Fall 2014 semester.
+  li.work.timeline-row
+    input.radio#apply type="radio" checked="true" name="timeline"
+    .relative
+      label.timeline for="apply" Submit your application!
+      span.date Summer 2017
+      span.circle
+    .timeline-content
+      p
+        ' Submit your application online #{link_to "here.", apply_path}
+        |  We'll review your applications toward the end of the summer and you'll
+        |  hear back from us at the beginning of the Fall 2017 semester.
 
   li.work.timeline-row
-    input.radio#week1 type="radio" checked="true" name="timeline"
+    input.radio#week1 type="radio" name="timeline"
     .relative
       label.timeline for="week1" Introduction, General Web Development, and MVC
       span.date Week 1
@@ -27,7 +27,7 @@ ul#timeline
         | Overview of the course and what you can expect. Work time will be setting up your environment.
 
   li.work.timeline-row
-    input.radio#week2 type="radio" checked="true" name="timeline"
+    input.radio#week2 type="radio" name="timeline"
     .relative
       label.timeline for="week2" Static Pages and Basic Ruby
       span.date Week 2
