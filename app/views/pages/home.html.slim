@@ -22,9 +22,9 @@
                 p.white The Rails DeCal is a 2-unit class for students who want to learn how to create complex, dynamic websites.
                 p.white
                   = @info
-                  = link_to "Warren Shen", "https://github.com/warrenshen", class: "light-link underline"
+                  = link_to "Nhi Quach", "https://github.com/nhiquach", class: "light-link underline"
                   | &nbsp;&&nbsp;
-                  = link_to "Charles Xue", "https://github.com/charlesx2013", class: "light-link underline"
+                  = link_to "Jonathan Chu", "https://github.com/jonmchu", class: "light-link underline"
   - if signed_in? &&signed_in? && CheckInCode.has_current?
     section#check-in
       .container
@@ -47,22 +47,22 @@
             .row
               .col-md-5.col-md-offset-1
                 .image-container.image-bottom.left-side
-                  = image_tag "warren.jpg", class: "round-with-border"
+                  = image_tag "placeholder.jpg", class: "round-with-border"
               .col-md-5.col-md-offset-1
                 .bubble.right.right-side
-                  h2 About Warren
+                  h2 About Jonathan
                   .description
-                    = render partial: "shared/instructors/warren"
+                    = render partial: "shared/tas/placeholder"
             .spacer
             .row
               .col-md-5.col-md-offset-1
                 .bubble.left.left-side
-                  h2 About Charles
+                  h2 About Nhi
                   .description
-                    = render partial: "shared/instructors/charles"
+                    = render partial: "shared/instructors/nhi"
               .col-md-5.col-md-offset-1
                 .image-container.image-bottom.right-side
-                  = image_tag "charles.jpg", class: "round-with-border"
+                  = image_tag "nhi.jpg", class: "round-with-border"
   section#tas
     .container
       .row
@@ -82,11 +82,11 @@
               .row
                 .col-md-5.col-md-offset-2
                   .description.left.left-side
-                    h3 Hubert Pham
-                    = render partial: "shared/tas/hubert"
+                    h3 Ken Chen
+                    = render partial: "shared/tas/placeholder"
                 .col-md-5
                   .image-container.image-bottom.right-side
-                    = image_tag "hubert.jpg", class: "round-with-border"
+                    = image_tag "placeholder.jpg", class: "round-with-border"
             .ta
               .row
                 .col-md-5
@@ -100,11 +100,11 @@
               .row
                 .col-md-5.col-md-offset-2
                   .description.left.left-side
-                    h3 Nhi Quach
-                    = render partial: "shared/tas/nhi"
+                    h3 Jason Xie
+                    = render partial: "shared/tas/placeholder"
                 .col-md-5
                   .image-container.image-bottom.right-side
-                    = image_tag "nhi.jpg", class: "round-with-border"
+                    = image_tag "placeholder.jpg", class: "round-with-border"
   section#schedule
     .container
       .row
