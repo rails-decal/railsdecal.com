@@ -105,6 +105,15 @@
                 .col-md-5
                   .image-container.image-bottom.right-side
                     = image_tag "jason.jpg", class: "round-with-border"
+            .ta
+              .row
+                .col-md-5
+                  .image-container.image-top.left-side
+                    = image_tag "lois.jpg", class: "round-with-border"
+                .col-md-5
+                  .description.right.right-side
+                    h3 Lois Chang
+                    = render partial: "shared/tas/lois"
   section#schedule
     .container
       .row
