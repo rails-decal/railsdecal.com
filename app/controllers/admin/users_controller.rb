@@ -11,7 +11,7 @@ class Admin::UsersController < Admin::BaseController
   private
 
   def users
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
   end
 
 end
