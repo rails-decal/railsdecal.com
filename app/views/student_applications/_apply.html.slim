@@ -2,7 +2,7 @@
   - if current_user.submitted_current_semester_application?
     p
       | You have already submitted your app for this semester!
-  / - else
-  /   = link_to "Apply Now!", apply_path, class: "flat-button full-width"
+  - else
+    = link_to "Apply Now!", apply_path, class: "flat-button full-width"
 - else
   = link_to "First, Sign in with GitHub", user_omniauth_authorize_path(:github), class: "flat-button full-width"
