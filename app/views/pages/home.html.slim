@@ -24,7 +24,7 @@
                   = @info
                   = link_to "Nhi Quach", "https://github.com/nhiquach", class: "light-link underline"
                   | &nbsp;&&nbsp;
-                  = link_to "Jonathan Chu", "https://github.com/jonmchu", class: "light-link underline"
+                  = link_to "Ken Chen", "https://github.com/lbkchen", class: "light-link underline"
   - if signed_in? &&signed_in? && CheckInCode.has_current?
     section#check-in
       .container
@@ -47,22 +47,22 @@
             .row
               .col-md-5.col-md-offset-1
                 .image-container.image-bottom.left-side
-                  = image_tag "jon.jpg", class: "round-with-border"
+                  = image_tag "nhi.jpg", class: "round-with-border"
               .col-md-5.col-md-offset-1
                 .bubble.right.right-side
-                  h2 About Jonathan
+                  h2 About Nhi
                   .description
-                    = render partial: "shared/instructors/jon"
+                    = render partial: "shared/instructors/nhi"
             .spacer
             .row
               .col-md-5.col-md-offset-1
                 .bubble.left.left-side
-                  h2 About Nhi
+                  h2 About Ken
                   .description
-                    = render partial: "shared/instructors/nhi"
+                    = render partial: "shared/instructors/ken"
               .col-md-5.col-md-offset-1
                 .image-container.image-bottom.right-side
-                  = image_tag "nhi.jpg", class: "round-with-border"
+                  = image_tag "ken.jpg", class: "round-with-border"
   section#tas
     .container
       .row
