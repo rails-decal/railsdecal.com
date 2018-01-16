@@ -31,6 +31,7 @@
                   = f.input :current_courseload, label: "List all of the classes you are taking this semester (#{ Semester.current.name }, CS and non-CS)."
                   = f.input :other_commitments, label: "Tell us about yourself. What other commitments do you have this semester?"
                   = f.input :how_many_hours_willing, label: "How many hours are you willing to dedicate to this course?"
+                  = f.input :semesters_applied_before, label: "Have you applied to the decal previously? List in which semesters you've applied before."
                   = f.input :how_did_you_hear_about_us, label: "How did you hear about us?", collection: [['Facebook', 'Facebook'], ['Friend','Friend'], ['Flyer','Flyer'], ['Decal.org','Decal.org'], ['Rails Decal Staff', 'Rails Decal Staff'], ['Other','Other']]
                 .form-actions
                   = f.button :submit, "Submit", class: 'flat-button'

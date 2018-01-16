@@ -25,7 +25,8 @@ class StudentApplicationsController < ApplicationController
     params.require(:student_application).permit(
       :first_name, :last_name, :email, :student_id, :year, :standing,
       :major, :why_join, :cs_classes_taken, :current_courseload,
-      :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us
+      :other_commitments, :how_many_hours_willing, :how_did_you_hear_about_us,
+      :semesters_applied_before
     )
   end
 
