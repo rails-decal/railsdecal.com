@@ -1,8 +1,8 @@
 RailsDecal::Application.routes.draw do
   root to: "pages#home"
 
-  get "apply", to: "student_applications#new", as: "apply"
-  post "apply", to: "student_applications#create", as: "student_applications"
+  get "apply", to: "student_applications#new", as: "apply" if Rails.env.development?
+  post "apply", to: "student_applications#create", as: "student_applications" if Rails.env.development?
   get "office-hours", to: "pages#office_hours"
   get "why", to: "pages#why"
 

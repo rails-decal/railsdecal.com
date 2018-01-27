@@ -4,20 +4,20 @@ h1.white
     | (subject to change)
 
 ul#timeline
-  li.work.timeline-row
-    input.radio#apply type="radio" checked="true" name="timeline"
-    .relative
-      label.timeline for="apply" Submit your application!
-      span.date Winter 2018
-      span.circle
-    .timeline-content
-      p
-        | Submit your application online #{link_to "here.", apply_path}
-        |  We'll review your applications and you'll
-        |  hear back from us shortly after the application deadline.
+  / li.work.timeline-row
+  /   input.radio#apply type="radio" checked="true" name="timeline"
+  /   .relative
+  /     label.timeline for="apply" Submit your application!
+  /     span.date Winter 2018
+  /     span.circle
+  /   .timeline-content
+  /     p
+  /       | Submit your application online #{link_to "here.", apply_path}
+  /       |  We'll review your applications and you'll
+  /       |  hear back from us shortly after the application deadline.
 
   li.work.timeline-row
-    input.radio#week1 type="radio" name="timeline"
+    input.radio#week1 type="radio" checked="true" name="timeline"
     .relative
       label.timeline for="week1" Introduction, General Web Development, and MVC
       span.date Week 1
