@@ -28,9 +28,9 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
               - if can? :show, current_user
                 li
                   = link_to "Profile", current_user
-              - if can? :apply, StudentApplication
-                li
-                  = link_to "Apply Now", apply_path
+              / - if can? :apply, StudentApplication
+              /   li
+              /     = link_to "Apply Now", apply_path
                 li.divider
               - if can? :view, :admin_dashboard
                 li
