@@ -6,7 +6,6 @@
 #  first_name                :string
 #  last_name                 :string
 #  email                     :string
-#  student_id                :integer
 #  phone_number              :string
 #  year                      :string
 #  major                     :string
@@ -23,6 +22,8 @@
 #  semester_id               :integer
 #  standing                  :integer          default(0)
 #  status                    :integer          default(0)
+#  student_id                :string
+#  semesters_applied_before  :text
 #
 
 class StudentApplication < ActiveRecord::Base
